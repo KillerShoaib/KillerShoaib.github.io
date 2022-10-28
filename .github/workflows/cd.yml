@@ -1,0 +1,56 @@
+name: Build, Test and Deploy the website
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+concurrency: deploy
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v3
+        with:
+          submodules: true
+          fetch-depth: 0
+
+      - name: Setup Hugo
+        uses: peaceiris/actions-hugo@v2
+        with:
+          hugo-version: 'latest'
+
+      - name: Build site with Hugo
+        run: hugo --minify --enableGitInfo
+
+      - name: Check HTML
+        uses: anishathalye/proof-html@v1
+        with:
+          directory: "./public"
+          check_external_hash: false
+          check_img_http: false
+          check_opengraph: false
+          empty_alt_ignore: true
+          enforce_https: false
+          url_ignore_re: |
+            linkedin.com
+            2020.erum.io
+            live.juliacon.org
+            rse.ac.uk
+            cogx.co
+            turing.ac.uk
+            docs.github.com
+        continue-on-error: ${{ github.event_name == 'push' }}
+
+      - name: Deploy to GitHub Pages
+        if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./public
