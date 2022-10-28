@@ -1,6 +1,6 @@
 # config.yaml
 
-baseURL:
+baseURL: "https://KillerShoaib.github.io/"
 languageCode: en-us
 title: ShoaibBlogs
 theme: LoveIt
