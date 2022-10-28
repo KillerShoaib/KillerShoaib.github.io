@@ -31,22 +31,7 @@ jobs:
 
       - name: Check HTML
         uses: anishathalye/proof-html@v1
-        with:
-          directory: "./public"
-          check_external_hash: false
-          check_img_http: false
-          check_opengraph: false
-          empty_alt_ignore: true
-          enforce_https: false
-          url_ignore_re: |
-            linkedin.com
-            2020.erum.io
-            live.juliacon.org
-            rse.ac.uk
-            cogx.co
-            turing.ac.uk
-            docs.github.com
-        continue-on-error: ${{ github.event_name == 'push' }}
+        continue-on-error: true
 
       - name: Deploy to GitHub Pages
         if: github.event_name == 'push' && github.ref == 'refs/heads/main'
