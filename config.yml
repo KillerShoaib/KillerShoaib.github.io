@@ -41,7 +41,16 @@ languages:
           name: Categories
           url: /categories/
           title: ""
+
         - weight: 4
+          identifier: deep learning
+          pre: ""
+          post: ""
+          name: Deep Learning
+          url: /categories/deep-learning/
+          title: ""
+        
+        - weight: 5
           identifier: about
           pre: ""
           post: ""
@@ -52,7 +61,7 @@ languages:
     weight: 2
     title: ShoaibBlogs
     languageCode: bn
-    languageName: বাংলা
+    languageName: বাংলা 
     hasCJKLanguage: true
     menu:
       main:
@@ -77,7 +86,16 @@ languages:
           name: বিভাগ
           url: /categories/
           title: ""
+
         - weight: 4
+          identifier: deep learning
+          pre: ""
+          post: ""
+          name: ডিপ লার্নিং
+          url: /categories/deep-learning/
+          title: ""
+
+        - weight: 5
           identifier: about
           pre: ""
           post: ""
