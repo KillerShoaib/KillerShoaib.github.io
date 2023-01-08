@@ -429,7 +429,7 @@ $$ \textrm{Output of Hidden Neuron1 = 1} $$
 **Forward Propagation of the output Neuron (after updated weights) :**
 
 {{< rawhtml >}}
-<p><b>এইক্ষেত্রে ইনপুট হবে ১ (কারণ হিডেন নিউরন এর আউটপুট ১) এবং W<sub>final</sub> এর আপডেটেড ভ্যালু W<sub>final</sub> = ০.৭ </b></p>
+<p><b>Here Input will be 1 (cause hidden neuron 1 output is 1) and updated W<sub>final</sub> value is W<sub>final</sub> = 0.7 </b></p>
 {{</ rawhtml >}}
 
 \
