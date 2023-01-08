@@ -78,7 +78,7 @@ ignoreErrors = ["error-remote-getjson", "error-missing-instagram-accesstoken"]
   # Footer config
   # 页面底部信息配置
   [params.footer]
-    enable = true
+    enable = false
     # Custom content (HTML format is supported)
     # 自定义内容 (支持 HTML 格式)
     custom = ""
@@ -222,7 +222,7 @@ ignoreErrors = ["error-remote-getjson", "error-missing-instagram-accesstoken"]
   [params.social]
     GitHub = "KillerShoaib"
     Linkedin = ""
-    Twitter = "Shoaib8Rj"
+    Twitter = "KillerShoaib__"
     Instagram = "killershoaib__"
     Facebook = "100085034082552"
     Telegram = ""
@@ -523,7 +523,7 @@ ignoreErrors = ["error-remote-getjson", "error-missing-instagram-accesstoken"]
     # 第三方库配置
     [params.page.library]
       [params.page.library.css]
-        someCSS = "some.css"
+        #someCSS = "some.css"
         # located in "assets/" 位于 "assets/"
         # Or 或者
         # someCSS = "https://cdn.example.com/some.css"
