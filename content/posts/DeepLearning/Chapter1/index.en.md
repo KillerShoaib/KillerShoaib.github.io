@@ -9,10 +9,10 @@ toc:
 
 math: true
 fraction: true
-images: ["Deep Learning thumbnail.png"]
+images: ["Deep-Learning-thumbnail.png"]
 resources:
 - name: "featured-image"
-  src: "Deep Learning thumbnail.png"
+  src: "Deep-Learning-thumbnail.png"
 
 tags: ["ANN"]
 categories: ["Deep Learning"]
@@ -33,7 +33,7 @@ If you have a little knowledge about artificial intelligence and machine learnin
 \
 Go, is a board game. In this game, an AI named **Alpha Go** beat the world champion of this game. In recent times if you’re scrolling through Facebook or Twitter you might have seen many posts about AI generating beautiful art. One of the AI that is doing such wonderful art is called **Midjourney** AI. It can render images from only text input. And the quality of the images is equivalent if not better than that of most artists in modern times. And we can’t forget our personal assistants **Google, Alexa, or Siri**. We are using these AI for day-to-day usage. All of these AI is possible because of **Deep Learning.**
 \
-{{< image src="/images/Deep Learning/Chapter1/Advancement of AI figure.png" caption="**Deep Learning Based AI** (`AlphaGo, Midjourney AI, Google-Siri-Alexa`)" >}}
+{{< image src="/images/DeepLearning/Chapter1/Advancement of AI figure.png" caption="**Deep Learning Based AI** (`AlphaGo, Midjourney AI, Google-Siri-Alexa`)" >}}
 
 ## **Inspiration of Deep Learning**
 
@@ -61,7 +61,7 @@ From the above discussion we’re able to know 3 things:
 
 **And all of these above were actually the main inspiration to create deep learning.**
 
-{{< image src="/images/Deep Learning/Chapter1/human neuron.jpg" caption="**Neurons in Human Body**" >}}
+{{< image src="/images/DeepLearning/Chapter1/human neuron.jpg" caption="**Neurons in Human Body**" >}}
 
 ## **How Does Deep Learning Work?**
 
@@ -116,7 +116,7 @@ The neural network structure is all the element that creates a neural network. I
 
 In a neural network, there can **only be 1 input or output layer** but can have **more than 1 hidden layer**. The number of hidden layers and the number of neurons needed for each layer is defined based on the problem statement.
 
-{{< image src="/images/Deep Learning/Chapter1/Components of Nural Network.png" caption="**Structure of Neural Network (Neurons, Weights & Layers)**" >}}
+{{< image src="/images/DeepLearning/Chapter1/Components of Nural Network.png" caption="**Structure of Neural Network (Neurons, Weights & Layers)**" >}}
 
 
 ### **Neural Network Training & Prediction**
@@ -192,7 +192,7 @@ $$ f(x) =  \frac{\mathrm{1} }{\mathrm{1} + e^- x} $$
 
 <!-- math equation 2 -->
 
-{{< image src="/images/Deep Learning/Chapter1/ForwardPropagation - Bangla.png" caption="**Forward Propagation inside a neuron**" >}}
+{{< image src="/images/DeepLearning/Chapter1/ForwardPropagation - Bangla.png" caption="**Forward Propagation inside a neuron**" >}}
 
 #### **2. Loss Function(comparing the predicted value with the original value)**
 
@@ -232,7 +232,7 @@ In the previous section [**How Does Deep Learning Work?**](#how-does-deep-learni
 * **1 neuron in the output layer.**
 * **Sigmoid activation function for both hidden and output layer**
 
-{{< image src="/images/Deep Learning/Chapter1/Neural Network Tranning 1.png" caption="**Structure of our neural network**" >}}
+{{< image src="/images/DeepLearning/Chapter1/Neural Network Tranning 1.png" caption="**Structure of our neural network**" >}}
 
 
 ### **Forward Propagation for 1st Iteration**
@@ -280,7 +280,7 @@ $$ \textrm{Output of hidden neuron1 = 0.5} $$
 
 <!-- math equation 2 -->
 
-{{< image src="/images/Deep Learning/Chapter1/Equation1(a).png" caption="**Calculation of Hidden Neuron 1**" >}}
+{{< image src="/images/DeepLearning/Chapter1/Equation1(a).png" caption="**Calculation of Hidden Neuron 1**" >}}
 
 \
 &nbsp;
@@ -322,7 +322,7 @@ $$ \textrm{Output neuron's Output = 0.5} $$
 
 {{< /rawhtml >}}
 
-{{< image src="/images/Deep Learning/Chapter1/Equation1(b).png" caption="**Calculation of Output Neuron**" >}}
+{{< image src="/images/DeepLearning/Chapter1/Equation1(b).png" caption="**Calculation of Output Neuron**" >}}
 
 \
 &nbsp;
@@ -364,7 +364,7 @@ $$ \textrm{Output neuron's Output = 0.5} $$
 **The final output of the neural network was 0.5 but our threshold is 0.5. So it means neural network predicted no.**
 
 
-{{< image src="/images/Deep Learning/Chapter1/Neural Network Tranning 2.png" caption="**Forward Propagation for 1st Iteration**" >}}
+{{< image src="/images/DeepLearning/Chapter1/Neural Network Tranning 2.png" caption="**Forward Propagation for 1st Iteration**" >}}
 
 
 ### **Comparing Predicted Value & Original Output**
@@ -377,7 +377,7 @@ The loss function will calculate the error between the original and predicted va
 
 We already know that our prediction is wrong. That means the neural network needs to update the values of the weights. In the backpropagation method, the neural network will update all of its weights based on the error which is calculated by the loss function.
 
-{{< image src="/images/Deep Learning/Chapter1/Neural Network Tranning 3_.png" caption="**Backpropagation**" >}}
+{{< image src="/images/DeepLearning/Chapter1/Neural Network Tranning 3_.png" caption="**Backpropagation**" >}}
 
 
 ### **Forward Propagation With Update Weights (2nd Iteration)**
@@ -503,7 +503,7 @@ $$ \textrm{Output of output Neuron = 0.67} $$
 
 **After the 2nd iteration, the output value is 0.67 which is greater than 0.5 then which means the neural network's final output is yes. This time our neural network can give us the right prediction.**
 
-{{< image src="/images/Deep Learning/Chapter1/Neural Network Tranning 4.png" caption="**Forward propagation with updated weights**" >}}
+{{< image src="/images/DeepLearning/Chapter1/Neural Network Tranning 4.png" caption="**Forward propagation with updated weights**" >}}
 
 
 ## **What’s Next?**
