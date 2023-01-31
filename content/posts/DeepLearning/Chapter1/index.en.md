@@ -9,15 +9,13 @@ toc:
 
 math: true
 fraction: true
-tags: ["ANN"]
-categories: ["Deep Learning"]
-featuredImage: "/images/Deep Learning/Chapter1/Deep Learning thumbnail .png"
-featuredImagePreview: "/images/Deep Learning/Chapter1/Deep Learning thumbnail .png"
-
 images: []
 resources:
 - name: "featured-image"
-  src: "/images/Deep Learning/Chapter1/Deep Learning thumbnail .png"
+  src: "Deep Learning thumbnail .png"
+
+tags: ["ANN"]
+categories: ["Deep Learning"]
 
 ---
 
