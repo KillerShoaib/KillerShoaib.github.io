@@ -9,10 +9,10 @@ toc:
 
 math: true
 fraction: true
-images: ["Deep Learning thumbnail .png"]
+images: ["Deep Learning thumbnail.png"]
 resources:
 - name: "featured-image"
-  src: "Deep Learning thumbnail .png"
+  src: "Deep Learning thumbnail.png"
 
 tags: ["ANN"]
 categories: ["Deep Learning"]
