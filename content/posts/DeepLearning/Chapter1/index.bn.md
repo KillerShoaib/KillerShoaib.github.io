@@ -10,7 +10,7 @@ toc:
 math: true
 fraction: true
 
-images: ["Deep-Learning-thumbnail-Bangla.png"]
+images: ["/images/DeepLearning/Chapter1/Deep-Learning-thumbnail-Bangla.png"]
 
 featuredImage: "/images/DeepLearning/Chapter1/Deep-Learning-thumbnail-Bangla.png"
 featuredImagePreview: "/images/DeepLearning/Chapter1/Deep-Learning-thumbnail-Bangla.png"
