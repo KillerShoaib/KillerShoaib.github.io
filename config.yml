@@ -10,7 +10,7 @@ enableEmoji: true
 author:
   name: Shoaib Hossain
   email: "sh.shoaib8@gmail.com"
-  link: "https://github.com/KillerShoaib"
+  link: "https://reliable-chimera-d33c1f.netlify.app/"
 
 languages:
   en:
@@ -55,7 +55,7 @@ languages:
           pre: ""
           post: ""
           name: About
-          url: /about/
+          url: https://reliable-chimera-d33c1f.netlify.app/
           title: ""
   bn:
     weight: 2
@@ -100,7 +100,7 @@ languages:
           pre: ""
           post: ""
           name: লেখক পরিচিতি
-          url: /about/
+          url: https://reliable-chimera-d33c1f.netlify.app/
           title: ""
     params:
       home:
