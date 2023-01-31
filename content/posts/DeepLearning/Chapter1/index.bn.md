@@ -10,7 +10,7 @@ toc:
 math: true
 fraction: true
 
-images: ["Deep Learning thumbnail - Bangla.png"]
+images: ["Deep Learning thumbnail .png"]
 resources:
 - name: "featured-image"
   src: "Deep Learning thumbnail - Bangla.png"
