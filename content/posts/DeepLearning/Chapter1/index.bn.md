@@ -10,14 +10,14 @@ toc:
 math: true
 fraction: true
 
-images: []
+images: ["Deep Learning thumbnail - Bangla.png"]
 resources:
 - name: "featured-image"
   src: "Deep Learning thumbnail - Bangla.png"
 
 tags: ["ANN"]
 categories: ["Deep Learning"]
-
+lightgallery: true
 ---
 
 
