@@ -9,7 +9,7 @@ toc:
 
 math: true
 fraction: true
-images: ["Deep-Learning-thumbnail.png"]
+images: ["/images/DeepLearning/Chapter1/Deep-Learning-thumbnail.png"]
 resources:
 - name: "featured-image"
   src: "Deep-Learning-thumbnail.png"
