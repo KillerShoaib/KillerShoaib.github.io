@@ -26,7 +26,7 @@
   description = "Blogs About ML-DL-CV-NLP and anything related AI"
   # website images for Open Graph and Twitter Cards
   # 网站图片, 用于 Open Graph 和 Twitter Cards
-  images = []
+  images = ["/logo.png"]
 
 
 
