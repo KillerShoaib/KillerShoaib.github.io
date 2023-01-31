@@ -10,10 +10,10 @@ toc:
 math: true
 fraction: true
 
-images: ["Deep Learning thumbnail - Bangla.png"]
-resources:
-- name: "featured-image"
-  src: "Deep Learning thumbnail - Bangla.png"
+images: ["Deep Learning thumbnail .png"]
+
+featuredImage: "/images/Deep Learning/Chapter1/Deep Learning thumbnail - Bangla.png"
+featuredImagePreview: "/images/Deep Learning/Chapter1/Deep Learning thumbnail - Bangla.png"
 
 tags: ["ANN"]
 categories: ["Deep Learning"]
