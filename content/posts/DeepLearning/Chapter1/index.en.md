@@ -9,10 +9,10 @@ toc:
 
 math: true
 fraction: true
-images: ["/images/DeepLearning/Chapter1/Deep-Learning-thumbnail.png"]
-resources:
-- name: "featured-image"
-  src: "Deep-Learning-thumbnail.png"
+images: ["/images/DeepLearning/Chapter1/Deep-Learning-thumbnail-SocialPreview.png"]
+featuredImage: "/images/DeepLearning/Chapter1/Deep-Learning-thumbnail.png"
+featuredImagePreview: "/images/DeepLearning/Chapter1/Deep-Learning-thumbnail.png"
+
 
 tags: ["ANN"]
 categories: ["Deep Learning"]
@@ -47,7 +47,7 @@ We have neurons all over our bodies. 100 billion neurons only exist in our brain
 \
 \
 Now, this information is shared by activating neurons. What do I mean by neuron activation?
-Okay, let’s try to understand from an example. Try to imagine you’re eating yummy food. Now how will the brain know the taste of that food? This taste which is information will go to the brain through neurons. Food taste will activate the neuron inside our mouth and it will that information to the brain. Here, only the mouth’s neuron is activated. It didn’t activate another neuron to pass the information.
+Okay, let’s try to understand from an example. Try to imagine you’re eating yummy food. Now how will the brain know the taste of that food? This taste which is information will go to the brain through neurons. Food taste will activate the neuron inside our mouth and it will carry that information to the brain. Here, only the mouth’s neuron is activated. It didn’t activate another neuron to pass the information.
 \
 \
 Neurons don’t only share information with the brain it also helps us means the brain learns new skills or task. How is that? When we’re learning new skills we try to practice that skills a lot. When we’re practicing that particular skill the neuron will try to create a new strong connection with the brain specifically for that skill and that’s how we’re able to learn new skills.
@@ -132,7 +132,7 @@ All of the steps are executed one after another. Now let’s try to understand w
 &nbsp;
 \
 &nbsp;
-#### **1. Forward propagation:**
+### **1. Forward propagation:**
 
 Neural networks make their prediction with forward propagation. In forward propagation, each neuron passes its value to the next layer. **One layer’s input is from its previous layer’s output and the output of the current layer is the input of the next layer.** And this will continue till the output layer and the output layer will make the final prediction. But now the question is how does the neuron forward the input values to its next layer?Here, each neuron goes through **2 steps** in forward propagation to forward the value to the next layer.
 \
@@ -194,12 +194,12 @@ $$ f(x) =  \frac{\mathrm{1} }{\mathrm{1} + e^- x} $$
 
 {{< image src="/images/DeepLearning/Chapter1/ForwardPropagation - Bangla.png" caption="**Forward Propagation inside a neuron**" >}}
 
-#### **2. Loss Function(comparing the predicted value with the original value)**
+### **2. Loss Function(comparing the predicted value with the original value)**
 
 Neural network's prediction is not enough. We need to verify the prediction. We need to know if the prediction is correct or incorrect. To do this we use the loss function. The loss function compares the predicted output and the original output. If the predicted out and the original output is the same then the loss will be 0. If the predicted output is close to the original output then the loss value would be small but when the predicted output and original output differ then the loss value would be large. By finding out the value of the loss function we are able to know how close is the predicted value to the original value. There are different loss functions for classification and regression tasks.
 
 
-#### **3. Backpropagation**
+### **3. Backpropagation**
 
 At the begging of the training, the predicted output of the forward propagation is far from the original output. And it is because at the beginning all the weights have been initialized as 0. If we follow the formula above and we take 0 for every weight then the output would always be 0.
 So, we can see weight values have a huge impact on the predicted value. If we can find the proper value for each weight then the neural network can make a better prediction that is close to the original output. The neural network needs to update its weight value. But how can it do so? It can update the value of its weights by backpropagation. Backpropagation is a technique where it calculates the error from the original output and predicted output using the loss function. After finding the error it updates all the weights values based on the error. This is a complicated process. There is lots of mathematical operation happening behind the scenes. But for now, I won’t discuss the mathematical parts it’ll be covered in an upcoming article.
