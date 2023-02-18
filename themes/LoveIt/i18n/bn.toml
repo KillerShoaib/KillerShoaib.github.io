@@ -102,10 +102,10 @@ other = "শেয়ার করুন"
 
 # === posts/single.html ===
 [contents]
-other = "কন্টেন্টস"
+other = "বিষয়বস্তু"
 
 [publishedOnDate]
-other = "প্রকাশনার তারিখ {{ .Date }}"
+other = "প্রকাশিত {{ .Date }}"
 
 [includedInCategories]
 other = "ক্যাটাগরি {{ .Categories }}"

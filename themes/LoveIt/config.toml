@@ -78,7 +78,7 @@ ignoreErrors = ["error-remote-getjson", "error-missing-instagram-accesstoken"]
   # Footer config
   # 页面底部信息配置
   [params.footer]
-    enable = false
+    enable = true
     # Custom content (HTML format is supported)
     # 自定义内容 (支持 HTML 格式)
     custom = ""
