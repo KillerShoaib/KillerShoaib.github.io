@@ -12,6 +12,7 @@ fraction: true
 images: ["/images/DeepLearning/Chapter2/1stPicfeatureEng.png"]
 featuredImage: "/images/DeepLearning/Chapter2/1stPicEng.png"
 featuredImagePreview: "/images/DeepLearning/Chapter2/1stPicEng.png"
+draft: true
 
 
 tags: ["ANN"]
