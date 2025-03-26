@@ -1,0 +1,39 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>AI With Shoaib</title>
+        <link>http://localhost:1313/</link>
+        <description>Blogs About ML-DL-CV-NLP and anything related AI</description>
+        <generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Sat, 01 Mar 2025 05:43:40 &#43;0600</lastBuildDate>
+            <atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
+        <item>
+    <title>Transcribing Bangla Youtube Video With Gemini</title>
+    <link>http://localhost:1313/posts/transcribing-bangla-youtube-video-using-gemini/</link>
+    <pubDate>Sat, 01 Mar 2025 05:43:40 &#43;0600</pubDate>
+    <author>Shoaib Hossain</author>
+    <guid>http://localhost:1313/posts/transcribing-bangla-youtube-video-using-gemini/</guid>
+    <description><![CDATA[<div class="featured-image">
+                <img src="/images/YoutubeTranscriptionGemini/Bangla%20Youtube%20Video%20Transcription%20Banner.png" referrerpolicy="no-referrer">
+            </div><p>Let&rsquo;s build a <strong>Bangla Youtube Transcriber</strong> using Google&rsquo;s new <strong>Gemini Flash 2.</strong></p>]]></description>
+</item>
+<item>
+    <title>2. Activation Function Part - 1</title>
+    <link>http://localhost:1313/posts/deeplearning/chapter2/</link>
+    <pubDate>Sun, 12 Feb 2023 00:18:40 &#43;0600</pubDate>
+    <author>Author</author>
+    <guid>http://localhost:1313/posts/deeplearning/chapter2/</guid>
+    <description><![CDATA[<div class="featured-image">
+                <img src="/images/DeepLearning/Chapter2/1stPicEng.png" referrerpolicy="no-referrer">
+            </div><p>An introduction to <strong>activation function</strong> and it&rsquo;s importance in neural network.</p>]]></description>
+</item>
+<item>
+    <title>1. What is Deep Learning &amp; How Does It Work</title>
+    <link>http://localhost:1313/posts/deeplearning/chapter1/</link>
+    <pubDate>Sun, 08 Jan 2023 05:43:40 &#43;0600</pubDate>
+    <author>Author</author>
+    <guid>http://localhost:1313/posts/deeplearning/chapter1/</guid>
+    <description><![CDATA[<div class="featured-image">
+                <img src="/images/DeepLearning/Chapter1/Deep-Learning-thumbnail.png" referrerpolicy="no-referrer">
+            </div><p><strong>A brief introduction to deep learning.</strong></p>]]></description>
+</item>
+</channel>
+</rss>

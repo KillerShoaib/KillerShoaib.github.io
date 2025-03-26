@@ -1,0 +1,690 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="noodp" />
+        <title>1. What is Deep Learning &amp; How Does It Work - AI With Shoaib</title><meta name="Description" content="A brief introduction to deep learning."><meta property="og:url" content="http://localhost:1313/posts/deeplearning/chapter1/">
+  <meta property="og:site_name" content="AI With Shoaib">
+  <meta property="og:title" content="1. What is Deep Learning & How Does It Work">
+  <meta property="og:description" content="A brief introduction to deep learning.">
+  <meta property="og:locale" content="en">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2023-01-08T05:43:40+06:00">
+    <meta property="article:modified_time" content="2023-01-08T05:43:40+06:00">
+    <meta property="article:tag" content="ANN">
+    <meta property="og:image" content="http://localhost:1313/images/DeepLearning/Chapter1/Deep-Learning-thumbnail-SocialPreview.png">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="http://localhost:1313/images/DeepLearning/Chapter1/Deep-Learning-thumbnail-SocialPreview.png">
+  <meta name="twitter:title" content="1. What is Deep Learning & How Does It Work">
+  <meta name="twitter:description" content="A brief introduction to deep learning.">
+      <meta name="twitter:site" content="@KillerShoaib__">
+<meta name="application-name" content="AI With Shoaib ">
+<meta name="apple-mobile-web-app-title" content="AI With Shoaib "><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="http://localhost:1313/posts/deeplearning/chapter1/" /><link rel="next" href="http://localhost:1313/posts/deeplearning/chapter2/" /><link rel="stylesheet" href="/css/style.min.css"><link rel="preload" href="/lib/fontawesome-free/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+        <noscript><link rel="stylesheet" href="/lib/fontawesome-free/all.min.css"></noscript><link rel="preload" href="/lib/animate/animate.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+        <noscript><link rel="stylesheet" href="/lib/animate/animate.min.css"></noscript><script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "headline": "1. What is Deep Learning \u0026 How Does It Work",
+        "inLanguage": "en",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "http:\/\/localhost:1313\/posts\/deeplearning\/chapter1\/"
+        },"genre": "posts","keywords": "ANN","wordcount":  3418 ,
+        "url": "http:\/\/localhost:1313\/posts\/deeplearning\/chapter1\/","datePublished": "2023-01-08T05:43:40+06:00","dateModified": "2023-01-08T05:43:40+06:00","publisher": {
+            "@type": "Organization",
+            "name": ""},"author": {
+                "@type": "Person",
+                "name": "Author"
+            },"description": "A brief introduction to deep learning."
+    }
+    </script></head>
+    <body data-header-desktop="fixed" data-header-mobile="auto"><script type="text/javascript">(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('dark' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'dark' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
+
+        <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
+    <div class="header-wrapper">
+        <div class="header-title">
+            <a href="/" title="AI With Shoaib"><span class="header-title-pre"><i class="fa-solid fa-robot"></i></span> AI With Shoaib </a>
+        </div>
+        <div class="menu">
+            <div class="menu-inner"><a class="menu-item" href="/posts/"> Posts </a><a class="menu-item" href="/categories/"> Categories </a><a class="menu-item" href="/tags/"> Tags </a><a class="menu-item" href="/categories/deep-learning/"> Deep Learning </a><a class="menu-item" href="https://reliable-chimera-d33c1f.netlify.app/" rel="noopener noreffer" target="_blank"> About </a><span class="menu-item delimiter"></span><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                    <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
+                </a><a href="javascript:void(0);" class="menu-item language" title="Select Language">
+                    <i class="fa fa-globe" aria-hidden="true"></i>                      
+                    <select class="language-select" id="language-select-desktop" onchange="location = this.value;"><option value="/posts/deeplearning/chapter1/" selected>English</option><option value="/bn/posts/deeplearning/chapter1/">বাংলা</option></select>
+                </a></div>
+        </div>
+    </div>
+</header><header class="mobile" id="header-mobile">
+    <div class="header-container">
+        <div class="header-wrapper">
+            <div class="header-title">
+                <a href="/" title="AI With Shoaib"><span class="header-title-pre"><i class="fa-solid fa-robot"></i></span> AI With Shoaib </a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle-mobile">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="menu" id="menu-mobile"><a class="menu-item" href="/posts/" title="">Posts</a><a class="menu-item" href="/categories/" title="">Categories</a><a class="menu-item" href="/tags/" title="">Tags</a><a class="menu-item" href="/categories/deep-learning/" title="">Deep Learning</a><a class="menu-item" href="https://reliable-chimera-d33c1f.netlify.app/" title="" rel="noopener noreffer" target="_blank">About</a><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
+            </a><a href="javascript:void(0);" class="menu-item" title="Select Language">
+                    <i class="fa fa-globe fa-fw" aria-hidden="true"></i>
+                    <select class="language-select" onchange="location = this.value;"><option value="/posts/deeplearning/chapter1/" selected>English</option><option value="/bn/posts/deeplearning/chapter1/">বাংলা</option></select>
+                </a></div>
+    </div>
+</header><main class="main">
+                <div class="container"><div class="toc" id="toc-auto">
+            <h2 class="toc-title">Contents</h2>
+            <div class="toc-content always-active" id="toc-content-auto"></div>
+        </div><article class="page single"><h1 class="single-title animate__animated animate__flipInX">1. What is Deep Learning & How Does It Work</h1><h2 class="single-subtitle">Why Deep Learning is getting popular?</h2><div class="post-meta">
+            <div class="post-meta-line"><span class="post-author"><a href="/" title="Author" rel="author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>Author</a></span>&nbsp;<span class="post-category">included in <a href="/categories/deep-learning/"><i class="far fa-folder fa-fw" aria-hidden="true"></i>Deep Learning</a></span></div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="2023-01-08">2023-01-08</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden="true"></i>&nbsp;3418 words&nbsp;
+                <i class="far fa-clock fa-fw" aria-hidden="true"></i>&nbsp;17 minutes&nbsp;</div>
+        </div><div class="featured-image"><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="/images/DeepLearning/Chapter1/Deep-Learning-thumbnail.png"
+        data-srcset="/images/DeepLearning/Chapter1/Deep-Learning-thumbnail.png, /images/DeepLearning/Chapter1/Deep-Learning-thumbnail.png 1.5x, /images/DeepLearning/Chapter1/Deep-Learning-thumbnail.png 2x"
+        data-sizes="auto"
+        alt="/images/DeepLearning/Chapter1/Deep-Learning-thumbnail.png"
+        title="A brief introduction to deep learning." /></div><div class="details toc" id="toc-static"  data-kept="">
+                <div class="details-summary toc-title">
+                    <span>Contents</span>
+                    <span><i class="details-icon fas fa-angle-right" aria-hidden="true"></i></span>
+                </div>
+                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#deep-learning-in-modern-world"><strong>Deep Learning in Modern World</strong></a></li>
+    <li><a href="#inspiration-of-deep-learning"><strong>Inspiration of Deep Learning</strong></a></li>
+    <li><a href="#how-does-deep-learning-work"><strong>How Does Deep Learning Work?</strong></a>
+      <ul>
+        <li><a href="#neural-network-structure"><strong>Neural Network Structure</strong></a></li>
+        <li><a href="#neural-network-training--prediction"><strong>Neural Network Training &amp; Prediction</strong></a></li>
+        <li><a href="#1-forward-propagation"><strong>1. Forward propagation:</strong></a></li>
+        <li><a href="#2-loss-functioncomparing-the-predicted-value-with-the-original-value"><strong>2. Loss Function(comparing the predicted value with the original value)</strong></a></li>
+        <li><a href="#3-backpropagation"><strong>3. Backpropagation</strong></a></li>
+      </ul>
+    </li>
+    <li><a href="#a-simple-neural-networks-example"><strong>A Simple Neural Network’s Example</strong></a>
+      <ul>
+        <li><a href="#creating-the-structure-of-the-neural-network"><strong>Creating The Structure of The Neural Network</strong></a></li>
+        <li><a href="#forward-propagation-for-1st-iteration"><strong>Forward Propagation for 1st Iteration</strong></a></li>
+        <li><a href="#comparing-predicted-value--original-output"><strong>Comparing Predicted Value &amp; Original Output</strong></a></li>
+        <li><a href="#backpropagation"><strong>Backpropagation</strong></a></li>
+        <li><a href="#forward-propagation-with-update-weights-2nd-iteration"><strong>Forward Propagation With Update Weights (2nd Iteration)</strong></a></li>
+      </ul>
+    </li>
+    <li><a href="#whats-next"><strong>What’s Next?</strong></a></li>
+  </ul>
+</nav></div>
+            </div><div class="content" id="content"><p><strong>A brief introduction to deep learning.</strong></p>
+<h2 id="deep-learning-in-modern-world"><strong>Deep Learning in Modern World</strong></h2>
+<p>If you have a little knowledge about artificial intelligence and machine learning, or if you&rsquo;re active on social media, you might have heard, “AI will be going to Take over Humanity” or “AI will Take all existing jobs”. Now I’m not here to debate all of these. Instead, I’m going to tell you what makes today’s AI so powerful. The main reason AI is getting better day by day and in some tasks it’s getting better than humans is because of <strong>Deep Learning</strong>.
+<br>
+<br>
+Go, is a board game. In this game, an AI named <strong>Alpha Go</strong> beat the world champion of this game. In recent times if you’re scrolling through Facebook or Twitter you might have seen many posts about AI generating beautiful art. One of the AI that is doing such wonderful art is called <strong>Midjourney</strong> AI. It can render images from only text input. And the quality of the images is equivalent if not better than that of most artists in modern times. And we can’t forget our personal assistants <strong>Google, Alexa, or Siri</strong>. We are using these AI for day-to-day usage. All of these AI is possible because of <strong>Deep Learning.</strong>
+<br>
+<figure><a class="lightgallery" href="/images/DeepLearning/Chapter1/Advancement%20of%20AI%20figure.png" title="/images/DeepLearning/Chapter1/Advancement of AI figure.png" data-thumbnail="/images/DeepLearning/Chapter1/Advancement of AI figure.png" data-sub-html="<h2>Deep Learning Based AI (AlphaGo, Midjourney AI, Google-Siri-Alexa)</h2>">
+        <img
+            class="lazyload"
+            src="/svg/loading.min.svg"
+            data-src="/images/DeepLearning/Chapter1/Advancement%20of%20AI%20figure.png"
+            data-srcset="/images/DeepLearning/Chapter1/Advancement%20of%20AI%20figure.png, /images/DeepLearning/Chapter1/Advancement%20of%20AI%20figure.png 1.5x, /images/DeepLearning/Chapter1/Advancement%20of%20AI%20figure.png 2x"
+            data-sizes="auto"
+            alt="/images/DeepLearning/Chapter1/Advancement of AI figure.png" />
+    </a><figcaption class="image-caption"><strong>Deep Learning Based AI</strong> (<code>AlphaGo, Midjourney AI, Google-Siri-Alexa</code>)</figcaption>
+    </figure></p>
+<h2 id="inspiration-of-deep-learning"><strong>Inspiration of Deep Learning</strong></h2>
+<p>All the advanced AI is made with deep learning. Now, you might want to know 2 things, the first question how does deep learning or neural network actually works, and the second question is what is the inspiration behind deep learning?  I will try to answer the second question in this section &amp; in the later section, I will discuss the first question.
+<br>
+<br>
+The whole concept of deep learning is inspired by the human brain. More specifically the neurons are the main inspiration for deep learning. If you have knowledge of the elementary level of biology then you must be familiar with the term neurons. WHAT? You don’t know what is a neuron? Didn’t pay attention to your biology class in high school? No need to worry. In this section, I’ll be talking about neurons and how it works.
+<br>
+<br>
+We have neurons all over our bodies. 100 billion neurons only exist in our brains. Yes, you have read that right. It’s billion, not million. The main task of a neuron is to carry information from any part of the body to the brain and carry information from the brain to any part of the body. So, the task is to carry information.
+<br>
+<br>
+Now, this information is shared by activating neurons. What do I mean by neuron activation?
+Okay, let’s try to understand from an example. Try to imagine you’re eating yummy food. Now how will the brain know the taste of that food? This taste which is information will go to the brain through neurons. Food taste will activate the neuron inside our mouth and it will carry that information to the brain. Here, only the mouth’s neuron is activated. It didn’t activate another neuron to pass the information.
+<br>
+<br>
+Neurons don’t only share information with the brain it also helps us means the brain learns new skills or task. How is that? When we’re learning new skills we try to practice that skills a lot. When we’re practicing that particular skill the neuron will try to create a new strong connection with the brain specifically for that skill and that’s how we’re able to learn new skills.
+<br>
+<br>
+From the above discussion we’re able to know 3 things:</p>
+<ul>
+<li>Neuron <strong>carries information</strong>.</li>
+<li><strong>Specific neurons get activated</strong> for a specific task.</li>
+<li>Training will create a new <strong>strong connection</strong> between neurons and the brain.</li>
+</ul>
+<p><strong>And all of these above were actually the main inspiration to create deep learning.</strong></p>
+<figure><a class="lightgallery" href="/images/DeepLearning/Chapter1/human%20neuron.jpg" title="/images/DeepLearning/Chapter1/human neuron.jpg" data-thumbnail="/images/DeepLearning/Chapter1/human neuron.jpg" data-sub-html="<h2>Neurons in Human Body</h2>">
+        <img
+            class="lazyload"
+            src="/svg/loading.min.svg"
+            data-src="/images/DeepLearning/Chapter1/human%20neuron.jpg"
+            data-srcset="/images/DeepLearning/Chapter1/human%20neuron.jpg, /images/DeepLearning/Chapter1/human%20neuron.jpg 1.5x, /images/DeepLearning/Chapter1/human%20neuron.jpg 2x"
+            data-sizes="auto"
+            alt="/images/DeepLearning/Chapter1/human neuron.jpg" />
+    </a><figcaption class="image-caption"><strong>Neurons in Human Body</strong></figcaption>
+    </figure>
+<h2 id="how-does-deep-learning-work"><strong>How Does Deep Learning Work?</strong></h2>
+<p>Now I will talk about the main topic, which is how does deep learning actually work?
+We will try to get a high-level overview of the topic. In future articles, I will explain the low-level aspects of deep learning.
+<br>
+<br>
+Deep learning takes data as input and predicts a value from the data which is the output. This task is done by a neural network. To make our AI expert in a specific task, first, we have to train the neural network with task-related data. After training the neural network becomes an expert in that specific task. There are mainly 2 types of tasks and those are <strong>classification tasks</strong> &amp; <strong>regression tasks.</strong></p>
+<ul>
+<li>
+<p><strong>Classification Task:</strong> Classification tasks are those kinds of tasks where neural networks need to classify 2 or more classes based on the input.</p>
+</li>
+<li>
+<p><strong>Regression Task:</strong> Regression tasks are those kinds of tasks where neural networks need to predict some continuous values. i.e: what is the height based on the weight of a person, etc.</p>
+</li>
+</ul>
+<p>We can divide the neural networks into <strong>2 portions</strong>:</p>
+<ul>
+<li><strong>Neural Network Structure.</strong></li>
+<li><strong>Neural Network Training &amp; Prediction.</strong></li>
+</ul>
+<h3 id="neural-network-structure"><strong>Neural Network Structure</strong></h3>
+<p>The neural network structure is all the element that creates a neural network. In a neural network structure, there is a total of 3 elements and they are:</p>
+<ol>
+<li><strong>Neuron</strong></li>
+<li><strong>Weights</strong></li>
+<li><strong>Layers</strong>
+<br>
+ </li>
+</ol>
+<p> <strong>Neuron:</strong> Neuron is the unit of the neural network. Neuron store all the information and pass that information to the next layer. Remember in the <a href="#inspiration-of-deep-learning" rel=""><strong>Inspiration of Deep Learning</strong></a> we discuss that neuron&rsquo;s main objective is to carry &amp; transfer information. Just like that neurons in neural networks carry information from one layer to the next layer.
+<br>
+ </p>
+<p> <strong>Weights:</strong> Weights establish the connection between the neurons of two different layers. (We will talk about layers below.) Weights have their own value. This value represents how strongly one neuron is connected to another neuron.
+<br>
+ </p>
+<p> <strong>Layers:</strong> Above we talked about Layers a lot. Layers are created with the combination of neurons and weights. Each layer has its own neuron and each of the neurons has weights that connect them to the next layer’s neurons. (There is an illustration of the neural network structure below, see the illustration for better clarification) Now in a neural network structure, there are <strong>3 types of layers</strong>:
+<br>
+ </p>
+<p>  1. <strong>Input Layer:</strong> This layer takes the input i.e: data. This is the very fast layer in a neural network. <br>
+ </p>
+<p>  2. <strong>Output Layer:</strong> The output layer is the last layer in a neural network. This layer gives the output or prediction value. <br>
+ </p>
+<p>  3.<strong>Hidden Layer:</strong> Hidden layer is in between the input and output layers. Hidden layers take the input from the input layer and pass the necessary information or values to the output layer. All the calculation for the neural network is computed in the hidden layer.
+<br>
+ </p>
+<p>In a neural network, there can <strong>only be 1 input or output layer</strong> but can have <strong>more than 1 hidden layer</strong>. The number of hidden layers and the number of neurons needed for each layer is defined based on the problem statement.</p>
+<figure><a class="lightgallery" href="/images/DeepLearning/Chapter1/Components%20of%20Nural%20Network.png" title="/images/DeepLearning/Chapter1/Components of Nural Network.png" data-thumbnail="/images/DeepLearning/Chapter1/Components of Nural Network.png" data-sub-html="<h2>Structure of Neural Network (Neurons, Weights &amp; Layers)</h2>">
+        <img
+            class="lazyload"
+            src="/svg/loading.min.svg"
+            data-src="/images/DeepLearning/Chapter1/Components%20of%20Nural%20Network.png"
+            data-srcset="/images/DeepLearning/Chapter1/Components%20of%20Nural%20Network.png, /images/DeepLearning/Chapter1/Components%20of%20Nural%20Network.png 1.5x, /images/DeepLearning/Chapter1/Components%20of%20Nural%20Network.png 2x"
+            data-sizes="auto"
+            alt="/images/DeepLearning/Chapter1/Components of Nural Network.png" />
+    </a><figcaption class="image-caption"><strong>Structure of Neural Network (Neurons, Weights &amp; Layers)</strong></figcaption>
+    </figure>
+<h3 id="neural-network-training--prediction"><strong>Neural Network Training &amp; Prediction</strong></h3>
+<p>After creating the structure of the neural network next step is to train the neural network for a specific task (classification or regression). Neural network training can be broken down into 3 steps. And those are -</p>
+<ol>
+<li><strong>Forward Propagation</strong></li>
+<li><strong>Loss function</strong> ( Comparing predicting value with the real value)</li>
+<li><strong>Backpropagation</strong></li>
+</ol>
+<p>All of the steps are executed one after another. Now let’s try to understand what is going on in each step.
+<br>
+ 
+<br>
+ </p>
+<h3 id="1-forward-propagation"><strong>1. Forward propagation:</strong></h3>
+<p>Neural networks make their prediction with forward propagation. In forward propagation, each neuron passes its value to the next layer. <strong>One layer’s input is from its previous layer’s output and the output of the current layer is the input of the next layer.</strong> And this will continue till the output layer and the output layer will make the final prediction. But now the question is how does the neuron forward the input values to its next layer?Here, each neuron goes through <strong>2 steps</strong> in forward propagation to forward the value to the next layer.
+<br>
+ 
+<br>
+ </p>
+<ul>
+<li><strong>Weights &amp; Biases :</strong> The first step is to calculate the input with the help of weights and biases. Each neuron is connected with all the neurons by individual weights from its previous layer ( See the illustration below for a better understanding). Now all the output of the previous layer is forwarded to the next layer by those weights. Now the inputs (the previous layer’s outputs) &amp; the weights are being calculated inside the neuron itself. <strong>Each input is multiplied by the weight it enters through and after multiplying all such inputs and weights, all are added together. In the end, bias is added to the final result.</strong> Every neuron has its own bias.</li>
+</ul>
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+  <title>Katex</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.css" integrity="sha384-zB1R0rpPzHqg7Kpt0Aljp8JPLqbXI3bhnPWROx27a9N0Ll6ZP/+DiW/UqRcLbRjq" crossorigin="anonymous">
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.js" integrity="sha384-y23I5Q6l+B6vatafAwxRu/0oK/79VlbSz7Q9aiSZUvyWYIYsd+qj+o24G5ZU2zJz" crossorigin="anonymous"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/contrib/auto-render.min.js" integrity="sha384-kWPLUVMOks5AQFrykwIup5lo0m3iMkkHrD0uJ4H5cjeGihAutqP0yW0J6dpFiVkI" crossorigin="anonymous" onload="renderMathInElement(document.body);"></script>
+</head>
+
+<body>
+\[x=input \\ w=weight \\ b=bias\]
+\[ \sum_{i=1}^{n} w_i.x_i+b = w_1.x_1 + w_2.x_2 + \ldots + w_n.x_n + b\]
+</body>
+</html>
+
+
+
+<p><br>
+ </p>
+<ul>
+<li><strong>Activation Function :</strong> After calculating the value inside the neuron the value is not directly forwarded to the next layer. Rather it goes through an activation function. In the previous discussion, <a href="#inspiration-of-deep-learning" rel=""><strong>Inspiration of Deep Learning</strong></a> we discussed the activation of human neurons. Similarly, here activation function decide which neuron will be activated. The activation function takes the calculated value ( in the 1st step) as input and gives an output. This output is forwarded to the next layer. There are many types of activation functions and each serves a different purpose. In the next article, I will write about various types of activation functions.</li>
+</ul>
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Katex</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.css" integrity="sha384-zB1R0rpPzHqg7Kpt0Aljp8JPLqbXI3bhnPWROx27a9N0Ll6ZP/+DiW/UqRcLbRjq" crossorigin="anonymous">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.js" integrity="sha384-y23I5Q6l+B6vatafAwxRu/0oK/79VlbSz7Q9aiSZUvyWYIYsd+qj+o24G5ZU2zJz" crossorigin="anonymous"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/contrib/auto-render.min.js" integrity="sha384-kWPLUVMOks5AQFrykwIup5lo0m3iMkkHrD0uJ4H5cjeGihAutqP0yW0J6dpFiVkI" crossorigin="anonymous" onload="renderMathInElement(document.body);"></script>
+</head>
+
+<body>
+\[x= \sum_{i=1}^{n} w_i.x_i+b\]
+$$ f(x) =  \frac{\mathrm{1} }{\mathrm{1} + e^- x} $$
+<p style="display:flex; justify-content:center"><b>f(x) is a sigmoid activation function</b></p>
+</body>
+</html>
+
+
+
+<figure><a class="lightgallery" href="/images/DeepLearning/Chapter1/ForwardPropagation%20-%20Bangla.png" title="/images/DeepLearning/Chapter1/ForwardPropagation - Bangla.png" data-thumbnail="/images/DeepLearning/Chapter1/ForwardPropagation - Bangla.png" data-sub-html="<h2>Forward Propagation inside a neuron</h2>">
+        <img
+            class="lazyload"
+            src="/svg/loading.min.svg"
+            data-src="/images/DeepLearning/Chapter1/ForwardPropagation%20-%20Bangla.png"
+            data-srcset="/images/DeepLearning/Chapter1/ForwardPropagation%20-%20Bangla.png, /images/DeepLearning/Chapter1/ForwardPropagation%20-%20Bangla.png 1.5x, /images/DeepLearning/Chapter1/ForwardPropagation%20-%20Bangla.png 2x"
+            data-sizes="auto"
+            alt="/images/DeepLearning/Chapter1/ForwardPropagation - Bangla.png" />
+    </a><figcaption class="image-caption"><strong>Forward Propagation inside a neuron</strong></figcaption>
+    </figure>
+<h3 id="2-loss-functioncomparing-the-predicted-value-with-the-original-value"><strong>2. Loss Function(comparing the predicted value with the original value)</strong></h3>
+<p>Neural network&rsquo;s prediction is not enough. We need to verify the prediction. We need to know if the prediction is correct or incorrect. To do this we use the loss function. The loss function compares the predicted output and the original output. If the predicted out and the original output is the same then the loss will be 0. If the predicted output is close to the original output then the loss value would be small but when the predicted output and original output differ then the loss value would be large. By finding out the value of the loss function we are able to know how close is the predicted value to the original value. There are different loss functions for classification and regression tasks.</p>
+<h3 id="3-backpropagation"><strong>3. Backpropagation</strong></h3>
+<p>At the begging of the training, the predicted output of the forward propagation is far from the original output. And it is because at the beginning all the weights have been initialized as 0. If we follow the formula above and we take 0 for every weight then the output would always be 0.
+So, we can see weight values have a huge impact on the predicted value. If we can find the proper value for each weight then the neural network can make a better prediction that is close to the original output. The neural network needs to update its weight value. But how can it do so? It can update the value of its weights by backpropagation. Backpropagation is a technique where it calculates the error from the original output and predicted output using the loss function. After finding the error it updates all the weights values based on the error. This is a complicated process. There is lots of mathematical operation happening behind the scenes. But for now, I won’t discuss the mathematical parts it’ll be covered in an upcoming article.
+<br>
+ 
+<br>
+ </p>
+<p>From the above discussion, we find out mainly 3 steps for training a neural network:</p>
+<ul>
+<li><strong>The neural network predicts with the help of forward propagation.</strong></li>
+<li><strong>After predicting, the loss function compares the original and predicted output.</strong></li>
+<li><strong>After computing, the error from the loss function the backward propagation updates each of the weights based on the error value in the loss function.</strong></li>
+</ul>
+<p>After completing these 3 steps 1 iteration has been completed. Then neural network starts its 2nd iteration but this time forward propagation is going to use the updated weights. And this iteration will be happening one after another till the error becomes 0 or close to 0.</p>
+<h2 id="a-simple-neural-networks-example"><strong>A Simple Neural Network’s Example</strong></h2>
+<p>Hey, are you there? I guess that’s a yes. I thought you left when you saw all the math equations. I’m glad that you’re still here and want to learn more. Now let&rsquo;s go and try to understand a simple example of a neural network. I want to make this example a little bit more interesting. <strong>That’s why now we are going to see an example of a neural network that is going to predict one of my favorite anime characters Naruto.</strong> We’ll give a picture as input and it’ll predict if the picture is of Naruto or not. This is a binary classification problem.</p>
+<h3 id="creating-the-structure-of-the-neural-network"><strong>Creating The Structure of The Neural Network</strong></h3>
+<p>In the previous section <a href="#how-does-deep-learning-work" rel=""><strong>How Does Deep Learning Work?</strong></a> we discussed that the first thing we do is create the architecture or structure of a neural network. In this section, I’ll create the architecture of the neural network for the example. <strong>For simplicity, I won’t take the whole picture as input rather only take 4 inputs which are hair, forehead, eyes, and lip from the picture.</strong> So, we have 4 inputs that will go to the input layer. After the input layer neural network has hidden layers. This is a simple example that’s why there will be only one neural network and it has only one neuron. After that neural network has an output layer and it has only one neuron ( cause this is a binary classification problem). The hidden layer and the output layer both layer’s will have a sigmoid activation function. The final structure of the network is -</p>
+<ul>
+<li><strong>4 neurons in the input layer for 4 different inputs</strong></li>
+<li><strong>1 hidden layer and 1 neuron for the hidden layer</strong></li>
+<li><strong>1 neuron in the output layer.</strong></li>
+<li><strong>Sigmoid activation function for both hidden and output layer</strong></li>
+</ul>
+<figure><a class="lightgallery" href="/images/DeepLearning/Chapter1/Neural%20Network%20Tranning%201.png" title="/images/DeepLearning/Chapter1/Neural Network Tranning 1.png" data-thumbnail="/images/DeepLearning/Chapter1/Neural Network Tranning 1.png" data-sub-html="<h2>Structure of our neural network</h2>">
+        <img
+            class="lazyload"
+            src="/svg/loading.min.svg"
+            data-src="/images/DeepLearning/Chapter1/Neural%20Network%20Tranning%201.png"
+            data-srcset="/images/DeepLearning/Chapter1/Neural%20Network%20Tranning%201.png, /images/DeepLearning/Chapter1/Neural%20Network%20Tranning%201.png 1.5x, /images/DeepLearning/Chapter1/Neural%20Network%20Tranning%201.png 2x"
+            data-sizes="auto"
+            alt="/images/DeepLearning/Chapter1/Neural Network Tranning 1.png" />
+    </a><figcaption class="image-caption"><strong>Structure of our neural network</strong></figcaption>
+    </figure>
+<h3 id="forward-propagation-for-1st-iteration"><strong>Forward Propagation for 1st Iteration</strong></h3>
+<p>
+
+
+<p>From the above picture, we can clearly see there are 4 inputs and those are hair, forehead, eye, and lip. And those inputs are connected to the hidden layer’s hidden neuron 1 through <b>W<sub>h</sub>, W<sub>f</sub>, W<sub>e</sub>, W<sub>l</sub></b> all of these weights respectively. And the hidden layer’s hidden neuron 1 is connected to the output layer’s output neuron through <b>W<sub>final</sub></b> weight. This is the first iteration so all the values of weights will be 0. And the bias of the hidden neuron 1 and output neuron 1 will be 0 too. And for simplicity, we will represent the input (hair, lip, etc.) as some constant scaler value. And those values are  <b>hair(x1) = 5000, forehead(x2) = 8000, eye(x3) = 2000, lip(x4) = 1000.</b> Now we have to the forward propagation.</p>
+
+
+<br>
+ 
+<br>
+ </p>
+<p><strong>Forward Propagation for Hidden Neuron 1 :</strong></p>
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Katex</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.css" integrity="sha384-zB1R0rpPzHqg7Kpt0Aljp8JPLqbXI3bhnPWROx27a9N0Ll6ZP/+DiW/UqRcLbRjq" crossorigin="anonymous">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.js" integrity="sha384-y23I5Q6l+B6vatafAwxRu/0oK/79VlbSz7Q9aiSZUvyWYIYsd+qj+o24G5ZU2zJz" crossorigin="anonymous"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/contrib/auto-render.min.js" integrity="sha384-kWPLUVMOks5AQFrykwIup5lo0m3iMkkHrD0uJ4H5cjeGihAutqP0yW0J6dpFiVkI" crossorigin="anonymous" onload="renderMathInElement(document.body);"></script>
+</head>
+
+<body>
+\[x_1 = 5000, x_2=8000, x_3=2000, x_4=1000\]
+\[w_h=0,w_f=0,w_e=0,w_l=0,b=0\]
+\[X= \sum_{i=1}^{n} w_i.x_i+b \textrm{   where, n = 4} \]
+\[X= x_1.w_h + x_2.w_f + x_3.w_e + x_4.w_l+b\]
+\[X= 5000.0 + 8000.0 + 2000.0 + 1000.0\]
+\[X= 0\]
+$$ \textrm{Sigomoid Activation Function Apply} $$
+$$ f(X) =  \frac{\mathrm{1} }{\mathrm{1} + e^-X} $$
+$$ f(X) =  \frac{\mathrm{1} }{\mathrm{1} + e^-0} $$
+$$ f(X) =  0.5 $$
+$$ \textrm{Output of hidden neuron1 = 0.5} $$
+</body>
+</html>
+
+
+
+<figure><a class="lightgallery" href="/images/DeepLearning/Chapter1/Equation1%28a%29.png" title="/images/DeepLearning/Chapter1/Equation1(a).png" data-thumbnail="/images/DeepLearning/Chapter1/Equation1(a).png" data-sub-html="<h2>Calculation of Hidden Neuron 1</h2>">
+        <img
+            class="lazyload"
+            src="/svg/loading.min.svg"
+            data-src="/images/DeepLearning/Chapter1/Equation1%28a%29.png"
+            data-srcset="/images/DeepLearning/Chapter1/Equation1%28a%29.png, /images/DeepLearning/Chapter1/Equation1%28a%29.png 1.5x, /images/DeepLearning/Chapter1/Equation1%28a%29.png 2x"
+            data-sizes="auto"
+            alt="/images/DeepLearning/Chapter1/Equation1(a).png" />
+    </a><figcaption class="image-caption"><strong>Calculation of Hidden Neuron 1</strong></figcaption>
+    </figure>
+<p><br>
+ 
+<br>
+ </p>
+<p><strong>Output Neuron&rsquo;s Forward Propagation -</strong></p>
+
+
+<p>Here, the output of hidden neuron 1 (0.5) will be the input of the output neuron. And hidden neuron 1 is connected to output neuron through W<sub>final</sub>. Output neuron's bias will be 0 too at first iteration.</p>
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Katex</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.css" integrity="sha384-zB1R0rpPzHqg7Kpt0Aljp8JPLqbXI3bhnPWROx27a9N0Ll6ZP/+DiW/UqRcLbRjq" crossorigin="anonymous">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.js" integrity="sha384-y23I5Q6l+B6vatafAwxRu/0oK/79VlbSz7Q9aiSZUvyWYIYsd+qj+o24G5ZU2zJz" crossorigin="anonymous"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/contrib/auto-render.min.js" integrity="sha384-kWPLUVMOks5AQFrykwIup5lo0m3iMkkHrD0uJ4H5cjeGihAutqP0yW0J6dpFiVkI" crossorigin="anonymous" onload="renderMathInElement(document.body);"></script>
+</head>
+
+<body>
+\[x_{h1} = 0.5\]
+\[w_{final}=0,b=0\]
+\[X= \sum_{i=1}^{n} w_i.x_i+b \textrm{   where, n = 1} \]
+\[X= x_{h1}.w_{final}+b\]
+\[X= 0.5*0+0\]
+\[X= 0\]
+$$ \textrm{Sigomoid Activation Function Apply} $$
+$$ f(X) =  \frac{\mathrm{1} }{\mathrm{1} + e^-X} $$
+$$ f(X) =  \frac{\mathrm{1} }{\mathrm{1} + e^-0} $$
+$$ f(X) =  0.5 $$
+$$ \textrm{Output neuron's Output = 0.5} $$
+</body>
+</html>
+
+
+
+<figure><a class="lightgallery" href="/images/DeepLearning/Chapter1/Equation1%28b%29.png" title="/images/DeepLearning/Chapter1/Equation1(b).png" data-thumbnail="/images/DeepLearning/Chapter1/Equation1(b).png" data-sub-html="<h2>Calculation of Output Neuron</h2>">
+        <img
+            class="lazyload"
+            src="/svg/loading.min.svg"
+            data-src="/images/DeepLearning/Chapter1/Equation1%28b%29.png"
+            data-srcset="/images/DeepLearning/Chapter1/Equation1%28b%29.png, /images/DeepLearning/Chapter1/Equation1%28b%29.png 1.5x, /images/DeepLearning/Chapter1/Equation1%28b%29.png 2x"
+            data-sizes="auto"
+            alt="/images/DeepLearning/Chapter1/Equation1(b).png" />
+    </a><figcaption class="image-caption"><strong>Calculation of Output Neuron</strong></figcaption>
+    </figure>
+<p><br>
+ 
+<br>
+ </p>
+<p><strong>Deciding the threshold for output:</strong> Here, the neural network’s final output value is 0.5. Now we have to convert this value to yes or no output. To do that we need to set a threshold so that when the value goes above the threshold then it can become 1 which means yes otherwise the final output will be 0 which means no. 0.5 is the threshold for this example. Anything below the threshold will return 0 and anything upper than the threshold will return 1.</p>
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Katex</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.css" integrity="sha384-zB1R0rpPzHqg7Kpt0Aljp8JPLqbXI3bhnPWROx27a9N0Ll6ZP/+DiW/UqRcLbRjq" crossorigin="anonymous">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.js" integrity="sha384-y23I5Q6l+B6vatafAwxRu/0oK/79VlbSz7Q9aiSZUvyWYIYsd+qj+o24G5ZU2zJz" crossorigin="anonymous"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/contrib/auto-render.min.js" integrity="sha384-kWPLUVMOks5AQFrykwIup5lo0m3iMkkHrD0uJ4H5cjeGihAutqP0yW0J6dpFiVkI" crossorigin="anonymous" onload="renderMathInElement(document.body);"></script>
+</head>
+
+<body>
+\[
+    \textrm{Output} =
+    \begin{cases}
+        \textrm{Yes} & \text{if $output>0.5$,}\\
+        \textrm{No} & \text{else $output<=0.5$.}
+    \end{cases}
+\]
+</body>
+</html>
+
+
+
+<p><br>
+ 
+<br>
+ </p>
+<p><strong>The final output of the neural network was 0.5 but our threshold is 0.5. So it means neural network predicted no.</strong></p>
+<figure><a class="lightgallery" href="/images/DeepLearning/Chapter1/Neural%20Network%20Tranning%202.png" title="/images/DeepLearning/Chapter1/Neural Network Tranning 2.png" data-thumbnail="/images/DeepLearning/Chapter1/Neural Network Tranning 2.png" data-sub-html="<h2>Forward Propagation for 1st Iteration</h2>">
+        <img
+            class="lazyload"
+            src="/svg/loading.min.svg"
+            data-src="/images/DeepLearning/Chapter1/Neural%20Network%20Tranning%202.png"
+            data-srcset="/images/DeepLearning/Chapter1/Neural%20Network%20Tranning%202.png, /images/DeepLearning/Chapter1/Neural%20Network%20Tranning%202.png 1.5x, /images/DeepLearning/Chapter1/Neural%20Network%20Tranning%202.png 2x"
+            data-sizes="auto"
+            alt="/images/DeepLearning/Chapter1/Neural Network Tranning 2.png" />
+    </a><figcaption class="image-caption"><strong>Forward Propagation for 1st Iteration</strong></figcaption>
+    </figure>
+<h3 id="comparing-predicted-value--original-output"><strong>Comparing Predicted Value &amp; Original Output</strong></h3>
+<p>After the first iteration, the predicted output is no. But the original output was yes. That means the neural network made a wrong prediction. So, now we have to update the weights of hidden neuron 1 and output neuron so that it can make better predictions in the next iteration
+The loss function will calculate the error between the original and predicted value and then we move on to the next phase which is backpropagation.</p>
+<h3 id="backpropagation"><strong>Backpropagation</strong></h3>
+<p>We already know that our prediction is wrong. That means the neural network needs to update the values of the weights. In the backpropagation method, the neural network will update all of its weights based on the error which is calculated by the loss function.</p>
+<figure><a class="lightgallery" href="/images/DeepLearning/Chapter1/Neural%20Network%20Tranning%203_.png" title="/images/DeepLearning/Chapter1/Neural Network Tranning 3_.png" data-thumbnail="/images/DeepLearning/Chapter1/Neural Network Tranning 3_.png" data-sub-html="<h2>Backpropagation</h2>">
+        <img
+            class="lazyload"
+            src="/svg/loading.min.svg"
+            data-src="/images/DeepLearning/Chapter1/Neural%20Network%20Tranning%203_.png"
+            data-srcset="/images/DeepLearning/Chapter1/Neural%20Network%20Tranning%203_.png, /images/DeepLearning/Chapter1/Neural%20Network%20Tranning%203_.png 1.5x, /images/DeepLearning/Chapter1/Neural%20Network%20Tranning%203_.png 2x"
+            data-sizes="auto"
+            alt="/images/DeepLearning/Chapter1/Neural Network Tranning 3_.png" />
+    </a><figcaption class="image-caption"><strong>Backpropagation</strong></figcaption>
+    </figure>
+<h3 id="forward-propagation-with-update-weights-2nd-iteration"><strong>Forward Propagation With Update Weights (2nd Iteration)</strong></h3>
+
+
+<p>After the backpropagation in the 1st iteration, the updated weights are <b>W<sub>h</sub> = 0.9,  W<sub>f</sub> = 0.8, W<sub>e</sub> = 0.5, W<sub>l</sub> = 0.5</b></p>
+
+
+<p><br>
+ 
+<br>
+ 
+<strong>Forward Propagation of Hidden Neuron 1 (after updated weights)</strong></p>
+<p>
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Katex</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.css" integrity="sha384-zB1R0rpPzHqg7Kpt0Aljp8JPLqbXI3bhnPWROx27a9N0Ll6ZP/+DiW/UqRcLbRjq" crossorigin="anonymous">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.js" integrity="sha384-y23I5Q6l+B6vatafAwxRu/0oK/79VlbSz7Q9aiSZUvyWYIYsd+qj+o24G5ZU2zJz" crossorigin="anonymous"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/contrib/auto-render.min.js" integrity="sha384-kWPLUVMOks5AQFrykwIup5lo0m3iMkkHrD0uJ4H5cjeGihAutqP0yW0J6dpFiVkI" crossorigin="anonymous" onload="renderMathInElement(document.body);"></script>
+</head>
+
+<body>
+\[x_1 = 5000, x_2=8000, x_3=2000, x_4=1000\]
+\[w_h=0.9,w_f=0.8,w_e=0.5,w_l=0.5,b=0\]
+\[X= \sum_{i=1}^{n} w_i.x_i+b \textrm{   where, n = 4} \]
+\[X= x_1.w_h + x_2.w_f + x_3.w_e + x_4.w_l+b\]
+\[X= 5000.(0.9) + 8000.(0.8) + 2000.(0.5) + 1000.(0.5)\]
+\[X= 12400\]
+$$ \textrm{Sigomoid Activation Function Apply} $$
+$$ f(X) =  \frac{\mathrm{1} }{\mathrm{1} + e^-X} $$
+$$ f(X) =  \frac{\mathrm{1} }{\mathrm{1} + e^-{12400}} $$
+$$ f(X) =  1 $$
+$$ \textrm{Output of Hidden Neuron1 = 1} $$
+</body>
+</html>
+
+
+
+<br>
+ 
+<br>
+ 
+<strong>Forward Propagation of the output Neuron (after updated weights) :</strong></p>
+
+
+<p><b>Here Input will be 1 (cause hidden neuron 1 output is 1) and updated W<sub>final</sub> value is W<sub>final</sub> = 0.7 </b></p>
+
+
+<p><br>
+ </p>
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Katex</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.css" integrity="sha384-zB1R0rpPzHqg7Kpt0Aljp8JPLqbXI3bhnPWROx27a9N0Ll6ZP/+DiW/UqRcLbRjq" crossorigin="anonymous">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.js" integrity="sha384-y23I5Q6l+B6vatafAwxRu/0oK/79VlbSz7Q9aiSZUvyWYIYsd+qj+o24G5ZU2zJz" crossorigin="anonymous"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/contrib/auto-render.min.js" integrity="sha384-kWPLUVMOks5AQFrykwIup5lo0m3iMkkHrD0uJ4H5cjeGihAutqP0yW0J6dpFiVkI" crossorigin="anonymous" onload="renderMathInElement(document.body);"></script>
+</head>
+
+<body>
+\[x_{h1} = 1\]
+\[w_{final}=0.7,b=0\]
+\[X= \sum_{i=1}^{n} w_i.x_i+b \textrm{   where, n = 1} \]
+\[X= x_{h1}.w_{final}+b\]
+\[X= 0.7*1+0\]
+\[X= 0.7\]
+$$ \textrm{Sigomoid Activation Function Apply} $$
+$$ f(X) =  \frac{\mathrm{1} }{\mathrm{1} + e^-X} $$
+$$ f(X) =  \frac{\mathrm{1} }{\mathrm{1} + e^-{0.7}} $$
+$$ f(X) =  0.67 $$
+$$ \textrm{Output of output Neuron = 0.67} $$
+</body>
+</html>
+
+
+<p><br>
+ 
+<br>
+ </p>
+<p><strong>Output Threshold of Our Network :</strong></p>
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Katex</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.css" integrity="sha384-zB1R0rpPzHqg7Kpt0Aljp8JPLqbXI3bhnPWROx27a9N0Ll6ZP/+DiW/UqRcLbRjq" crossorigin="anonymous">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.js" integrity="sha384-y23I5Q6l+B6vatafAwxRu/0oK/79VlbSz7Q9aiSZUvyWYIYsd+qj+o24G5ZU2zJz" crossorigin="anonymous"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/contrib/auto-render.min.js" integrity="sha384-kWPLUVMOks5AQFrykwIup5lo0m3iMkkHrD0uJ4H5cjeGihAutqP0yW0J6dpFiVkI" crossorigin="anonymous" onload="renderMathInElement(document.body);"></script>
+</head>
+
+<body>
+\[
+    \textrm{Output} =
+    \begin{cases}
+        \textrm{Yes} & \text{if $output>0.5$,}\\
+        \textrm{No} & \text{else $output<=0.5$.}
+    \end{cases}
+\]
+</body>
+</html>
+
+
+
+<p><br>
+ 
+<br>
+ </p>
+<p><strong>After the 2nd iteration, the output value is 0.67 which is greater than 0.5 then which means the neural network&rsquo;s final output is yes. This time our neural network can give us the right prediction.</strong></p>
+<figure><a class="lightgallery" href="/images/DeepLearning/Chapter1/Neural%20Network%20Tranning%204.png" title="/images/DeepLearning/Chapter1/Neural Network Tranning 4.png" data-thumbnail="/images/DeepLearning/Chapter1/Neural Network Tranning 4.png" data-sub-html="<h2>Forward propagation with updated weights</h2>">
+        <img
+            class="lazyload"
+            src="/svg/loading.min.svg"
+            data-src="/images/DeepLearning/Chapter1/Neural%20Network%20Tranning%204.png"
+            data-srcset="/images/DeepLearning/Chapter1/Neural%20Network%20Tranning%204.png, /images/DeepLearning/Chapter1/Neural%20Network%20Tranning%204.png 1.5x, /images/DeepLearning/Chapter1/Neural%20Network%20Tranning%204.png 2x"
+            data-sizes="auto"
+            alt="/images/DeepLearning/Chapter1/Neural Network Tranning 4.png" />
+    </a><figcaption class="image-caption"><strong>Forward propagation with updated weights</strong></figcaption>
+    </figure>
+<h2 id="whats-next"><strong>What’s Next?</strong></h2>
+<p>The above example was a simple example and not something that is practical. Here we trained our neural network with just 1 iteration and with 1 sample image. In real-world scenarios, there will be thousands of samples and we need to train the neural networks for thousands of iterations to update the weights so that we can get an optimal result from the network.
+<br>
+ 
+<br>
+ 
+It was a brief introduction to how neural network works. I hope you’ve read so far and at least have basic knowledge of neural networks. This was just the tip of the iceberg, deep learning is a huge topic, and every day this topic is growing at an exponential rate. But still, before diving into the deep of deep learning first, we need to understand a few basic concepts. One of the basic concepts is <strong>Activation Function.</strong> In my next article, I’ll try to explain in details <strong>what activation function is &amp; why we need them in a neural network.</strong> But if you want to learn more about neural networks right now then below I’ve shared some resources for you.</p>
+<ul>
+<li><a href="https://rakibul-hassan.gitbook.io/deep-learning/" target="_blank" rel="noopener noreffer "><strong>Python Deep Learning From Scratch</strong></a> This is a Bangla book and it&rsquo;s written by <strong>Rokibul Hassan</strong>. He is the best Bangla teacher or content creator when it comes to deep learning and machine learning. I have started learning deep learning after reading this book.</li>
+<li><a href="https://www.youtube.com/playlist?list=PLZoTAELRMXVPGU70ZGsckrMdr0FteeRUi" target="_blank" rel="noopener noreffer "><strong>Krish Naik&rsquo;s Deep Learning Youtube Series</strong></a></li>
+<li><a href="https://www.youtube.com/playlist?list=PLeo1K3hjS3uu7CxAacxVndI4bE_o3BDtO" target="_blank" rel="noopener noreffer "><strong>Code Basics&rsquo;s Deep Learning Youtube Series</strong></a>
+<br>
+ 
+<br>
+ </li>
+</ul>
+<p><strong>Thanks for reading this article. Hope you will come back to read the next article on the Activation Function</strong></p></div><div class="post-footer" id="post-footer">
+    <div class="post-info">
+        <div class="post-info-line">
+            <div class="post-info-mod">
+                <span>Updated on 2023-01-08</span>
+            </div></div>
+        <div class="post-info-line">
+            <div class="post-info-md"></div>
+            <div class="post-info-share">
+                <span><a href="javascript:void(0);" title="Share on Twitter" data-sharer="twitter" data-url="http://localhost:1313/posts/deeplearning/chapter1/" data-title="1. What is Deep Learning &amp; How Does It Work" data-via="KillerShoaib__" data-hashtags="ANN"><i class="fab fa-twitter fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="Share on Facebook" data-sharer="facebook" data-url="http://localhost:1313/posts/deeplearning/chapter1/" data-hashtag="ANN"><i class="fab fa-facebook-square fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="Share on Hacker News" data-sharer="hackernews" data-url="http://localhost:1313/posts/deeplearning/chapter1/" data-title="1. What is Deep Learning &amp; How Does It Work"><i class="fab fa-hacker-news fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="Share on Line" data-sharer="line" data-url="http://localhost:1313/posts/deeplearning/chapter1/" data-title="1. What is Deep Learning &amp; How Does It Work"><i data-svg-src="/lib/simple-icons/icons/line.min.svg" aria-hidden="true"></i></a><a href="javascript:void(0);" title="Share on 微博" data-sharer="weibo" data-url="http://localhost:1313/posts/deeplearning/chapter1/" data-title="1. What is Deep Learning &amp; How Does It Work" data-image="/images/DeepLearning/Chapter1/Deep-Learning-thumbnail.png"><i class="fab fa-weibo fa-fw" aria-hidden="true"></i></a></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="post-info-more">
+        <section class="post-tags"><i class="fas fa-tags fa-fw" aria-hidden="true"></i>&nbsp;<a href="/tags/ann/">ANN</a></section>
+        <section>
+            <span><a href="javascript:void(0);" onclick="window.history.back();">Back</a></span>&nbsp;|&nbsp;<span><a href="/">Home</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav">
+            <a href="/posts/deeplearning/chapter2/" class="next" rel="next" title="2. Activation Function Part - 1">2. Activation Function Part - 1<i class="fas fa-angle-right fa-fw" aria-hidden="true"></i></a></div>
+</div>
+</article></div>
+            </main><footer class="footer">
+        <div class="footer-container"><div class="footer-line">Powered by <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.145.0">Hugo</a> | Theme - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.2.11"><i class="far fa-kiss-wink-heart fa-fw" aria-hidden="true"></i> LoveIt</a>
+                </div><div class="footer-line" itemscope itemtype="http://schema.org/CreativeWork"><i class="far fa-copyright fa-fw" aria-hidden="true"></i><span itemprop="copyrightYear">2022 - 2025</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="/" target="_blank"></a></span></div>
+        </div>
+    </footer></div>
+
+        <div id="fixed-buttons"><a href="#" id="back-to-top" class="fixed-button" title="Back to Top">
+                <i class="fas fa-arrow-up fa-fw" aria-hidden="true"></i>
+            </a><a href="#" id="view-comments" class="fixed-button" title="View Comments">
+                <i class="fas fa-comment fa-fw" aria-hidden="true"></i>
+            </a>
+        </div><link rel="stylesheet" href="/lib/lightgallery/css/lightgallery-bundle.min.css"><link rel="stylesheet" href="/lib/katex/katex.min.css"><script type="text/javascript" src="/lib/lazysizes/lazysizes.min.js"></script><script type="text/javascript" src="/lib/lightgallery/lightgallery.min.js"></script><script type="text/javascript" src="/lib/lightgallery/plugins/thumbnail/lg-thumbnail.min.js"></script><script type="text/javascript" src="/lib/lightgallery/plugins/zoom/lg-zoom.min.js"></script><script type="text/javascript" src="/lib/clipboard/clipboard.min.js"></script><script type="text/javascript" src="/lib/sharer/sharer.min.js"></script><script type="text/javascript" src="/lib/katex/katex.min.js"></script><script type="text/javascript" src="/lib/katex/contrib/auto-render.min.js"></script><script type="text/javascript" src="/lib/katex/contrib/copy-tex.min.js"></script><script type="text/javascript" src="/lib/katex/contrib/mhchem.min.js"></script><script type="text/javascript">window.config={"code":{"copyTitle":"Copy to clipboard","maxShownLines":50},"comment":{},"lightgallery":true,"math":{"delimiters":[{"display":true,"left":"$$","right":"$$"},{"display":true,"left":"\\[","right":"\\]"},{"display":true,"left":"\\begin{equation}","right":"\\end{equation}"},{"display":true,"left":"\\begin{equation*}","right":"\\end{equation*}"},{"display":true,"left":"\\begin{align}","right":"\\end{align}"},{"display":true,"left":"\\begin{align*}","right":"\\end{align*}"},{"display":true,"left":"\\begin{alignat}","right":"\\end{alignat}"},{"display":true,"left":"\\begin{alignat*}","right":"\\end{alignat*}"},{"display":true,"left":"\\begin{gather}","right":"\\end{gather}"},{"display":true,"left":"\\begin{CD}","right":"\\end{CD}"},{"display":false,"left":"$","right":"$"},{"display":false,"left":"\\(","right":"\\)"}],"strict":false}};</script><script type="text/javascript" src="/js/theme.min.js"></script></body>
+</html>

@@ -1,8 +1,7 @@
 # config.yaml
-
 baseURL: "https://KillerShoaib.github.io/"
 languageCode: en-us
-title: ShoaibBlogs
+title: AI With Shoaib
 theme: LoveIt
 enableInlineShortcodes: true
 enableEmoji: true
@@ -15,7 +14,7 @@ author:
 languages:
   en:
     weight: 1
-    title: ShoaibBlogs
+    title: AI With Shoaib
     languageCode: en
     languageName: English
     menu:
@@ -59,7 +58,7 @@ languages:
           title: ""
   bn:
     weight: 2
-    title: ShoaibBlogs
+    title: AI With Shoaib
     languageCode: bn
     languageName: বাংলা 
     hasCJKLanguage: true
@@ -108,7 +107,7 @@ languages:
           enable: true
           gravatarEmail: ""
           avatarURL: /images/ezgif.com-gif-maker (1).gif
-          title: ShoaibBlogs
+          title: AI With Shoaib
           subtitle: সহজ বাংলায় ডিপ লার্নিং, মেশিন লার্নিং, কম্পিউটার ভিশন এবং ন্যাচারাল ল্যাঙ্গুয়েজে প্রসেসিং
           typeit: true
           social: true
