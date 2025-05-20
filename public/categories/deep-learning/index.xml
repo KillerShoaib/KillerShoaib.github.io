@@ -1,27 +1,26 @@
-<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
-    <channel>
-        <title>Deep Learning - Category - AI With Shoaib</title>
-        <link>http://localhost:1313/categories/deep-learning/</link>
-        <description>Deep Learning - Category - AI With Shoaib</description>
-        <generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Sun, 12 Feb 2023 00:18:40 &#43;0600</lastBuildDate><atom:link href="http://localhost:1313/categories/deep-learning/" rel="self" type="application/rss+xml" /><item>
-    <title>2. Activation Function Part - 1</title>
-    <link>http://localhost:1313/posts/deeplearning/chapter2/</link>
-    <pubDate>Sun, 12 Feb 2023 00:18:40 &#43;0600</pubDate>
-    <author>Author</author>
-    <guid>http://localhost:1313/posts/deeplearning/chapter2/</guid>
-    <description><![CDATA[<div class="featured-image">
-                <img src="/images/DeepLearning/Chapter2/1stPicEng.png" referrerpolicy="no-referrer">
-            </div><p>An introduction to <strong>activation function</strong> and it&rsquo;s importance in neural network.</p>]]></description>
-</item>
-<item>
-    <title>1. What is Deep Learning &amp; How Does It Work</title>
-    <link>http://localhost:1313/posts/deeplearning/chapter1/</link>
-    <pubDate>Sun, 08 Jan 2023 05:43:40 &#43;0600</pubDate>
-    <author>Author</author>
-    <guid>http://localhost:1313/posts/deeplearning/chapter1/</guid>
-    <description><![CDATA[<div class="featured-image">
-                <img src="/images/DeepLearning/Chapter1/Deep-Learning-thumbnail.png" referrerpolicy="no-referrer">
-            </div><p><strong>A brief introduction to deep learning.</strong></p>]]></description>
-</item>
-</channel>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Deep Learning on AI With Shoaib</title>
+    <link>http://localhost:1313/categories/deep-learning/</link>
+    <description>Recent content in Deep Learning on AI With Shoaib</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <lastBuildDate>Sun, 12 Feb 2023 00:18:40 +0600</lastBuildDate>
+    <atom:link href="http://localhost:1313/categories/deep-learning/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>2. Activation Function Part - 1</title>
+      <link>http://localhost:1313/posts/deeplearning/chapter2/</link>
+      <pubDate>Sun, 12 Feb 2023 00:18:40 +0600</pubDate>
+      <guid>http://localhost:1313/posts/deeplearning/chapter2/</guid>
+      <description>&lt;p&gt;An introduction to &lt;strong&gt;activation function&lt;/strong&gt; and it&amp;rsquo;s importance in neural network.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>1. What is Deep Learning &amp; How Does It Work</title>
+      <link>http://localhost:1313/posts/deeplearning/chapter1/</link>
+      <pubDate>Sun, 08 Jan 2023 05:43:40 +0600</pubDate>
+      <guid>http://localhost:1313/posts/deeplearning/chapter1/</guid>
+      <description>&lt;p&gt;&lt;strong&gt;A brief introduction to deep learning.&lt;/strong&gt;&lt;/p&gt;</description>
+    </item>
+  </channel>
 </rss>

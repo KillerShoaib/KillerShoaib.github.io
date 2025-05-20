@@ -1,27 +1,26 @@
-<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
-    <channel>
-        <title>ডিপ লার্নিং - ক্যাটাগরি - AI With Shoaib</title>
-        <link>http://localhost:1313/bn/categories/deep-learning/</link>
-        <description>ডিপ লার্নিং - ক্যাটাগরি - AI With Shoaib</description>
-        <generator>Hugo -- gohugo.io</generator><language>bn</language><lastBuildDate>Sun, 12 Feb 2023 00:18:40 &#43;0600</lastBuildDate><atom:link href="http://localhost:1313/bn/categories/deep-learning/" rel="self" type="application/rss+xml" /><item>
-    <title>২. অ্যাক্টিভেশন ফাংশন - পর্ব ১</title>
-    <link>http://localhost:1313/bn/posts/deeplearning/chapter2/</link>
-    <pubDate>Sun, 12 Feb 2023 00:18:40 &#43;0600</pubDate>
-    <author>লেখক</author>
-    <guid>http://localhost:1313/bn/posts/deeplearning/chapter2/</guid>
-    <description><![CDATA[<div class="featured-image">
-                <img src="/images/DeepLearning/Chapter2/1stPicBangla.png" referrerpolicy="no-referrer">
-            </div><p><strong>অ্যাক্টিভেশন ফাংশন</strong> সম্পর্কে পরিচিতি এবং নিউরাল নেটওয়ার্কে এর গুরুত্ব নিয়ে আলোচনা।</p>]]></description>
-</item>
-<item>
-    <title>১. ডিপ লার্নিং কি এবং কিভাবে কাজ করে</title>
-    <link>http://localhost:1313/bn/posts/deeplearning/chapter1/</link>
-    <pubDate>Sun, 08 Jan 2023 05:43:40 &#43;0600</pubDate>
-    <author>লেখক</author>
-    <guid>http://localhost:1313/bn/posts/deeplearning/chapter1/</guid>
-    <description><![CDATA[<div class="featured-image">
-                <img src="/images/DeepLearning/Chapter1/Deep-Learning-thumbnail-Bangla.png" referrerpolicy="no-referrer">
-            </div><p><strong>ডিপ লার্নিং</strong> সম্পর্কে ধারণা এবং কিভাবে এই পদ্ধতি কাজ করে থাকে।</p>]]></description>
-</item>
-</channel>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>ডিপ লার্নিং on AI With Shoaib</title>
+    <link>http://localhost:1313/bn/categories/deep-learning/</link>
+    <description>Recent content in ডিপ লার্নিং on AI With Shoaib</description>
+    <generator>Hugo</generator>
+    <language>bn</language>
+    <lastBuildDate>Sun, 12 Feb 2023 00:18:40 +0600</lastBuildDate>
+    <atom:link href="http://localhost:1313/bn/categories/deep-learning/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>২. অ্যাক্টিভেশন ফাংশন - পর্ব ১</title>
+      <link>http://localhost:1313/bn/posts/deeplearning/chapter2/</link>
+      <pubDate>Sun, 12 Feb 2023 00:18:40 +0600</pubDate>
+      <guid>http://localhost:1313/bn/posts/deeplearning/chapter2/</guid>
+      <description>&lt;p&gt;&lt;strong&gt;অ্যাক্টিভেশন ফাংশন&lt;/strong&gt; সম্পর্কে পরিচিতি এবং নিউরাল নেটওয়ার্কে এর গুরুত্ব নিয়ে আলোচনা।&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>১. ডিপ লার্নিং কি এবং কিভাবে কাজ করে</title>
+      <link>http://localhost:1313/bn/posts/deeplearning/chapter1/</link>
+      <pubDate>Sun, 08 Jan 2023 05:43:40 +0600</pubDate>
+      <guid>http://localhost:1313/bn/posts/deeplearning/chapter1/</guid>
+      <description>&lt;p&gt;&lt;strong&gt;ডিপ লার্নিং&lt;/strong&gt; সম্পর্কে ধারণা এবং কিভাবে এই পদ্ধতি কাজ করে থাকে।&lt;/p&gt;</description>
+    </item>
+  </channel>
 </rss>

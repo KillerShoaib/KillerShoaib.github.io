@@ -76,7 +76,7 @@ First I've divided this entire task into **2 diffrent phases.**
 
 Let's start with **Phase 1**.
 
-### Phase 1 (Youtube Audio Download)
+### Youtube Audio Download (Phase 1)
 
 {{< image src="/images/YoutubeTranscriptionGemini/Blog_diagram_1_youtube_pipeline_arc.png" caption="**Phase 1 (Youtube Audio Download)**" >}}
 
@@ -114,7 +114,7 @@ And that's it. That was the end of the **Phase 1**. Now you can take a 5 min bre
 
 Okay, break time is over now start the **Phase 2**.
 
-### Phase 2 (Transcription)
+### Transcription (Phase 2)
 
 {{< image src="/images/YoutubeTranscriptionGemini/Blog_diagram_2_transcription_pipeline_arc.png" caption="**Phase 2 (Transcription)**" >}}
 
@@ -155,28 +155,171 @@ From **Step 2** to **Step 6** I've repeated the process untill I've got the tran
 
 ## Automating Youtube Audio Download
 
+Now that we've a complete overall understanding of the workflow, it's time to get our hands dirty with actual coding and how everything works under the hood. Though one think you need to have in mind that
+I'm not going to explain line by line (comeon you've Gemini, ChatGPT. Give them the codebase and tell them to explain line by line). So let's start!
+
+### Manually Copying All Playlist Urls
+If you remember that in `Phase 1 - Step 1` I've gone through each of the playlist and copy pasted them. Again, I know it's stupid to do that. It's not automation. But I did it. So, if you're going to work on
+this project then my advice is to automate this step. After manually copying each playlist I've put them in `PlayListUrl.py`. Next part was getting each video links from each of the playlist.
+
+### Getting All Video Urls
+Code for this step can be found in `VideoLinks.py`. Instead of going each line let me share the main gist. 
+First, I've imported `playLists` from `PlayListUrl` which contain all the playlist urls.
 
 
+Then I had used `pytube`. **Pytube** is really cool tbh. You can do a lot of automation for utub using **pytube**. There is a class in `pytube` name `Playlist`. All you need to do is to pass the playlist url
+while creating the object and that's it. You'll get all the publicly available information of that playlist from that object. Below look in the example:
+
+```python
+from pytube import Playlist
+
+url = "a playlist url"
+p = Playlist(url) # passing the url
+
+# accessing the title of the playlist
+p.title
+
+# accessing the all the video urls fro that playlist
+p.video_urls
+```
+
+In the above code you can see I can get all the video urls by passing the playlist url. That's it, now all I had done is loop over `playLists` list (which was in `PlayListUrl`) and pass each url to the class, get the `title` and `video_urls` and save them to a json file.
+In the next step I used this video links to download the video directly.
+
+### Downloading All The Videos from url
+
+So let's summarize what we've done so far:
+
+1. Manually copied all the playlist urls.
+2. Use those urls to get each video links and save them in a json file
+
+Now the final step is to use each of the video url to download them. Again, **Pytube** to the rescue. As I've mentioned before **Pytube** can download any youtube video if the url is given. Now let's see an example
+of how `pytube` can download youtube video below.
+> **Before that one big thing I need to mention is that for video download purpose I've used `pytubefix` instead of `pytube`. You can think of `pytubefix` is an extension of
+`pytube`. Where it fixes lots of bugs and integrate new features but yet act exactly same as `pytube`.**
+
+```python
+from pytubefix import YouTube
+from pytubefix.cli import on_progress
+
+url = "Video url"
+
+# creating the youtube object
+yt = YouTube(url, on_progress_callback = on_progress, use_po_token=True,)
+
+# Get the audio stream (mp3 format with the highest bitrate)
+audio_stream = yt.streams.get_audio_only()
+
+# Download the audio file
+audio_stream.download(mp3=True,output_path="Audio output path")
+```
+
+Let's break it down the code piece by piece.
+
+1. First we created a `yt` object from `YouTube` class. We have passed **3 parameters or arguments**. First one is the `video url`, Second one is `on_progress` generator. The purpose of it to show a progress bar in the terminal so that we know how much download have completed at a given time. Finally we set `use_po_token` to `true`. I'll discuss about this in details in a bit.
+2. After creating `yt` object next we need to create an `stream` object. This is required to download the audio (or video). We use `.get_audio_only()` method to grab only the audio and exclude the video.
+3. Finally we **download** the audio using the `.download` method. There we pass **2 arguments**. First, `mp3=true` is telling to download the audio in **mp3 format**. Then, `output_path` argument is telling the program to **store the file in that path**.
+
+This is how we download a single youtube video using `pytube` or to be more precise `pytubefix`. **Now in my usecase we have all the urls. All I did is created a loop and loop over each url and downloaded them one by one and stored them in a specific path.**
+
+
+### Now Let's Talk About Automation Issues I've Faced
+
+Well well, it wasn't easy sailing at all. Creating complete automation was way harder than doing a single video and that's cause of youtube making it super difficult to download their videos. Here are 2 issues I've faced.
+
+1. **Manually giving po token:** Remember `po_token` was set to true. So **po token** basically means **proof of origin**, basically this parameters is needed to pass alongside the url otherwise youtube will return `403` response. You can think of it some kinda **authetication token** where youtube is verifying if the request is from an active user or bot. Typically the browser create this **po token** automatically behind the scene. For my automation script I have to copy the **po token** from my browser and pasted in the terminal. I'm not going in details how to get the `po_token` from the browser but I'm giving this [**pull request**](https://github.com/JuanBindez/pytubefix/pull/209) which explains how to get the **po token** from the browser and also how to automate the entire process.
+
+2. **Getting blank audio file:** After giving the `po_token` and starting the automation script I've faced another issue which was there were lots of videos was taking a long amount of time to download and in the end those videos were failed to download and generated an empty file. I don't know the exact reason for that but I'm assuming it is utub making it harder to download this video by using some bot protection. I didn't investigate further. I was able to download more than 300 videos and the rest of the videos were failed to download. 
+
+
+### Things to Consider
+
+If you want to build this automation project then you can focus on these below things to improve this automation process and avoid the stupid mistakes I've made.
+
+1. **Automate Playlist Urls:** You should figure out how can you automatically get all the playlist url link for a given channel. So that you don't have to manually copy and paste it.
+2. **Automating PO Token Generation:** If you follow the instructions from [**here**](https://github.com/JuanBindez/pytubefix/pull/209) then you can completely automate the entire automation script. Then you can run that inside a vm or schedule a run using github actions.
+3. **Reattempt Failed Videos:** In my case I was stupid enough to not take logs of the failed videos. Therefore I didn't know which videos didn't download in the process. But you can keep a log of all the failed video url and then create a retry mechanism where the script will try to download only the failed videos.
+
+If you add the above **3 steps** in the current automation script then you'll have a much robust youtube download automation script which can be used for any usecase.
+
+
+## Creating the Transcription Pipeline
+
+Congratulations! We've successfully downloaded youtube videos using the automation script. Now comes the fun part. We'll **transcribe** all of this youtube videos in **Bangla**
+
+### Why Choose Evil Google
+
+For transcribing the audio to bangla I had choosen google's **Gemini Flash 2.0**. Now the question is why choose the **Evil Google** who is stealing all of our data. The reasons are:
+
+1. **Google's Generosity:** This is the main reason, google is offering 1.5k free api request for gemini flash 2.0 without providing credit card. Google is the only one who is offering one of their frontier LLM with a free api quota.
+2. **Gemini Flash 2 Performance:** From my testing gemini flash 2 was performing really good in multilingual transcription. And google's LLM perform better in Bangla than any other models.
+
+So for above 2 reason I've choosen **Gemini flash 2** LLM to transcribe the audio into Bangla. Though I'm giving google permission to use my api call to improve their models. But again I'm using youtube video data to begin with so that there is nothing confidential I'm sharing to begin with.
+
+### Generating The Transcription
+
+Now I'll show you how you can upload an audio file and get the transcription using the api. Remember the api key? We will use that api key to get all the response. I've explained my entire workflow for in the [**Transcription phase**](#transcription-phase-2). I'm not going to explain the entire code but rather show you how to get bangla transcription for a single audio file. If you want the entire code then refer back to `pipeline.py` file in the [**Github repo**](https://github.com/KillerShoaib/BanglaYoutubeTranscribe).
+
+> **If you haven't installed `genai` client already then install it using `pip install google-generativeai`. But google is going deprecated this library and they are migrating to `google-genai`. Please refer to the [**docs**](https://pypi.org/project/google-genai/) for utilizing the latest library.**
+
+#### Setting up the API
+Now let's see the code snippet one by one. First we need to pass the `gemini api key` to the `genai` client.
+```python
+import google.generativeai as genai
+from google.ai.generativelanguage_v1beta.types import content
+
+# passing the api key
+genai.configure(api_key="GEMINI_API_KEY_COPIED_EARLIER")
+```
+
+#### Setting Parameters
+After setting up the api key now we'll configure different **LLM parameters** (i.e: `temperature`, `top_p`)
+
+```python
+
+
+generation_config = {
+    "temperature": 0,
+    "top_p": 0.2,
+    "top_k": 20,
+    "response_schema": content.Schema(
+        type = content.Type.OBJECT,
+        properties = {
+        "Bangla_transcription_from_audio": content.Schema(
+            type = content.Type.STRING,
+        ),
+        },
+    ),
+    "response_mime_type": "application/json",
+}
+
+
+```
+Let's understand what's happening above:
+
+1. First we set the `temperature` parameter value to 0
+2. then set the `top_p` parameter value to 0.2
+3. then set the `top_k` parameter value to 20
+4. Finally, we utilize **structure output**. Means the final response from the LLM will be in a `json` format. Where the key name will be `Bangla_transcription_from_audio` and the value of that key will be the `transcription string` for that particular audio,
+
+**What is Structure Output?**
+
+I'm going to talk very breifly about **structure output.** Structure output from LLM means forcing the LLM to give the **output in a specific format**. That specific format can be a `json schema` or `xml schema`. Currently the `json schema` is the most famous way to get the structure output from LLMs. The main reason to use **structure output is to have control**. Suppose when I was tring to transcribe the audio then there will be some **additional text** that will come with the transcribtion such as "Here is your transcription...", "okay let's transcribe it...". **This additional text won't be added for structure output.**
+
+
+#### Creating System Instruction
+
+We need to prompt the model so that model knows exactly what to do. This part can be refer as **prompt engineering** where we're prompting or giving instruction to the LLM in a way so that it can give us the desired output.
+
+
+
+ 
 
 
 
 
 
 <!-- 
-
-## Automating Youtube Audio Downloading
-
-
-### How I had downloaded the youtube audios?
-
-### The Problem I've faced while Automating
-
-### Things to Consider If you want to do it yourselves.
-
-
-## Creating the Transcription Pipeline
-
-### Why choose Evil Google
 
 ### Generating the transcription
 
