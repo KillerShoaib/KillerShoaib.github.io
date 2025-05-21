@@ -7,6 +7,10 @@ draft: false
 toc:
   auto: false
 
+code:
+  copy: true
+  maxShownLines: 50
+
 math: true
 fraction: true
 images: ["/images/DeepLearning/Chapter1/Deep-Learning-thumbnail-SocialPreview.png"]
@@ -28,13 +32,13 @@ Let's build a **Bangla Youtube Transcriber** using Google's new **Gemini Flash 2
 
 ## Why Build This?
 
-I'm working as a professional AI engineer in a startup company. Where We're building customer support system using Gen AI technologies. We're facing problem to find out good Bangla open source LLM.I wouldn't bored you with all the details why I'm doing this but it comes down to mainly one thing, which is **contributing to open source Bangla AI community.** I want to create a domino effect or inspire other so that other can use this project or some thing else to contribute to **Bangla AI community** and eventually we start to have or atleast have some decent resources and dataset for Bangla LLM.
+I'm working as a professional AI engineer in a startup company. Where We're building customer support system using Gen AI technologies. We're facing problem to find out good Bangla open source LLM. I wouldn't bored you with all the details why I'm doing this but it comes down to mainly one thing, which is **contributing to open source Bangla AI community.** I want to create a domino effect or inspire other so that other can use this project or some thing else to contribute to **Bangla AI community** and eventually we start to have or atleast have some decent resources and datasets for Bangla LLM.
 
 **And, I do think this project is cool or interesting to me. So, yeah this is another reason**
 
 ## What We're Building & What to Expect?
 
-I think you can already guessed from the name of it, we're building **Bangla Youtube Transcriber**. It'll basically create a dataset containing the transcribed text from the YouTube audio. Well I'll be honest I can't transcribe whole Bangla videos that are present in YouTube. For this project I've chosen **Rakibul Hasan's** Youtube channel. I've transcribed approximately 60% of his entire youtube channel. "Why 60?"% you may ask. Well the thing is that YouTube is stubborn and it was blocking my automation script that's why I couldn't able to download all the audios. After getting the audios we use **Gemini Flash 2.0** to trancribe each of the audio into text.
+I think you can already guessed from the name of it, we're building **Bangla Youtube Transcriber**. It'll basically create a dataset containing the transcribed text from the YouTube audio. Well, I'll be honest I can't transcribe whole Bangla videos that are present in YouTube. For this project I've chosen **Rakibul Hasan's** Youtube channel. I've transcribed approximately 60% of his entire youtube channel. "Why 60%?" you may ask. Well the thing is that YouTube is stubborn and it was blocking my automation script that's why I couldn't able to download all the audios. After getting the audios we use **Gemini Flash 2.0** to trancribe each of the audio into text.
 
 In this blog I'll show you my thought process and how I've build this. But this is **not going to be line by line code explanation.** I'll show the overall concept and details so that you can reproduce or build something similar to this. But for the entire code you can check out the [**github repo**](https://github.com/KillerShoaib/BanglaYoutubeTranscribe)
 
@@ -309,19 +313,77 @@ I'm going to talk very breifly about **structure output.** Structure output from
 
 #### Creating System Instruction
 
-We need to prompt the model so that model knows exactly what to do. This part can be refer as **prompt engineering** where we're prompting or giving instruction to the LLM in a way so that it can give us the desired output.
+We need to prompt the model so that model knows exactly what to do. This part can be refer as **prompt engineering** where we're prompting or giving instruction to the LLM in a way so that it can give us the desired output. I've used the below **instruction prompt:**
+
+{{< image src="/images/YoutubeTranscriptionGemini/System_prompt.png" caption="**System Prompt**" >}}
 
 
+#### Creating the Model Instance
+
+So far, we've **setup parameters**, created an **instruction prompt** and now we need to pass this alongside the model or llm name to create the model instance.
+
+```python
+model = genai.GenerativeModel(
+  model_name="gemini-2.0-flash-exp",
+  generation_config=generation_config,
+  system_instruction=SYSTEM_INST,
+)
+```
+
+#### Uploading Audio File
+
+```python
+def upload_to_gemini(path:str, mime_type:Optional[str]=None):
+
+  file = genai.upload_file(path, mime_type=mime_type)
+  print(f"Uploaded file '{file.display_name}' as: {file.uri}")
+  return file
+
+files = [
+  upload_to_gemini("audio_file_path")
+]
+```
+
+In the above code we created a python function for uploading the audio file to the gemini. First we pass the **audio file path** in the `path` argument. And then it upload that audio file to gemini.
+
+
+#### Getting the response
+
+```python
+# create a chat_session and include the file (chat session will be created in each iteration)
+chat_session = model.start_chat(
+  history=[
+    {
+      "role": "user",
+      "parts": [
+        files[0],
+      ],
+    },
+  ]
+)
+
+# now getting the response back
+response = chat_session.send_message("Please transcribe the audio into bangla text.")
+gemini_json_response = json.loads(response.text)
+print(gemini_json_response["Bangla_transcription_from_audio"])
+```
+
+In the above code we are doing:
+1. First creating a session or think of as a chat history, where we are passing the audio file that we've already uploaded to the gemini in the previous step. We're just passing `files[0]` means the first item from the `files` list.
+2. Then we're sending the message to transcribe the audio using `send_message` and saving the response to the `response` variable
+3. Since, the response is in `json` format therefore I'm converting the string (`response.text` contains the response string) to a json object and saving it to a `gemini_json_response`
+4. Finally we're printing the transcription which is in the `Bangla_transcription_from_audio` key of json object.
+
+
+That's it we're able to generate **bangla transcribtion from an audio using gemini llm**. Now for my usecase all I did is loop over each audio file and generate transcription and save them to a json file. That's it.
 
  
+## Future work
 
-
-
+## Gratitude
 
 
 <!-- 
-
-### Generating the transcription
 
 ### More resources & Future work
 

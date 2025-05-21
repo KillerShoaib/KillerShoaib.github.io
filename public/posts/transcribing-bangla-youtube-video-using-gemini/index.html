@@ -36,7 +36,7 @@
         "mainEntityOfPage": {
             "@type": "WebPage",
             "@id": "http:\/\/localhost:1313\/posts\/transcribing-bangla-youtube-video-using-gemini\/"
-        },"genre": "posts","keywords": "STT, LLM","wordcount":  3348 ,
+        },"genre": "posts","keywords": "STT, LLM","wordcount":  3656 ,
         "url": "http:\/\/localhost:1313\/posts\/transcribing-bangla-youtube-video-using-gemini\/","datePublished": "2025-03-01T05:43:40+06:00","dateModified": "2025-03-01T05:43:40+06:00","publisher": {
             "@type": "Organization",
             "name": ""},"author": {
@@ -84,8 +84,8 @@
             <div class="toc-content always-active" id="toc-content-auto"></div>
         </div><article class="page single"><h1 class="single-title animate__animated animate__flipInX">Transcribing Bangla Youtube Video With Gemini</h1><h2 class="single-subtitle">An end to end guide to transcribe bangla youtube video using gemini flash 2</h2><div class="post-meta">
             <div class="post-meta-line"><span class="post-author"><a href="/" title="Author" rel="author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>Shoaib Hossain</a></span>&nbsp;<span class="post-category">included in <a href="/categories/standalone-project/"><i class="far fa-folder fa-fw" aria-hidden="true"></i>Standalone Project</a></span></div>
-            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="2025-03-01">2025-03-01</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden="true"></i>&nbsp;3348 words&nbsp;
-                <i class="far fa-clock fa-fw" aria-hidden="true"></i>&nbsp;16 minutes&nbsp;</div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="2025-03-01">2025-03-01</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden="true"></i>&nbsp;3656 words&nbsp;
+                <i class="far fa-clock fa-fw" aria-hidden="true"></i>&nbsp;18 minutes&nbsp;</div>
         </div><div class="featured-image"><img
         class="lazyload"
         src="/svg/loading.min.svg"
@@ -124,14 +124,16 @@
         <li><a href="#generating-the-transcription">Generating The Transcription</a></li>
       </ul>
     </li>
+    <li><a href="#future-work">Future work</a></li>
+    <li><a href="#gratitude">Gratitude</a></li>
   </ul>
 </nav></div>
             </div><div class="content" id="content"><p>Let&rsquo;s build a <strong>Bangla Youtube Transcriber</strong> using Google&rsquo;s new <strong>Gemini Flash 2.</strong></p>
 <h2 id="why-build-this">Why Build This?</h2>
-<p>I&rsquo;m working as a professional AI engineer in a startup company. Where We&rsquo;re building customer support system using Gen AI technologies. We&rsquo;re facing problem to find out good Bangla open source LLM.I wouldn&rsquo;t bored you with all the details why I&rsquo;m doing this but it comes down to mainly one thing, which is <strong>contributing to open source Bangla AI community.</strong> I want to create a domino effect or inspire other so that other can use this project or some thing else to contribute to <strong>Bangla AI community</strong> and eventually we start to have or atleast have some decent resources and dataset for Bangla LLM.</p>
+<p>I&rsquo;m working as a professional AI engineer in a startup company. Where We&rsquo;re building customer support system using Gen AI technologies. We&rsquo;re facing problem to find out good Bangla open source LLM. I wouldn&rsquo;t bored you with all the details why I&rsquo;m doing this but it comes down to mainly one thing, which is <strong>contributing to open source Bangla AI community.</strong> I want to create a domino effect or inspire other so that other can use this project or some thing else to contribute to <strong>Bangla AI community</strong> and eventually we start to have or atleast have some decent resources and datasets for Bangla LLM.</p>
 <p><strong>And, I do think this project is cool or interesting to me. So, yeah this is another reason</strong></p>
 <h2 id="what-were-building--what-to-expect">What We&rsquo;re Building &amp; What to Expect?</h2>
-<p>I think you can already guessed from the name of it, we&rsquo;re building <strong>Bangla Youtube Transcriber</strong>. It&rsquo;ll basically create a dataset containing the transcribed text from the YouTube audio. Well I&rsquo;ll be honest I can&rsquo;t transcribe whole Bangla videos that are present in YouTube. For this project I&rsquo;ve chosen <strong>Rakibul Hasan&rsquo;s</strong> Youtube channel. I&rsquo;ve transcribed approximately 60% of his entire youtube channel. &ldquo;Why 60?&rdquo;% you may ask. Well the thing is that YouTube is stubborn and it was blocking my automation script that&rsquo;s why I couldn&rsquo;t able to download all the audios. After getting the audios we use <strong>Gemini Flash 2.0</strong> to trancribe each of the audio into text.</p>
+<p>I think you can already guessed from the name of it, we&rsquo;re building <strong>Bangla Youtube Transcriber</strong>. It&rsquo;ll basically create a dataset containing the transcribed text from the YouTube audio. Well, I&rsquo;ll be honest I can&rsquo;t transcribe whole Bangla videos that are present in YouTube. For this project I&rsquo;ve chosen <strong>Rakibul Hasan&rsquo;s</strong> Youtube channel. I&rsquo;ve transcribed approximately 60% of his entire youtube channel. &ldquo;Why 60%?&rdquo; you may ask. Well the thing is that YouTube is stubborn and it was blocking my automation script that&rsquo;s why I couldn&rsquo;t able to download all the audios. After getting the audios we use <strong>Gemini Flash 2.0</strong> to trancribe each of the audio into text.</p>
 <p>In this blog I&rsquo;ll show you my thought process and how I&rsquo;ve build this. But this is <strong>not going to be line by line code explanation.</strong> I&rsquo;ll show the overall concept and details so that you can reproduce or build something similar to this. But for the entire code you can check out the <a href="https://github.com/KillerShoaib/BanglaYoutubeTranscribe" target="_blank" rel="noopener noreffer "><strong>github repo</strong></a></p>
 <h2 id="how-to-get-gemini-api-key">How to get Gemini API Key?</h2>
 <p>Since, we&rsquo;re going to use <code>Gemini Flash 2.0</code> we need to have <code>Google API key</code>. Don&rsquo;t worry google is generous. They are giving <strong>1,500 API request per day for</strong> free without any credit card. All you need to have is google account. Everyone have google account (If you don&rsquo;t then please for the love of god stop living under a rock).</p>
@@ -358,7 +360,62 @@ of how <code>pytube</code> can download youtube video below.</p>
 <p><strong>What is Structure Output?</strong></p>
 <p>I&rsquo;m going to talk very breifly about <strong>structure output.</strong> Structure output from LLM means forcing the LLM to give the <strong>output in a specific format</strong>. That specific format can be a <code>json schema</code> or <code>xml schema</code>. Currently the <code>json schema</code> is the most famous way to get the structure output from LLMs. The main reason to use <strong>structure output is to have control</strong>. Suppose when I was tring to transcribe the audio then there will be some <strong>additional text</strong> that will come with the transcribtion such as &ldquo;Here is your transcription&hellip;&rdquo;, &ldquo;okay let&rsquo;s transcribe it&hellip;&rdquo;. <strong>This additional text won&rsquo;t be added for structure output.</strong></p>
 <h4 id="creating-system-instruction">Creating System Instruction</h4>
-<p>We need to prompt the model so that model knows exactly what to do. This part can be refer as <strong>prompt engineering</strong> where we&rsquo;re prompting or giving instruction to the LLM in a way so that it can give us the desired output.</p></div><div class="post-footer" id="post-footer">
+<p>We need to prompt the model so that model knows exactly what to do. This part can be refer as <strong>prompt engineering</strong> where we&rsquo;re prompting or giving instruction to the LLM in a way so that it can give us the desired output. I&rsquo;ve used the below <strong>instruction prompt:</strong></p>
+<figure><a class="lightgallery" href="/images/YoutubeTranscriptionGemini/System_prompt.png" title="/images/YoutubeTranscriptionGemini/System_prompt.png" data-thumbnail="/images/YoutubeTranscriptionGemini/System_prompt.png" data-sub-html="<h2>System Prompt</h2>">
+        <img
+            class="lazyload"
+            src="/svg/loading.min.svg"
+            data-src="/images/YoutubeTranscriptionGemini/System_prompt.png"
+            data-srcset="/images/YoutubeTranscriptionGemini/System_prompt.png, /images/YoutubeTranscriptionGemini/System_prompt.png 1.5x, /images/YoutubeTranscriptionGemini/System_prompt.png 2x"
+            data-sizes="auto"
+            alt="/images/YoutubeTranscriptionGemini/System_prompt.png" />
+    </a><figcaption class="image-caption"><strong>System Prompt</strong></figcaption>
+    </figure>
+<h4 id="creating-the-model-instance">Creating the Model Instance</h4>
+<p>So far, we&rsquo;ve <strong>setup parameters</strong>, created an <strong>instruction prompt</strong> and now we need to pass this alongside the model or llm name to create the model instance.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>model <span style="color:#f92672">=</span> genai<span style="color:#f92672">.</span>GenerativeModel(
+</span></span><span style="display:flex;"><span>  model_name<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;gemini-2.0-flash-exp&#34;</span>,
+</span></span><span style="display:flex;"><span>  generation_config<span style="color:#f92672">=</span>generation_config,
+</span></span><span style="display:flex;"><span>  system_instruction<span style="color:#f92672">=</span>SYSTEM_INST,
+</span></span><span style="display:flex;"><span>)
+</span></span></code></pre></div><h4 id="uploading-audio-file">Uploading Audio File</h4>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">upload_to_gemini</span>(path:str, mime_type:Optional[str]<span style="color:#f92672">=</span><span style="color:#66d9ef">None</span>):
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  file <span style="color:#f92672">=</span> genai<span style="color:#f92672">.</span>upload_file(path, mime_type<span style="color:#f92672">=</span>mime_type)
+</span></span><span style="display:flex;"><span>  print(<span style="color:#e6db74">f</span><span style="color:#e6db74">&#34;Uploaded file &#39;</span><span style="color:#e6db74">{</span>file<span style="color:#f92672">.</span>display_name<span style="color:#e6db74">}</span><span style="color:#e6db74">&#39; as: </span><span style="color:#e6db74">{</span>file<span style="color:#f92672">.</span>uri<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span>)
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">return</span> file
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>files <span style="color:#f92672">=</span> [
+</span></span><span style="display:flex;"><span>  upload_to_gemini(<span style="color:#e6db74">&#34;audio_file_path&#34;</span>)
+</span></span><span style="display:flex;"><span>]
+</span></span></code></pre></div><p>In the above code we created a python function for uploading the audio file to the gemini. First we pass the <strong>audio file path</strong> in the <code>path</code> argument. And then it upload that audio file to gemini.</p>
+<h4 id="getting-the-response">Getting the response</h4>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#75715e"># create a chat_session and include the file (chat session will be created in each iteration)</span>
+</span></span><span style="display:flex;"><span>chat_session <span style="color:#f92672">=</span> model<span style="color:#f92672">.</span>start_chat(
+</span></span><span style="display:flex;"><span>  history<span style="color:#f92672">=</span>[
+</span></span><span style="display:flex;"><span>    {
+</span></span><span style="display:flex;"><span>      <span style="color:#e6db74">&#34;role&#34;</span>: <span style="color:#e6db74">&#34;user&#34;</span>,
+</span></span><span style="display:flex;"><span>      <span style="color:#e6db74">&#34;parts&#34;</span>: [
+</span></span><span style="display:flex;"><span>        files[<span style="color:#ae81ff">0</span>],
+</span></span><span style="display:flex;"><span>      ],
+</span></span><span style="display:flex;"><span>    },
+</span></span><span style="display:flex;"><span>  ]
+</span></span><span style="display:flex;"><span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># now getting the response back</span>
+</span></span><span style="display:flex;"><span>response <span style="color:#f92672">=</span> chat_session<span style="color:#f92672">.</span>send_message(<span style="color:#e6db74">&#34;Please transcribe the audio into bangla text.&#34;</span>)
+</span></span><span style="display:flex;"><span>gemini_json_response <span style="color:#f92672">=</span> json<span style="color:#f92672">.</span>loads(response<span style="color:#f92672">.</span>text)
+</span></span><span style="display:flex;"><span>print(gemini_json_response[<span style="color:#e6db74">&#34;Bangla_transcription_from_audio&#34;</span>])
+</span></span></code></pre></div><p>In the above code we are doing:</p>
+<ol>
+<li>First creating a session or think of as a chat history, where we are passing the audio file that we&rsquo;ve already uploaded to the gemini in the previous step. We&rsquo;re just passing <code>files[0]</code> means the first item from the <code>files</code> list.</li>
+<li>Then we&rsquo;re sending the message to transcribe the audio using <code>send_message</code> and saving the response to the <code>response</code> variable</li>
+<li>Since, the response is in <code>json</code> format therefore I&rsquo;m converting the string (<code>response.text</code> contains the response string) to a json object and saving it to a <code>gemini_json_response</code></li>
+<li>Finally we&rsquo;re printing the transcription which is in the <code>Bangla_transcription_from_audio</code> key of json object.</li>
+</ol>
+<p>That&rsquo;s it we&rsquo;re able to generate <strong>bangla transcribtion from an audio using gemini llm</strong>. Now for my usecase all I did is loop over each audio file and generate transcription and save them to a json file. That&rsquo;s it.</p>
+<h2 id="future-work">Future work</h2>
+<h2 id="gratitude">Gratitude</h2></div><div class="post-footer" id="post-footer">
     <div class="post-info">
         <div class="post-info-line">
             <div class="post-info-mod">
