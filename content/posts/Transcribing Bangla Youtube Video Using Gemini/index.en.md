@@ -349,7 +349,7 @@ In the above code we created a python function for uploading the audio file to t
 
 #### Getting the response
 
-```python
+{{< codeblock python >}}
 # create a chat_session and include the file (chat session will be created in each iteration)
 chat_session = model.start_chat(
   history=[
@@ -366,7 +366,7 @@ chat_session = model.start_chat(
 response = chat_session.send_message("Please transcribe the audio into bangla text.")
 gemini_json_response = json.loads(response.text)
 print(gemini_json_response["Bangla_transcription_from_audio"])
-```
+{{< /codeblock >}}
 
 In the above code we are doing:
 1. First creating a session or think of as a chat history, where we are passing the audio file that we've already uploaded to the gemini in the previous step. We're just passing `files[0]` means the first item from the `files` list.

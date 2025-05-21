@@ -1,0 +1,153 @@
+<!-- codeblock shortcode to mimic LoveIt theme code blocks -->
+{{ $code := .Inner }}
+{{ $lang := .Get 0 | default "plaintext" }}
+{{ $title := .Get 1 | default "" }}
+{{ $initialOpenState := .Get 2 | default "true" }} {{/* Expects "true" or "false" as string */}}
+
+{{/* Prepare options for Hugo's highlight function. We want line numbers in a table. */}}
+{{ $options := "linenos=table" }}
+{{/* You can add more Chroma options here if needed, e.g., hl_lines='5-7', style='monokai' */}}
+{{/* However, 'style' is usually best set globally in config.yml */}}
+
+{{ $highlightedContent := highlight $code $lang $options }}
+
+<div class="code-block code-block-custom {{ if eq $initialOpenState "true" }}open{{ end }}">
+  <div class="code-header language-{{ $lang }}">
+    <span class="code-header-left-toggle-area">
+      <i class="arrow fas fa-chevron-right fa-fw" aria-hidden="true"></i>
+      <span class="lang-name-text">{{ if $title }}{{ $title }}{{ else }}{{ $lang | default "Code" | humanize | title }}{{ end }}</span>
+    </span>
+    <span class="code-header-right-copy-area">
+      <span class="copy" title="Copy to clipboard">
+        <i class="far fa-copy fa-fw" aria-hidden="true"></i>
+      </span>
+    </span>
+  </div>
+  <div class="highlight-wrapper">
+    {{ $highlightedContent | safeHTML }}
+  </div>
+</div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  let currentCodeBlock;
+  // Try to find the script's immediate preceding sibling that is a code block
+  if (document.currentScript && document.currentScript.previousElementSibling && document.currentScript.previousElementSibling.classList.contains('code-block-custom')) {
+    currentCodeBlock = document.currentScript.previousElementSibling;
+  } else {
+    // Fallback for scenarios where document.currentScript is not reliable or structure differs slightly
+    // This might happen if scripts are bundled or moved around by other processes.
+    // We'll find all custom code blocks and assume this script is for the last one not yet initialized.
+    const allCustomCodeBlocks = document.querySelectorAll('.code-block-custom:not([data-initialized="true"])');
+    if (allCustomCodeBlocks.length > 0) {
+        currentCodeBlock = allCustomCodeBlocks[allCustomCodeBlocks.length - 1];
+    }
+  }
+
+  if (!currentCodeBlock) {
+    // console.error("Custom Code Block Script: Could not find its corresponding HTML element.");
+    return;
+  }
+  
+  // Prevent multiple initializations if the script somehow runs more than once for the same block
+  if (currentCodeBlock.dataset.initialized === 'true') {
+    // console.log("Custom Code Block: Already initialized, skipping.", currentCodeBlock);
+    return;
+  }
+  currentCodeBlock.dataset.initialized = 'true';
+
+  const toggleArea = currentCodeBlock.querySelector('.code-header-left-toggle-area');
+  const copyBtn = currentCodeBlock.querySelector('.code-header-right-copy-area .copy');
+  const highlightWrapper = currentCodeBlock.querySelector('.highlight-wrapper');
+
+  if (toggleArea && highlightWrapper) {
+    const actualHighlightDiv = highlightWrapper.querySelector('div.highlight'); // Hugo's generated div
+    const arrowIcon = toggleArea.querySelector('.arrow'); // Get the arrow icon element
+
+    toggleArea.addEventListener('click', function() {
+      currentCodeBlock.classList.toggle('open');
+
+      if (currentCodeBlock.classList.contains('open')) { // EXPANDING
+        if (arrowIcon) arrowIcon.className = 'arrow fas fa-chevron-down fa-fw'; // Change icon to down-arrow
+        highlightWrapper.style.display = 'block';
+        if (actualHighlightDiv) actualHighlightDiv.style.visibility = 'visible';
+
+        requestAnimationFrame(() => {
+          highlightWrapper.style.maxHeight = highlightWrapper.scrollHeight + "px";
+        });
+      } else { // COLLAPSING
+        if (arrowIcon) arrowIcon.className = 'arrow fas fa-chevron-right fa-fw'; // Change icon to right-arrow
+        if (actualHighlightDiv) actualHighlightDiv.style.visibility = 'hidden'; // Hide content text immediately
+        highlightWrapper.style.maxHeight = '0';
+
+        setTimeout(() => {
+          if (!currentCodeBlock.classList.contains('open')) { // Check state again for rapid clicks
+            highlightWrapper.style.display = 'none';
+          }
+        }, 350); // Match CSS transition-duration
+      }
+    });
+  }
+
+  if (copyBtn && highlightWrapper) {
+    copyBtn.addEventListener('click', function(e) {
+      e.stopPropagation(); 
+      
+      const tableEl = highlightWrapper.querySelector('div.highlight > pre.chroma > table');
+      let codeToCopy = '';
+
+      if (tableEl) { // Standard Chroma output with linenos=table
+        const codeCell = tableEl.querySelector('td.lntd:last-child pre > code');
+        if (codeCell) {
+          codeToCopy = codeCell.innerText;
+        } else { // Fallback for slightly different structures within table
+            const genericCodeInLastCell = tableEl.querySelector('td.lntd:last-child');
+            if(genericCodeInLastCell) codeToCopy = genericCodeInLastCell.innerText.trim(); // May grab line numbers if not careful
+        }
+      } else { // Fallback if no table (e.g., linenos=inline or no line numbers)
+        const preCode = highlightWrapper.querySelector('div.highlight > pre.chroma > code, div.highlight > pre > code');
+        if (preCode) {
+          codeToCopy = preCode.innerText;
+        }
+      }
+      
+      if (codeToCopy) {
+        navigator.clipboard.writeText(codeToCopy).then(() => {
+          const icon = this.querySelector('i');
+          const originalTitle = this.title;
+          icon.className = 'fas fa-check fa-fw';
+          this.title = "Copied!";
+          setTimeout(() => {
+            icon.className = 'far fa-copy fa-fw';
+            this.title = originalTitle;
+          }, 2000);
+        }).catch(err => {
+          this.title = "Failed to copy";
+          setTimeout(() => { this.title = "Copy to clipboard"; }, 2000);
+        });
+      } else {
+        this.title = "Nothing to copy";
+        setTimeout(() => { this.title = "Copy to clipboard"; }, 2000);
+      }
+    });
+  }
+
+  // Initial state for max-height, display, content visibility, and arrow icon
+  const actualHighlightDivInitial = highlightWrapper ? highlightWrapper.querySelector('div.highlight') : null;
+  const arrowIconInitial = toggleArea ? toggleArea.querySelector('.arrow') : null;
+
+  if (currentCodeBlock.classList.contains('open') && highlightWrapper) {
+    if (arrowIconInitial) arrowIconInitial.className = 'arrow fas fa-chevron-down fa-fw';
+    highlightWrapper.style.display = 'block';
+    if (actualHighlightDivInitial) actualHighlightDivInitial.style.visibility = 'visible';
+    setTimeout(() => {
+        highlightWrapper.style.maxHeight = highlightWrapper.scrollHeight + "px";
+    }, 50);
+  } else if (highlightWrapper) {
+    if (arrowIconInitial) arrowIconInitial.className = 'arrow fas fa-chevron-right fa-fw';
+    highlightWrapper.style.maxHeight = '0';
+    highlightWrapper.style.display = 'none';
+    if (actualHighlightDivInitial) actualHighlightDivInitial.style.visibility = 'hidden';
+  }
+});
+</script> 

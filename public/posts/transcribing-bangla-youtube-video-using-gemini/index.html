@@ -36,7 +36,7 @@
         "mainEntityOfPage": {
             "@type": "WebPage",
             "@id": "http:\/\/localhost:1313\/posts\/transcribing-bangla-youtube-video-using-gemini\/"
-        },"genre": "posts","keywords": "STT, LLM","wordcount":  3656 ,
+        },"genre": "posts","keywords": "STT, LLM","wordcount":  3674 ,
         "url": "http:\/\/localhost:1313\/posts\/transcribing-bangla-youtube-video-using-gemini\/","datePublished": "2025-03-01T05:43:40+06:00","dateModified": "2025-03-01T05:43:40+06:00","publisher": {
             "@type": "Organization",
             "name": ""},"author": {
@@ -84,7 +84,7 @@
             <div class="toc-content always-active" id="toc-content-auto"></div>
         </div><article class="page single"><h1 class="single-title animate__animated animate__flipInX">Transcribing Bangla Youtube Video With Gemini</h1><h2 class="single-subtitle">An end to end guide to transcribe bangla youtube video using gemini flash 2</h2><div class="post-meta">
             <div class="post-meta-line"><span class="post-author"><a href="/" title="Author" rel="author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>Shoaib Hossain</a></span>&nbsp;<span class="post-category">included in <a href="/categories/standalone-project/"><i class="far fa-folder fa-fw" aria-hidden="true"></i>Standalone Project</a></span></div>
-            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="2025-03-01">2025-03-01</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden="true"></i>&nbsp;3656 words&nbsp;
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="2025-03-01">2025-03-01</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden="true"></i>&nbsp;3674 words&nbsp;
                 <i class="far fa-clock fa-fw" aria-hidden="true"></i>&nbsp;18 minutes&nbsp;</div>
         </div><div class="featured-image"><img
         class="lazyload"
@@ -390,7 +390,55 @@ of how <code>pytube</code> can download youtube video below.</p>
 </span></span><span style="display:flex;"><span>]
 </span></span></code></pre></div><p>In the above code we created a python function for uploading the audio file to the gemini. First we pass the <strong>audio file path</strong> in the <code>path</code> argument. And then it upload that audio file to gemini.</p>
 <h4 id="getting-the-response">Getting the response</h4>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#75715e"># create a chat_session and include the file (chat session will be created in each iteration)</span>
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+<div class="code-block code-block-custom open">
+  <div class="code-header language-python">
+    <span class="code-header-left-toggle-area">
+      <i class="arrow fas fa-chevron-right fa-fw" aria-hidden="true"></i>
+      <span class="lang-name-text">Python</span>
+    </span>
+    <span class="code-header-right-copy-area">
+      <span class="copy" title="Copy to clipboard">
+        <i class="far fa-copy fa-fw" aria-hidden="true"></i>
+      </span>
+    </span>
+  </div>
+  <div class="highlight-wrapper">
+    <div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># create a chat_session and include the file (chat session will be created in each iteration)</span>
 </span></span><span style="display:flex;"><span>chat_session <span style="color:#f92672">=</span> model<span style="color:#f92672">.</span>start_chat(
 </span></span><span style="display:flex;"><span>  history<span style="color:#f92672">=</span>[
 </span></span><span style="display:flex;"><span>    {
@@ -406,7 +454,136 @@ of how <code>pytube</code> can download youtube video below.</p>
 </span></span><span style="display:flex;"><span>response <span style="color:#f92672">=</span> chat_session<span style="color:#f92672">.</span>send_message(<span style="color:#e6db74">&#34;Please transcribe the audio into bangla text.&#34;</span>)
 </span></span><span style="display:flex;"><span>gemini_json_response <span style="color:#f92672">=</span> json<span style="color:#f92672">.</span>loads(response<span style="color:#f92672">.</span>text)
 </span></span><span style="display:flex;"><span>print(gemini_json_response[<span style="color:#e6db74">&#34;Bangla_transcription_from_audio&#34;</span>])
-</span></span></code></pre></div><p>In the above code we are doing:</p>
+</span></span></code></pre></td></tr></table>
+</div>
+</div>
+  </div>
+</div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  let currentCodeBlock;
+  
+  if (document.currentScript && document.currentScript.previousElementSibling && document.currentScript.previousElementSibling.classList.contains('code-block-custom')) {
+    currentCodeBlock = document.currentScript.previousElementSibling;
+  } else {
+    
+    
+    
+    const allCustomCodeBlocks = document.querySelectorAll('.code-block-custom:not([data-initialized="true"])');
+    if (allCustomCodeBlocks.length > 0) {
+        currentCodeBlock = allCustomCodeBlocks[allCustomCodeBlocks.length - 1];
+    }
+  }
+
+  if (!currentCodeBlock) {
+    
+    return;
+  }
+  
+  
+  if (currentCodeBlock.dataset.initialized === 'true') {
+    
+    return;
+  }
+  currentCodeBlock.dataset.initialized = 'true';
+
+  const toggleArea = currentCodeBlock.querySelector('.code-header-left-toggle-area');
+  const copyBtn = currentCodeBlock.querySelector('.code-header-right-copy-area .copy');
+  const highlightWrapper = currentCodeBlock.querySelector('.highlight-wrapper');
+
+  if (toggleArea && highlightWrapper) {
+    const actualHighlightDiv = highlightWrapper.querySelector('div.highlight'); 
+    const arrowIcon = toggleArea.querySelector('.arrow'); 
+
+    toggleArea.addEventListener('click', function() {
+      currentCodeBlock.classList.toggle('open');
+
+      if (currentCodeBlock.classList.contains('open')) { 
+        if (arrowIcon) arrowIcon.className = 'arrow fas fa-chevron-down fa-fw'; 
+        highlightWrapper.style.display = 'block';
+        if (actualHighlightDiv) actualHighlightDiv.style.visibility = 'visible';
+
+        requestAnimationFrame(() => {
+          highlightWrapper.style.maxHeight = highlightWrapper.scrollHeight + "px";
+        });
+      } else { 
+        if (arrowIcon) arrowIcon.className = 'arrow fas fa-chevron-right fa-fw'; 
+        if (actualHighlightDiv) actualHighlightDiv.style.visibility = 'hidden'; 
+        highlightWrapper.style.maxHeight = '0';
+
+        setTimeout(() => {
+          if (!currentCodeBlock.classList.contains('open')) { 
+            highlightWrapper.style.display = 'none';
+          }
+        }, 350); 
+      }
+    });
+  }
+
+  if (copyBtn && highlightWrapper) {
+    copyBtn.addEventListener('click', function(e) {
+      e.stopPropagation(); 
+      
+      const tableEl = highlightWrapper.querySelector('div.highlight > pre.chroma > table');
+      let codeToCopy = '';
+
+      if (tableEl) { 
+        const codeCell = tableEl.querySelector('td.lntd:last-child pre > code');
+        if (codeCell) {
+          codeToCopy = codeCell.innerText;
+        } else { 
+            const genericCodeInLastCell = tableEl.querySelector('td.lntd:last-child');
+            if(genericCodeInLastCell) codeToCopy = genericCodeInLastCell.innerText.trim(); 
+        }
+      } else { 
+        const preCode = highlightWrapper.querySelector('div.highlight > pre.chroma > code, div.highlight > pre > code');
+        if (preCode) {
+          codeToCopy = preCode.innerText;
+        }
+      }
+      
+      if (codeToCopy) {
+        navigator.clipboard.writeText(codeToCopy).then(() => {
+          const icon = this.querySelector('i');
+          const originalTitle = this.title;
+          icon.className = 'fas fa-check fa-fw';
+          this.title = "Copied!";
+          setTimeout(() => {
+            icon.className = 'far fa-copy fa-fw';
+            this.title = originalTitle;
+          }, 2000);
+        }).catch(err => {
+          this.title = "Failed to copy";
+          setTimeout(() => { this.title = "Copy to clipboard"; }, 2000);
+        });
+      } else {
+        this.title = "Nothing to copy";
+        setTimeout(() => { this.title = "Copy to clipboard"; }, 2000);
+      }
+    });
+  }
+
+  
+  const actualHighlightDivInitial = highlightWrapper ? highlightWrapper.querySelector('div.highlight') : null;
+  const arrowIconInitial = toggleArea ? toggleArea.querySelector('.arrow') : null;
+
+  if (currentCodeBlock.classList.contains('open') && highlightWrapper) {
+    if (arrowIconInitial) arrowIconInitial.className = 'arrow fas fa-chevron-down fa-fw';
+    highlightWrapper.style.display = 'block';
+    if (actualHighlightDivInitial) actualHighlightDivInitial.style.visibility = 'visible';
+    setTimeout(() => {
+        highlightWrapper.style.maxHeight = highlightWrapper.scrollHeight + "px";
+    }, 50);
+  } else if (highlightWrapper) {
+    if (arrowIconInitial) arrowIconInitial.className = 'arrow fas fa-chevron-right fa-fw';
+    highlightWrapper.style.maxHeight = '0';
+    highlightWrapper.style.display = 'none';
+    if (actualHighlightDivInitial) actualHighlightDivInitial.style.visibility = 'hidden';
+  }
+});
+</script> 
+<p>In the above code we are doing:</p>
 <ol>
 <li>First creating a session or think of as a chat history, where we are passing the audio file that we&rsquo;ve already uploaded to the gemini in the previous step. We&rsquo;re just passing <code>files[0]</code> means the first item from the <code>files</code> list.</li>
 <li>Then we&rsquo;re sending the message to transcribe the audio using <code>send_message</code> and saving the response to the <code>response</code> variable</li>
