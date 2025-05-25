@@ -2,7 +2,7 @@
 title: "Transcribing Bangla Youtube Video With Gemini"
 subtitle: "An end to end guide to transcribe bangla youtube video using gemini flash 2"
 description: "An end to end guide to transcribe bangla youtube video using gemini flash 2"
-date: 2025-03-01T05:43:40+06:00
+date: 2025-05-25T05:43:40+06:00
 draft: false
 toc:
   auto: false
@@ -13,7 +13,7 @@ code:
 
 math: true
 fraction: true
-images: ["/images/DeepLearning/Chapter1/Deep-Learning-thumbnail-SocialPreview.png"]
+images: ["/images/YoutubeTranscriptionGemini/Bangla Youtube Video Transcription Banner.png"]
 featuredImage: "/images/YoutubeTranscriptionGemini/Bangla Youtube Video Transcription Banner.png"
 featuredImagePreview: "images/YoutubeTranscriptionGemini/Bangla Youtube Video Transcription Pipeline.png"
 author: "Shoaib Hossain"
