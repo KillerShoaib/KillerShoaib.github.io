@@ -39,7 +39,7 @@ description: ""
     }
 </style>
 <div class="first">
-    <h1 style="text-align: center;"> :wave:Hi, I'm <b>Shoaib Hossain</b></h1>
+    <h1 style="text-align: center;"> Hi, I'm <b>Shoaib Hossain</b></h1>
     <h3 style="text-align: center;">Writing about <b>Machine Learning - Deep Learning - NLP - CV</b></h3>
     <h1> Educational Background 📝</h1>
 </div>

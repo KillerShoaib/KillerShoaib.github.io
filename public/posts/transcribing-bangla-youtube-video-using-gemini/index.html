@@ -36,7 +36,7 @@
         "mainEntityOfPage": {
             "@type": "WebPage",
             "@id": "http:\/\/localhost:1313\/posts\/transcribing-bangla-youtube-video-using-gemini\/"
-        },"genre": "posts","keywords": "STT, LLM","wordcount":  3674 ,
+        },"genre": "posts","keywords": "STT, LLM","wordcount":  4142 ,
         "url": "http:\/\/localhost:1313\/posts\/transcribing-bangla-youtube-video-using-gemini\/","datePublished": "2025-03-01T05:43:40+06:00","dateModified": "2025-03-01T05:43:40+06:00","publisher": {
             "@type": "Organization",
             "name": ""},"author": {
@@ -53,7 +53,7 @@
             <a href="/" title="AI With Shoaib"><span class="header-title-pre"><i class="fa-solid fa-robot"></i></span> AI With Shoaib </a>
         </div>
         <div class="menu">
-            <div class="menu-inner"><a class="menu-item" href="/posts/"> Posts </a><a class="menu-item" href="/categories/"> Categories </a><a class="menu-item" href="/tags/"> Tags </a><a class="menu-item" href="/categories/deep-learning/"> Deep Learning </a><a class="menu-item" href="https://reliable-chimera-d33c1f.netlify.app/" rel="noopener noreffer" target="_blank"> About </a><span class="menu-item delimiter"></span><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+            <div class="menu-inner"><a class="menu-item" href="/posts/"> Posts </a><a class="menu-item" href="/categories/"> Categories </a><a class="menu-item" href="/tags/"> Tags </a><a class="menu-item" href="/categories/deep-learning/"> Deep Learning </a><a class="menu-item" href="/about/"> About </a><span class="menu-item delimiter"></span><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
                     <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
                 </a><a href="javascript:void(0);" class="menu-item language" title="Select Language">
                     <i class="fa fa-globe" aria-hidden="true"></i>                      
@@ -71,7 +71,7 @@
                 <span></span><span></span><span></span>
             </div>
         </div>
-        <div class="menu" id="menu-mobile"><a class="menu-item" href="/posts/" title="">Posts</a><a class="menu-item" href="/categories/" title="">Categories</a><a class="menu-item" href="/tags/" title="">Tags</a><a class="menu-item" href="/categories/deep-learning/" title="">Deep Learning</a><a class="menu-item" href="https://reliable-chimera-d33c1f.netlify.app/" title="" rel="noopener noreffer" target="_blank">About</a><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+        <div class="menu" id="menu-mobile"><a class="menu-item" href="/posts/" title="">Posts</a><a class="menu-item" href="/categories/" title="">Categories</a><a class="menu-item" href="/tags/" title="">Tags</a><a class="menu-item" href="/categories/deep-learning/" title="">Deep Learning</a><a class="menu-item" href="/about/" title="">About</a><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
                 <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
             </a><a href="javascript:void(0);" class="menu-item" title="Select Language">
                     <i class="fa fa-globe fa-fw" aria-hidden="true"></i>
@@ -84,8 +84,8 @@
             <div class="toc-content always-active" id="toc-content-auto"></div>
         </div><article class="page single"><h1 class="single-title animate__animated animate__flipInX">Transcribing Bangla Youtube Video With Gemini</h1><h2 class="single-subtitle">An end to end guide to transcribe bangla youtube video using gemini flash 2</h2><div class="post-meta">
             <div class="post-meta-line"><span class="post-author"><a href="/" title="Author" rel="author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>Shoaib Hossain</a></span>&nbsp;<span class="post-category">included in <a href="/categories/standalone-project/"><i class="far fa-folder fa-fw" aria-hidden="true"></i>Standalone Project</a></span></div>
-            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="2025-03-01">2025-03-01</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden="true"></i>&nbsp;3674 words&nbsp;
-                <i class="far fa-clock fa-fw" aria-hidden="true"></i>&nbsp;18 minutes&nbsp;</div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="2025-03-01">2025-03-01</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden="true"></i>&nbsp;4142 words&nbsp;
+                <i class="far fa-clock fa-fw" aria-hidden="true"></i>&nbsp;20 minutes&nbsp;</div>
         </div><div class="featured-image"><img
         class="lazyload"
         src="/svg/loading.min.svg"
@@ -126,6 +126,7 @@
     </li>
     <li><a href="#future-work">Future work</a></li>
     <li><a href="#gratitude">Gratitude</a></li>
+    <li><a href="#my-next-blog">My Next Blog</a></li>
   </ul>
 </nav></div>
             </div><div class="content" id="content"><p>Let&rsquo;s build a <strong>Bangla Youtube Transcriber</strong> using Google&rsquo;s new <strong>Gemini Flash 2.</strong></p>
@@ -251,7 +252,49 @@ this project then my advice is to automate this step. After manually copying eac
 First, I&rsquo;ve imported <code>playLists</code> from <code>PlayListUrl</code> which contain all the playlist urls.</p>
 <p>Then I had used <code>pytube</code>. <strong>Pytube</strong> is really cool tbh. You can do a lot of automation for utub using <strong>pytube</strong>. There is a class in <code>pytube</code> name <code>Playlist</code>. All you need to do is to pass the playlist url
 while creating the object and that&rsquo;s it. You&rsquo;ll get all the publicly available information of that playlist from that object. Below look in the example:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">from</span> pytube <span style="color:#f92672">import</span> Playlist
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+<div class="code-block code-block-custom open">
+  <div class="code-header language-python">
+    <span class="code-header-left-toggle-area">
+      <i class="arrow fas fa-chevron-right fa-fw" aria-hidden="true"></i>
+      <span class="lang-name-text">Python</span>
+    </span>
+    <span class="code-header-right-copy-area">
+      <span class="copy" title="Copy to clipboard">
+        <i class="far fa-copy fa-fw" aria-hidden="true"></i>
+      </span>
+    </span>
+  </div>
+  <div class="highlight-wrapper">
+    <div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">from</span> pytube <span style="color:#f92672">import</span> Playlist
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>url <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;a playlist url&#34;</span>
 </span></span><span style="display:flex;"><span>p <span style="color:#f92672">=</span> Playlist(url) <span style="color:#75715e"># passing the url</span>
@@ -261,7 +304,137 @@ while creating the object and that&rsquo;s it. You&rsquo;ll get all the publicly
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#75715e"># accessing the all the video urls fro that playlist</span>
 </span></span><span style="display:flex;"><span>p<span style="color:#f92672">.</span>video_urls
-</span></span></code></pre></div><p>In the above code you can see I can get all the video urls by passing the playlist url. That&rsquo;s it, now all I had done is loop over <code>playLists</code> list (which was in <code>PlayListUrl</code>) and pass each url to the class, get the <code>title</code> and <code>video_urls</code> and save them to a json file.
+</span></span></code></pre></td></tr></table>
+</div>
+</div>
+  </div>
+</div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  let currentCodeBlock;
+  
+  if (document.currentScript && document.currentScript.previousElementSibling && document.currentScript.previousElementSibling.classList.contains('code-block-custom')) {
+    currentCodeBlock = document.currentScript.previousElementSibling;
+  } else {
+    
+    
+    
+    const allCustomCodeBlocks = document.querySelectorAll('.code-block-custom:not([data-initialized="true"])');
+    if (allCustomCodeBlocks.length > 0) {
+        currentCodeBlock = allCustomCodeBlocks[allCustomCodeBlocks.length - 1];
+    }
+  }
+
+  if (!currentCodeBlock) {
+    
+    return;
+  }
+  
+  
+  if (currentCodeBlock.dataset.initialized === 'true') {
+    
+    return;
+  }
+  currentCodeBlock.dataset.initialized = 'true';
+
+  const toggleArea = currentCodeBlock.querySelector('.code-header-left-toggle-area');
+  const copyBtn = currentCodeBlock.querySelector('.code-header-right-copy-area .copy');
+  const highlightWrapper = currentCodeBlock.querySelector('.highlight-wrapper');
+
+  if (toggleArea && highlightWrapper) {
+    const actualHighlightDiv = highlightWrapper.querySelector('div.highlight'); 
+    const arrowIcon = toggleArea.querySelector('.arrow'); 
+
+    toggleArea.addEventListener('click', function() {
+      currentCodeBlock.classList.toggle('open');
+
+      if (currentCodeBlock.classList.contains('open')) { 
+        if (arrowIcon) arrowIcon.className = 'arrow fas fa-chevron-down fa-fw'; 
+        highlightWrapper.style.display = 'block';
+        if (actualHighlightDiv) actualHighlightDiv.style.visibility = 'visible';
+
+        requestAnimationFrame(() => {
+          highlightWrapper.style.maxHeight = highlightWrapper.scrollHeight + "px";
+        });
+      } else { 
+        if (arrowIcon) arrowIcon.className = 'arrow fas fa-chevron-right fa-fw'; 
+        if (actualHighlightDiv) actualHighlightDiv.style.visibility = 'hidden'; 
+        highlightWrapper.style.maxHeight = '0';
+
+        setTimeout(() => {
+          if (!currentCodeBlock.classList.contains('open')) { 
+            highlightWrapper.style.display = 'none';
+          }
+        }, 350); 
+      }
+    });
+  }
+
+  if (copyBtn && highlightWrapper) {
+    copyBtn.addEventListener('click', function(e) {
+      e.stopPropagation(); 
+      
+      const tableEl = highlightWrapper.querySelector('div.highlight > pre.chroma > table');
+      let codeToCopy = '';
+
+      if (tableEl) { 
+        const codeCell = tableEl.querySelector('td.lntd:last-child pre > code');
+        if (codeCell) {
+          codeToCopy = codeCell.innerText;
+        } else { 
+            const genericCodeInLastCell = tableEl.querySelector('td.lntd:last-child');
+            if(genericCodeInLastCell) codeToCopy = genericCodeInLastCell.innerText.trim(); 
+        }
+      } else { 
+        const preCode = highlightWrapper.querySelector('div.highlight > pre.chroma > code, div.highlight > pre > code');
+        if (preCode) {
+          codeToCopy = preCode.innerText;
+        }
+      }
+      
+      if (codeToCopy) {
+        navigator.clipboard.writeText(codeToCopy).then(() => {
+          const icon = this.querySelector('i');
+          const originalTitle = this.title;
+          icon.className = 'fas fa-check fa-fw';
+          this.title = "Copied!";
+          setTimeout(() => {
+            icon.className = 'far fa-copy fa-fw';
+            this.title = originalTitle;
+          }, 2000);
+        }).catch(err => {
+          this.title = "Failed to copy";
+          setTimeout(() => { this.title = "Copy to clipboard"; }, 2000);
+        });
+      } else {
+        this.title = "Nothing to copy";
+        setTimeout(() => { this.title = "Copy to clipboard"; }, 2000);
+      }
+    });
+  }
+
+  
+  const actualHighlightDivInitial = highlightWrapper ? highlightWrapper.querySelector('div.highlight') : null;
+  const arrowIconInitial = toggleArea ? toggleArea.querySelector('.arrow') : null;
+
+  if (currentCodeBlock.classList.contains('open') && highlightWrapper) {
+    if (arrowIconInitial) arrowIconInitial.className = 'arrow fas fa-chevron-down fa-fw';
+    highlightWrapper.style.display = 'block';
+    if (actualHighlightDivInitial) actualHighlightDivInitial.style.visibility = 'visible';
+    setTimeout(() => {
+        highlightWrapper.style.maxHeight = highlightWrapper.scrollHeight + "px";
+    }, 50);
+  } else if (highlightWrapper) {
+    if (arrowIconInitial) arrowIconInitial.className = 'arrow fas fa-chevron-right fa-fw';
+    highlightWrapper.style.maxHeight = '0';
+    highlightWrapper.style.display = 'none';
+    if (actualHighlightDivInitial) actualHighlightDivInitial.style.visibility = 'hidden';
+  }
+});
+</script> 
+</script> 
+<p>In the above code you can see I can get all the video urls by passing the playlist url. That&rsquo;s it, now all I had done is loop over <code>playLists</code> list (which was in <code>PlayListUrl</code>) and pass each url to the class, get the <code>title</code> and <code>video_urls</code> and save them to a json file.
 In the next step I used this video links to download the video directly.</p>
 <h3 id="downloading-all-the-videos-from-url">Downloading All The Videos from url</h3>
 <p>So let&rsquo;s summarize what we&rsquo;ve done so far:</p>
@@ -274,7 +447,52 @@ of how <code>pytube</code> can download youtube video below.</p>
 <blockquote>
 <p><strong>Before that one big thing I need to mention is that for video download purpose I&rsquo;ve used <code>pytubefix</code> instead of <code>pytube</code>. You can think of <code>pytubefix</code> is an extension of
 <code>pytube</code>. Where it fixes lots of bugs and integrate new features but yet act exactly same as <code>pytube</code>.</strong></p></blockquote>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">from</span> pytubefix <span style="color:#f92672">import</span> YouTube
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+<div class="code-block code-block-custom open">
+  <div class="code-header language-python">
+    <span class="code-header-left-toggle-area">
+      <i class="arrow fas fa-chevron-right fa-fw" aria-hidden="true"></i>
+      <span class="lang-name-text">Python</span>
+    </span>
+    <span class="code-header-right-copy-area">
+      <span class="copy" title="Copy to clipboard">
+        <i class="far fa-copy fa-fw" aria-hidden="true"></i>
+      </span>
+    </span>
+  </div>
+  <div class="highlight-wrapper">
+    <div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">from</span> pytubefix <span style="color:#f92672">import</span> YouTube
 </span></span><span style="display:flex;"><span><span style="color:#f92672">from</span> pytubefix.cli <span style="color:#f92672">import</span> on_progress
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>url <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Video url&#34;</span>
@@ -287,7 +505,137 @@ of how <code>pytube</code> can download youtube video below.</p>
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#75715e"># Download the audio file</span>
 </span></span><span style="display:flex;"><span>audio_stream<span style="color:#f92672">.</span>download(mp3<span style="color:#f92672">=</span><span style="color:#66d9ef">True</span>,output_path<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;Audio output path&#34;</span>)
-</span></span></code></pre></div><p>Let&rsquo;s break it down the code piece by piece.</p>
+</span></span></code></pre></td></tr></table>
+</div>
+</div>
+  </div>
+</div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  let currentCodeBlock;
+  
+  if (document.currentScript && document.currentScript.previousElementSibling && document.currentScript.previousElementSibling.classList.contains('code-block-custom')) {
+    currentCodeBlock = document.currentScript.previousElementSibling;
+  } else {
+    
+    
+    
+    const allCustomCodeBlocks = document.querySelectorAll('.code-block-custom:not([data-initialized="true"])');
+    if (allCustomCodeBlocks.length > 0) {
+        currentCodeBlock = allCustomCodeBlocks[allCustomCodeBlocks.length - 1];
+    }
+  }
+
+  if (!currentCodeBlock) {
+    
+    return;
+  }
+  
+  
+  if (currentCodeBlock.dataset.initialized === 'true') {
+    
+    return;
+  }
+  currentCodeBlock.dataset.initialized = 'true';
+
+  const toggleArea = currentCodeBlock.querySelector('.code-header-left-toggle-area');
+  const copyBtn = currentCodeBlock.querySelector('.code-header-right-copy-area .copy');
+  const highlightWrapper = currentCodeBlock.querySelector('.highlight-wrapper');
+
+  if (toggleArea && highlightWrapper) {
+    const actualHighlightDiv = highlightWrapper.querySelector('div.highlight'); 
+    const arrowIcon = toggleArea.querySelector('.arrow'); 
+
+    toggleArea.addEventListener('click', function() {
+      currentCodeBlock.classList.toggle('open');
+
+      if (currentCodeBlock.classList.contains('open')) { 
+        if (arrowIcon) arrowIcon.className = 'arrow fas fa-chevron-down fa-fw'; 
+        highlightWrapper.style.display = 'block';
+        if (actualHighlightDiv) actualHighlightDiv.style.visibility = 'visible';
+
+        requestAnimationFrame(() => {
+          highlightWrapper.style.maxHeight = highlightWrapper.scrollHeight + "px";
+        });
+      } else { 
+        if (arrowIcon) arrowIcon.className = 'arrow fas fa-chevron-right fa-fw'; 
+        if (actualHighlightDiv) actualHighlightDiv.style.visibility = 'hidden'; 
+        highlightWrapper.style.maxHeight = '0';
+
+        setTimeout(() => {
+          if (!currentCodeBlock.classList.contains('open')) { 
+            highlightWrapper.style.display = 'none';
+          }
+        }, 350); 
+      }
+    });
+  }
+
+  if (copyBtn && highlightWrapper) {
+    copyBtn.addEventListener('click', function(e) {
+      e.stopPropagation(); 
+      
+      const tableEl = highlightWrapper.querySelector('div.highlight > pre.chroma > table');
+      let codeToCopy = '';
+
+      if (tableEl) { 
+        const codeCell = tableEl.querySelector('td.lntd:last-child pre > code');
+        if (codeCell) {
+          codeToCopy = codeCell.innerText;
+        } else { 
+            const genericCodeInLastCell = tableEl.querySelector('td.lntd:last-child');
+            if(genericCodeInLastCell) codeToCopy = genericCodeInLastCell.innerText.trim(); 
+        }
+      } else { 
+        const preCode = highlightWrapper.querySelector('div.highlight > pre.chroma > code, div.highlight > pre > code');
+        if (preCode) {
+          codeToCopy = preCode.innerText;
+        }
+      }
+      
+      if (codeToCopy) {
+        navigator.clipboard.writeText(codeToCopy).then(() => {
+          const icon = this.querySelector('i');
+          const originalTitle = this.title;
+          icon.className = 'fas fa-check fa-fw';
+          this.title = "Copied!";
+          setTimeout(() => {
+            icon.className = 'far fa-copy fa-fw';
+            this.title = originalTitle;
+          }, 2000);
+        }).catch(err => {
+          this.title = "Failed to copy";
+          setTimeout(() => { this.title = "Copy to clipboard"; }, 2000);
+        });
+      } else {
+        this.title = "Nothing to copy";
+        setTimeout(() => { this.title = "Copy to clipboard"; }, 2000);
+      }
+    });
+  }
+
+  
+  const actualHighlightDivInitial = highlightWrapper ? highlightWrapper.querySelector('div.highlight') : null;
+  const arrowIconInitial = toggleArea ? toggleArea.querySelector('.arrow') : null;
+
+  if (currentCodeBlock.classList.contains('open') && highlightWrapper) {
+    if (arrowIconInitial) arrowIconInitial.className = 'arrow fas fa-chevron-down fa-fw';
+    highlightWrapper.style.display = 'block';
+    if (actualHighlightDivInitial) actualHighlightDivInitial.style.visibility = 'visible';
+    setTimeout(() => {
+        highlightWrapper.style.maxHeight = highlightWrapper.scrollHeight + "px";
+    }, 50);
+  } else if (highlightWrapper) {
+    if (arrowIconInitial) arrowIconInitial.className = 'arrow fas fa-chevron-right fa-fw';
+    highlightWrapper.style.maxHeight = '0';
+    highlightWrapper.style.display = 'none';
+    if (actualHighlightDivInitial) actualHighlightDivInitial.style.visibility = 'hidden';
+  }
+});
+</script> 
+</script> 
+<p>Let&rsquo;s break it down the code piece by piece.</p>
 <ol>
 <li>First we created a <code>yt</code> object from <code>YouTube</code> class. We have passed <strong>3 parameters or arguments</strong>. First one is the <code>video url</code>, Second one is <code>on_progress</code> generator. The purpose of it to show a progress bar in the terminal so that we know how much download have completed at a given time. Finally we set <code>use_po_token</code> to <code>true</code>. I&rsquo;ll discuss about this in details in a bit.</li>
 <li>After creating <code>yt</code> object next we need to create an <code>stream</code> object. This is required to download the audio (or video). We use <code>.get_audio_only()</code> method to grab only the audio and exclude the video.</li>
@@ -326,15 +674,232 @@ of how <code>pytube</code> can download youtube video below.</p>
 <blockquote>
 <p><strong>If you haven&rsquo;t installed <code>genai</code> client already then install it using <code>pip install google-generativeai</code>. But google is going deprecated this library and they are migrating to <code>google-genai</code>. Please refer to the <a href="https://pypi.org/project/google-genai/" target="_blank" rel="noopener noreffer "><strong>docs</strong></a> for utilizing the latest library.</strong></p></blockquote>
 <h4 id="setting-up-the-api">Setting up the API</h4>
-<p>Now let&rsquo;s see the code snippet one by one. First we need to pass the <code>gemini api key</code> to the <code>genai</code> client.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">import</span> google.generativeai <span style="color:#66d9ef">as</span> genai
+<p>Now let&rsquo;s see the code snippet one by one. First we need to pass the <code>gemini api key</code> to the <code>genai</code> client.
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+<div class="code-block code-block-custom open">
+  <div class="code-header language-python">
+    <span class="code-header-left-toggle-area">
+      <i class="arrow fas fa-chevron-right fa-fw" aria-hidden="true"></i>
+      <span class="lang-name-text">Python</span>
+    </span>
+    <span class="code-header-right-copy-area">
+      <span class="copy" title="Copy to clipboard">
+        <i class="far fa-copy fa-fw" aria-hidden="true"></i>
+      </span>
+    </span>
+  </div>
+  <div class="highlight-wrapper">
+    <div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> google.generativeai <span style="color:#66d9ef">as</span> genai
 </span></span><span style="display:flex;"><span><span style="color:#f92672">from</span> google.ai.generativelanguage_v1beta.types <span style="color:#f92672">import</span> content
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#75715e"># passing the api key</span>
 </span></span><span style="display:flex;"><span>genai<span style="color:#f92672">.</span>configure(api_key<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;GEMINI_API_KEY_COPIED_EARLIER&#34;</span>)
-</span></span></code></pre></div><h4 id="setting-parameters">Setting Parameters</h4>
+</span></span></code></pre></td></tr></table>
+</div>
+</div>
+  </div>
+</div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  let currentCodeBlock;
+  
+  if (document.currentScript && document.currentScript.previousElementSibling && document.currentScript.previousElementSibling.classList.contains('code-block-custom')) {
+    currentCodeBlock = document.currentScript.previousElementSibling;
+  } else {
+    
+    
+    
+    const allCustomCodeBlocks = document.querySelectorAll('.code-block-custom:not([data-initialized="true"])');
+    if (allCustomCodeBlocks.length > 0) {
+        currentCodeBlock = allCustomCodeBlocks[allCustomCodeBlocks.length - 1];
+    }
+  }
+
+  if (!currentCodeBlock) {
+    
+    return;
+  }
+  
+  
+  if (currentCodeBlock.dataset.initialized === 'true') {
+    
+    return;
+  }
+  currentCodeBlock.dataset.initialized = 'true';
+
+  const toggleArea = currentCodeBlock.querySelector('.code-header-left-toggle-area');
+  const copyBtn = currentCodeBlock.querySelector('.code-header-right-copy-area .copy');
+  const highlightWrapper = currentCodeBlock.querySelector('.highlight-wrapper');
+
+  if (toggleArea && highlightWrapper) {
+    const actualHighlightDiv = highlightWrapper.querySelector('div.highlight'); 
+    const arrowIcon = toggleArea.querySelector('.arrow'); 
+
+    toggleArea.addEventListener('click', function() {
+      currentCodeBlock.classList.toggle('open');
+
+      if (currentCodeBlock.classList.contains('open')) { 
+        if (arrowIcon) arrowIcon.className = 'arrow fas fa-chevron-down fa-fw'; 
+        highlightWrapper.style.display = 'block';
+        if (actualHighlightDiv) actualHighlightDiv.style.visibility = 'visible';
+
+        requestAnimationFrame(() => {
+          highlightWrapper.style.maxHeight = highlightWrapper.scrollHeight + "px";
+        });
+      } else { 
+        if (arrowIcon) arrowIcon.className = 'arrow fas fa-chevron-right fa-fw'; 
+        if (actualHighlightDiv) actualHighlightDiv.style.visibility = 'hidden'; 
+        highlightWrapper.style.maxHeight = '0';
+
+        setTimeout(() => {
+          if (!currentCodeBlock.classList.contains('open')) { 
+            highlightWrapper.style.display = 'none';
+          }
+        }, 350); 
+      }
+    });
+  }
+
+  if (copyBtn && highlightWrapper) {
+    copyBtn.addEventListener('click', function(e) {
+      e.stopPropagation(); 
+      
+      const tableEl = highlightWrapper.querySelector('div.highlight > pre.chroma > table');
+      let codeToCopy = '';
+
+      if (tableEl) { 
+        const codeCell = tableEl.querySelector('td.lntd:last-child pre > code');
+        if (codeCell) {
+          codeToCopy = codeCell.innerText;
+        } else { 
+            const genericCodeInLastCell = tableEl.querySelector('td.lntd:last-child');
+            if(genericCodeInLastCell) codeToCopy = genericCodeInLastCell.innerText.trim(); 
+        }
+      } else { 
+        const preCode = highlightWrapper.querySelector('div.highlight > pre.chroma > code, div.highlight > pre > code');
+        if (preCode) {
+          codeToCopy = preCode.innerText;
+        }
+      }
+      
+      if (codeToCopy) {
+        navigator.clipboard.writeText(codeToCopy).then(() => {
+          const icon = this.querySelector('i');
+          const originalTitle = this.title;
+          icon.className = 'fas fa-check fa-fw';
+          this.title = "Copied!";
+          setTimeout(() => {
+            icon.className = 'far fa-copy fa-fw';
+            this.title = originalTitle;
+          }, 2000);
+        }).catch(err => {
+          this.title = "Failed to copy";
+          setTimeout(() => { this.title = "Copy to clipboard"; }, 2000);
+        });
+      } else {
+        this.title = "Nothing to copy";
+        setTimeout(() => { this.title = "Copy to clipboard"; }, 2000);
+      }
+    });
+  }
+
+  
+  const actualHighlightDivInitial = highlightWrapper ? highlightWrapper.querySelector('div.highlight') : null;
+  const arrowIconInitial = toggleArea ? toggleArea.querySelector('.arrow') : null;
+
+  if (currentCodeBlock.classList.contains('open') && highlightWrapper) {
+    if (arrowIconInitial) arrowIconInitial.className = 'arrow fas fa-chevron-down fa-fw';
+    highlightWrapper.style.display = 'block';
+    if (actualHighlightDivInitial) actualHighlightDivInitial.style.visibility = 'visible';
+    setTimeout(() => {
+        highlightWrapper.style.maxHeight = highlightWrapper.scrollHeight + "px";
+    }, 50);
+  } else if (highlightWrapper) {
+    if (arrowIconInitial) arrowIconInitial.className = 'arrow fas fa-chevron-right fa-fw';
+    highlightWrapper.style.maxHeight = '0';
+    highlightWrapper.style.display = 'none';
+    if (actualHighlightDivInitial) actualHighlightDivInitial.style.visibility = 'hidden';
+  }
+});
+</script> 
+</script> </p>
+<h4 id="setting-parameters">Setting Parameters</h4>
 <p>After setting up the api key now we&rsquo;ll configure different <strong>LLM parameters</strong> (i.e: <code>temperature</code>, <code>top_p</code>)</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>
+<p>
+
+
+
+ 
+
+
+
+
+
+
+
+
+<div class="code-block code-block-custom open">
+  <div class="code-header language-python">
+    <span class="code-header-left-toggle-area">
+      <i class="arrow fas fa-chevron-right fa-fw" aria-hidden="true"></i>
+      <span class="lang-name-text">Python</span>
+    </span>
+    <span class="code-header-right-copy-area">
+      <span class="copy" title="Copy to clipboard">
+        <i class="far fa-copy fa-fw" aria-hidden="true"></i>
+      </span>
+    </span>
+  </div>
+  <div class="highlight-wrapper">
+    <div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>generation_config <span style="color:#f92672">=</span> {
 </span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;temperature&#34;</span>: <span style="color:#ae81ff">0</span>,
@@ -350,7 +915,139 @@ of how <code>pytube</code> can download youtube video below.</p>
 </span></span><span style="display:flex;"><span>    ),
 </span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;response_mime_type&#34;</span>: <span style="color:#e6db74">&#34;application/json&#34;</span>,
 </span></span><span style="display:flex;"><span>}
-</span></span></code></pre></div><p>Let&rsquo;s understand what&rsquo;s happening above:</p>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div>
+  </div>
+</div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  let currentCodeBlock;
+  
+  if (document.currentScript && document.currentScript.previousElementSibling && document.currentScript.previousElementSibling.classList.contains('code-block-custom')) {
+    currentCodeBlock = document.currentScript.previousElementSibling;
+  } else {
+    
+    
+    
+    const allCustomCodeBlocks = document.querySelectorAll('.code-block-custom:not([data-initialized="true"])');
+    if (allCustomCodeBlocks.length > 0) {
+        currentCodeBlock = allCustomCodeBlocks[allCustomCodeBlocks.length - 1];
+    }
+  }
+
+  if (!currentCodeBlock) {
+    
+    return;
+  }
+  
+  
+  if (currentCodeBlock.dataset.initialized === 'true') {
+    
+    return;
+  }
+  currentCodeBlock.dataset.initialized = 'true';
+
+  const toggleArea = currentCodeBlock.querySelector('.code-header-left-toggle-area');
+  const copyBtn = currentCodeBlock.querySelector('.code-header-right-copy-area .copy');
+  const highlightWrapper = currentCodeBlock.querySelector('.highlight-wrapper');
+
+  if (toggleArea && highlightWrapper) {
+    const actualHighlightDiv = highlightWrapper.querySelector('div.highlight'); 
+    const arrowIcon = toggleArea.querySelector('.arrow'); 
+
+    toggleArea.addEventListener('click', function() {
+      currentCodeBlock.classList.toggle('open');
+
+      if (currentCodeBlock.classList.contains('open')) { 
+        if (arrowIcon) arrowIcon.className = 'arrow fas fa-chevron-down fa-fw'; 
+        highlightWrapper.style.display = 'block';
+        if (actualHighlightDiv) actualHighlightDiv.style.visibility = 'visible';
+
+        requestAnimationFrame(() => {
+          highlightWrapper.style.maxHeight = highlightWrapper.scrollHeight + "px";
+        });
+      } else { 
+        if (arrowIcon) arrowIcon.className = 'arrow fas fa-chevron-right fa-fw'; 
+        if (actualHighlightDiv) actualHighlightDiv.style.visibility = 'hidden'; 
+        highlightWrapper.style.maxHeight = '0';
+
+        setTimeout(() => {
+          if (!currentCodeBlock.classList.contains('open')) { 
+            highlightWrapper.style.display = 'none';
+          }
+        }, 350); 
+      }
+    });
+  }
+
+  if (copyBtn && highlightWrapper) {
+    copyBtn.addEventListener('click', function(e) {
+      e.stopPropagation(); 
+      
+      const tableEl = highlightWrapper.querySelector('div.highlight > pre.chroma > table');
+      let codeToCopy = '';
+
+      if (tableEl) { 
+        const codeCell = tableEl.querySelector('td.lntd:last-child pre > code');
+        if (codeCell) {
+          codeToCopy = codeCell.innerText;
+        } else { 
+            const genericCodeInLastCell = tableEl.querySelector('td.lntd:last-child');
+            if(genericCodeInLastCell) codeToCopy = genericCodeInLastCell.innerText.trim(); 
+        }
+      } else { 
+        const preCode = highlightWrapper.querySelector('div.highlight > pre.chroma > code, div.highlight > pre > code');
+        if (preCode) {
+          codeToCopy = preCode.innerText;
+        }
+      }
+      
+      if (codeToCopy) {
+        navigator.clipboard.writeText(codeToCopy).then(() => {
+          const icon = this.querySelector('i');
+          const originalTitle = this.title;
+          icon.className = 'fas fa-check fa-fw';
+          this.title = "Copied!";
+          setTimeout(() => {
+            icon.className = 'far fa-copy fa-fw';
+            this.title = originalTitle;
+          }, 2000);
+        }).catch(err => {
+          this.title = "Failed to copy";
+          setTimeout(() => { this.title = "Copy to clipboard"; }, 2000);
+        });
+      } else {
+        this.title = "Nothing to copy";
+        setTimeout(() => { this.title = "Copy to clipboard"; }, 2000);
+      }
+    });
+  }
+
+  
+  const actualHighlightDivInitial = highlightWrapper ? highlightWrapper.querySelector('div.highlight') : null;
+  const arrowIconInitial = toggleArea ? toggleArea.querySelector('.arrow') : null;
+
+  if (currentCodeBlock.classList.contains('open') && highlightWrapper) {
+    if (arrowIconInitial) arrowIconInitial.className = 'arrow fas fa-chevron-down fa-fw';
+    highlightWrapper.style.display = 'block';
+    if (actualHighlightDivInitial) actualHighlightDivInitial.style.visibility = 'visible';
+    setTimeout(() => {
+        highlightWrapper.style.maxHeight = highlightWrapper.scrollHeight + "px";
+    }, 50);
+  } else if (highlightWrapper) {
+    if (arrowIconInitial) arrowIconInitial.className = 'arrow fas fa-chevron-right fa-fw';
+    highlightWrapper.style.maxHeight = '0';
+    highlightWrapper.style.display = 'none';
+    if (actualHighlightDivInitial) actualHighlightDivInitial.style.visibility = 'hidden';
+  }
+});
+</script> 
+</script> 
+Let&rsquo;s understand what&rsquo;s happening above:</p>
 <ol>
 <li>First we set the <code>temperature</code> parameter value to 0</li>
 <li>then set the <code>top_p</code> parameter value to 0.2</li>
@@ -361,25 +1058,395 @@ of how <code>pytube</code> can download youtube video below.</p>
 <p>I&rsquo;m going to talk very breifly about <strong>structure output.</strong> Structure output from LLM means forcing the LLM to give the <strong>output in a specific format</strong>. That specific format can be a <code>json schema</code> or <code>xml schema</code>. Currently the <code>json schema</code> is the most famous way to get the structure output from LLMs. The main reason to use <strong>structure output is to have control</strong>. Suppose when I was tring to transcribe the audio then there will be some <strong>additional text</strong> that will come with the transcribtion such as &ldquo;Here is your transcription&hellip;&rdquo;, &ldquo;okay let&rsquo;s transcribe it&hellip;&rdquo;. <strong>This additional text won&rsquo;t be added for structure output.</strong></p>
 <h4 id="creating-system-instruction">Creating System Instruction</h4>
 <p>We need to prompt the model so that model knows exactly what to do. This part can be refer as <strong>prompt engineering</strong> where we&rsquo;re prompting or giving instruction to the LLM in a way so that it can give us the desired output. I&rsquo;ve used the below <strong>instruction prompt:</strong></p>
-<figure><a class="lightgallery" href="/images/YoutubeTranscriptionGemini/System_prompt.png" title="/images/YoutubeTranscriptionGemini/System_prompt.png" data-thumbnail="/images/YoutubeTranscriptionGemini/System_prompt.png" data-sub-html="<h2>System Prompt</h2>">
-        <img
-            class="lazyload"
-            src="/svg/loading.min.svg"
-            data-src="/images/YoutubeTranscriptionGemini/System_prompt.png"
-            data-srcset="/images/YoutubeTranscriptionGemini/System_prompt.png, /images/YoutubeTranscriptionGemini/System_prompt.png 1.5x, /images/YoutubeTranscriptionGemini/System_prompt.png 2x"
-            data-sizes="auto"
-            alt="/images/YoutubeTranscriptionGemini/System_prompt.png" />
-    </a><figcaption class="image-caption"><strong>System Prompt</strong></figcaption>
-    </figure>
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+<div class="code-block code-block-custom open">
+  <div class="code-header language-markdown">
+    <span class="code-header-left-toggle-area">
+      <i class="arrow fas fa-chevron-right fa-fw" aria-hidden="true"></i>
+      <span class="lang-name-text">Markdown</span>
+    </span>
+    <span class="code-header-right-copy-area">
+      <span class="copy" title="Copy to clipboard">
+        <i class="far fa-copy fa-fw" aria-hidden="true"></i>
+      </span>
+    </span>
+  </div>
+  <div class="highlight-wrapper">
+    <div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-markdown" data-lang="markdown"><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>You&#39;re an expert at transcribing bangla audio into bangla text. Now follow the below steps:
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">1.</span> You&#39;ll be given a bangla audio. Your task is to only transcribe that bangla audio in bangla text. 
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">2.</span> Do not add anything else. Only transcribe the audio into bangla.
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">3.</span> Sometimes in the audio there maybe english words. You don&#39;t have to translate the english words into bangla. Rather while transcribing keep the english words as it is.
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">4.</span> Finally return your final bangla transcription (with some english text if there is any).
+</span></span></code></pre></td></tr></table>
+</div>
+</div>
+  </div>
+</div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  let currentCodeBlock;
+  
+  if (document.currentScript && document.currentScript.previousElementSibling && document.currentScript.previousElementSibling.classList.contains('code-block-custom')) {
+    currentCodeBlock = document.currentScript.previousElementSibling;
+  } else {
+    
+    
+    
+    const allCustomCodeBlocks = document.querySelectorAll('.code-block-custom:not([data-initialized="true"])');
+    if (allCustomCodeBlocks.length > 0) {
+        currentCodeBlock = allCustomCodeBlocks[allCustomCodeBlocks.length - 1];
+    }
+  }
+
+  if (!currentCodeBlock) {
+    
+    return;
+  }
+  
+  
+  if (currentCodeBlock.dataset.initialized === 'true') {
+    
+    return;
+  }
+  currentCodeBlock.dataset.initialized = 'true';
+
+  const toggleArea = currentCodeBlock.querySelector('.code-header-left-toggle-area');
+  const copyBtn = currentCodeBlock.querySelector('.code-header-right-copy-area .copy');
+  const highlightWrapper = currentCodeBlock.querySelector('.highlight-wrapper');
+
+  if (toggleArea && highlightWrapper) {
+    const actualHighlightDiv = highlightWrapper.querySelector('div.highlight'); 
+    const arrowIcon = toggleArea.querySelector('.arrow'); 
+
+    toggleArea.addEventListener('click', function() {
+      currentCodeBlock.classList.toggle('open');
+
+      if (currentCodeBlock.classList.contains('open')) { 
+        if (arrowIcon) arrowIcon.className = 'arrow fas fa-chevron-down fa-fw'; 
+        highlightWrapper.style.display = 'block';
+        if (actualHighlightDiv) actualHighlightDiv.style.visibility = 'visible';
+
+        requestAnimationFrame(() => {
+          highlightWrapper.style.maxHeight = highlightWrapper.scrollHeight + "px";
+        });
+      } else { 
+        if (arrowIcon) arrowIcon.className = 'arrow fas fa-chevron-right fa-fw'; 
+        if (actualHighlightDiv) actualHighlightDiv.style.visibility = 'hidden'; 
+        highlightWrapper.style.maxHeight = '0';
+
+        setTimeout(() => {
+          if (!currentCodeBlock.classList.contains('open')) { 
+            highlightWrapper.style.display = 'none';
+          }
+        }, 350); 
+      }
+    });
+  }
+
+  if (copyBtn && highlightWrapper) {
+    copyBtn.addEventListener('click', function(e) {
+      e.stopPropagation(); 
+      
+      const tableEl = highlightWrapper.querySelector('div.highlight > pre.chroma > table');
+      let codeToCopy = '';
+
+      if (tableEl) { 
+        const codeCell = tableEl.querySelector('td.lntd:last-child pre > code');
+        if (codeCell) {
+          codeToCopy = codeCell.innerText;
+        } else { 
+            const genericCodeInLastCell = tableEl.querySelector('td.lntd:last-child');
+            if(genericCodeInLastCell) codeToCopy = genericCodeInLastCell.innerText.trim(); 
+        }
+      } else { 
+        const preCode = highlightWrapper.querySelector('div.highlight > pre.chroma > code, div.highlight > pre > code');
+        if (preCode) {
+          codeToCopy = preCode.innerText;
+        }
+      }
+      
+      if (codeToCopy) {
+        navigator.clipboard.writeText(codeToCopy).then(() => {
+          const icon = this.querySelector('i');
+          const originalTitle = this.title;
+          icon.className = 'fas fa-check fa-fw';
+          this.title = "Copied!";
+          setTimeout(() => {
+            icon.className = 'far fa-copy fa-fw';
+            this.title = originalTitle;
+          }, 2000);
+        }).catch(err => {
+          this.title = "Failed to copy";
+          setTimeout(() => { this.title = "Copy to clipboard"; }, 2000);
+        });
+      } else {
+        this.title = "Nothing to copy";
+        setTimeout(() => { this.title = "Copy to clipboard"; }, 2000);
+      }
+    });
+  }
+
+  
+  const actualHighlightDivInitial = highlightWrapper ? highlightWrapper.querySelector('div.highlight') : null;
+  const arrowIconInitial = toggleArea ? toggleArea.querySelector('.arrow') : null;
+
+  if (currentCodeBlock.classList.contains('open') && highlightWrapper) {
+    if (arrowIconInitial) arrowIconInitial.className = 'arrow fas fa-chevron-down fa-fw';
+    highlightWrapper.style.display = 'block';
+    if (actualHighlightDivInitial) actualHighlightDivInitial.style.visibility = 'visible';
+    setTimeout(() => {
+        highlightWrapper.style.maxHeight = highlightWrapper.scrollHeight + "px";
+    }, 50);
+  } else if (highlightWrapper) {
+    if (arrowIconInitial) arrowIconInitial.className = 'arrow fas fa-chevron-right fa-fw';
+    highlightWrapper.style.maxHeight = '0';
+    highlightWrapper.style.display = 'none';
+    if (actualHighlightDivInitial) actualHighlightDivInitial.style.visibility = 'hidden';
+  }
+});
+</script> 
+</script> 
 <h4 id="creating-the-model-instance">Creating the Model Instance</h4>
 <p>So far, we&rsquo;ve <strong>setup parameters</strong>, created an <strong>instruction prompt</strong> and now we need to pass this alongside the model or llm name to create the model instance.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>model <span style="color:#f92672">=</span> genai<span style="color:#f92672">.</span>GenerativeModel(
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+<div class="code-block code-block-custom open">
+  <div class="code-header language-python">
+    <span class="code-header-left-toggle-area">
+      <i class="arrow fas fa-chevron-right fa-fw" aria-hidden="true"></i>
+      <span class="lang-name-text">Python</span>
+    </span>
+    <span class="code-header-right-copy-area">
+      <span class="copy" title="Copy to clipboard">
+        <i class="far fa-copy fa-fw" aria-hidden="true"></i>
+      </span>
+    </span>
+  </div>
+  <div class="highlight-wrapper">
+    <div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>model <span style="color:#f92672">=</span> genai<span style="color:#f92672">.</span>GenerativeModel(
 </span></span><span style="display:flex;"><span>  model_name<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;gemini-2.0-flash-exp&#34;</span>,
 </span></span><span style="display:flex;"><span>  generation_config<span style="color:#f92672">=</span>generation_config,
 </span></span><span style="display:flex;"><span>  system_instruction<span style="color:#f92672">=</span>SYSTEM_INST,
 </span></span><span style="display:flex;"><span>)
-</span></span></code></pre></div><h4 id="uploading-audio-file">Uploading Audio File</h4>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">upload_to_gemini</span>(path:str, mime_type:Optional[str]<span style="color:#f92672">=</span><span style="color:#66d9ef">None</span>):
+</span></span></code></pre></td></tr></table>
+</div>
+</div>
+  </div>
+</div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  let currentCodeBlock;
+  
+  if (document.currentScript && document.currentScript.previousElementSibling && document.currentScript.previousElementSibling.classList.contains('code-block-custom')) {
+    currentCodeBlock = document.currentScript.previousElementSibling;
+  } else {
+    
+    
+    
+    const allCustomCodeBlocks = document.querySelectorAll('.code-block-custom:not([data-initialized="true"])');
+    if (allCustomCodeBlocks.length > 0) {
+        currentCodeBlock = allCustomCodeBlocks[allCustomCodeBlocks.length - 1];
+    }
+  }
+
+  if (!currentCodeBlock) {
+    
+    return;
+  }
+  
+  
+  if (currentCodeBlock.dataset.initialized === 'true') {
+    
+    return;
+  }
+  currentCodeBlock.dataset.initialized = 'true';
+
+  const toggleArea = currentCodeBlock.querySelector('.code-header-left-toggle-area');
+  const copyBtn = currentCodeBlock.querySelector('.code-header-right-copy-area .copy');
+  const highlightWrapper = currentCodeBlock.querySelector('.highlight-wrapper');
+
+  if (toggleArea && highlightWrapper) {
+    const actualHighlightDiv = highlightWrapper.querySelector('div.highlight'); 
+    const arrowIcon = toggleArea.querySelector('.arrow'); 
+
+    toggleArea.addEventListener('click', function() {
+      currentCodeBlock.classList.toggle('open');
+
+      if (currentCodeBlock.classList.contains('open')) { 
+        if (arrowIcon) arrowIcon.className = 'arrow fas fa-chevron-down fa-fw'; 
+        highlightWrapper.style.display = 'block';
+        if (actualHighlightDiv) actualHighlightDiv.style.visibility = 'visible';
+
+        requestAnimationFrame(() => {
+          highlightWrapper.style.maxHeight = highlightWrapper.scrollHeight + "px";
+        });
+      } else { 
+        if (arrowIcon) arrowIcon.className = 'arrow fas fa-chevron-right fa-fw'; 
+        if (actualHighlightDiv) actualHighlightDiv.style.visibility = 'hidden'; 
+        highlightWrapper.style.maxHeight = '0';
+
+        setTimeout(() => {
+          if (!currentCodeBlock.classList.contains('open')) { 
+            highlightWrapper.style.display = 'none';
+          }
+        }, 350); 
+      }
+    });
+  }
+
+  if (copyBtn && highlightWrapper) {
+    copyBtn.addEventListener('click', function(e) {
+      e.stopPropagation(); 
+      
+      const tableEl = highlightWrapper.querySelector('div.highlight > pre.chroma > table');
+      let codeToCopy = '';
+
+      if (tableEl) { 
+        const codeCell = tableEl.querySelector('td.lntd:last-child pre > code');
+        if (codeCell) {
+          codeToCopy = codeCell.innerText;
+        } else { 
+            const genericCodeInLastCell = tableEl.querySelector('td.lntd:last-child');
+            if(genericCodeInLastCell) codeToCopy = genericCodeInLastCell.innerText.trim(); 
+        }
+      } else { 
+        const preCode = highlightWrapper.querySelector('div.highlight > pre.chroma > code, div.highlight > pre > code');
+        if (preCode) {
+          codeToCopy = preCode.innerText;
+        }
+      }
+      
+      if (codeToCopy) {
+        navigator.clipboard.writeText(codeToCopy).then(() => {
+          const icon = this.querySelector('i');
+          const originalTitle = this.title;
+          icon.className = 'fas fa-check fa-fw';
+          this.title = "Copied!";
+          setTimeout(() => {
+            icon.className = 'far fa-copy fa-fw';
+            this.title = originalTitle;
+          }, 2000);
+        }).catch(err => {
+          this.title = "Failed to copy";
+          setTimeout(() => { this.title = "Copy to clipboard"; }, 2000);
+        });
+      } else {
+        this.title = "Nothing to copy";
+        setTimeout(() => { this.title = "Copy to clipboard"; }, 2000);
+      }
+    });
+  }
+
+  
+  const actualHighlightDivInitial = highlightWrapper ? highlightWrapper.querySelector('div.highlight') : null;
+  const arrowIconInitial = toggleArea ? toggleArea.querySelector('.arrow') : null;
+
+  if (currentCodeBlock.classList.contains('open') && highlightWrapper) {
+    if (arrowIconInitial) arrowIconInitial.className = 'arrow fas fa-chevron-down fa-fw';
+    highlightWrapper.style.display = 'block';
+    if (actualHighlightDivInitial) actualHighlightDivInitial.style.visibility = 'visible';
+    setTimeout(() => {
+        highlightWrapper.style.maxHeight = highlightWrapper.scrollHeight + "px";
+    }, 50);
+  } else if (highlightWrapper) {
+    if (arrowIconInitial) arrowIconInitial.className = 'arrow fas fa-chevron-right fa-fw';
+    highlightWrapper.style.maxHeight = '0';
+    highlightWrapper.style.display = 'none';
+    if (actualHighlightDivInitial) actualHighlightDivInitial.style.visibility = 'hidden';
+  }
+});
+</script> 
+</script> 
+<h4 id="uploading-audio-file">Uploading Audio File</h4>
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+<div class="code-block code-block-custom open">
+  <div class="code-header language-python">
+    <span class="code-header-left-toggle-area">
+      <i class="arrow fas fa-chevron-right fa-fw" aria-hidden="true"></i>
+      <span class="lang-name-text">Python</span>
+    </span>
+    <span class="code-header-right-copy-area">
+      <span class="copy" title="Copy to clipboard">
+        <i class="far fa-copy fa-fw" aria-hidden="true"></i>
+      </span>
+    </span>
+  </div>
+  <div class="highlight-wrapper">
+    <div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">upload_to_gemini</span>(path:str, mime_type:Optional[str]<span style="color:#f92672">=</span><span style="color:#66d9ef">None</span>):
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>  file <span style="color:#f92672">=</span> genai<span style="color:#f92672">.</span>upload_file(path, mime_type<span style="color:#f92672">=</span>mime_type)
 </span></span><span style="display:flex;"><span>  print(<span style="color:#e6db74">f</span><span style="color:#e6db74">&#34;Uploaded file &#39;</span><span style="color:#e6db74">{</span>file<span style="color:#f92672">.</span>display_name<span style="color:#e6db74">}</span><span style="color:#e6db74">&#39; as: </span><span style="color:#e6db74">{</span>file<span style="color:#f92672">.</span>uri<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span>)
@@ -388,7 +1455,137 @@ of how <code>pytube</code> can download youtube video below.</p>
 </span></span><span style="display:flex;"><span>files <span style="color:#f92672">=</span> [
 </span></span><span style="display:flex;"><span>  upload_to_gemini(<span style="color:#e6db74">&#34;audio_file_path&#34;</span>)
 </span></span><span style="display:flex;"><span>]
-</span></span></code></pre></div><p>In the above code we created a python function for uploading the audio file to the gemini. First we pass the <strong>audio file path</strong> in the <code>path</code> argument. And then it upload that audio file to gemini.</p>
+</span></span></code></pre></td></tr></table>
+</div>
+</div>
+  </div>
+</div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  let currentCodeBlock;
+  
+  if (document.currentScript && document.currentScript.previousElementSibling && document.currentScript.previousElementSibling.classList.contains('code-block-custom')) {
+    currentCodeBlock = document.currentScript.previousElementSibling;
+  } else {
+    
+    
+    
+    const allCustomCodeBlocks = document.querySelectorAll('.code-block-custom:not([data-initialized="true"])');
+    if (allCustomCodeBlocks.length > 0) {
+        currentCodeBlock = allCustomCodeBlocks[allCustomCodeBlocks.length - 1];
+    }
+  }
+
+  if (!currentCodeBlock) {
+    
+    return;
+  }
+  
+  
+  if (currentCodeBlock.dataset.initialized === 'true') {
+    
+    return;
+  }
+  currentCodeBlock.dataset.initialized = 'true';
+
+  const toggleArea = currentCodeBlock.querySelector('.code-header-left-toggle-area');
+  const copyBtn = currentCodeBlock.querySelector('.code-header-right-copy-area .copy');
+  const highlightWrapper = currentCodeBlock.querySelector('.highlight-wrapper');
+
+  if (toggleArea && highlightWrapper) {
+    const actualHighlightDiv = highlightWrapper.querySelector('div.highlight'); 
+    const arrowIcon = toggleArea.querySelector('.arrow'); 
+
+    toggleArea.addEventListener('click', function() {
+      currentCodeBlock.classList.toggle('open');
+
+      if (currentCodeBlock.classList.contains('open')) { 
+        if (arrowIcon) arrowIcon.className = 'arrow fas fa-chevron-down fa-fw'; 
+        highlightWrapper.style.display = 'block';
+        if (actualHighlightDiv) actualHighlightDiv.style.visibility = 'visible';
+
+        requestAnimationFrame(() => {
+          highlightWrapper.style.maxHeight = highlightWrapper.scrollHeight + "px";
+        });
+      } else { 
+        if (arrowIcon) arrowIcon.className = 'arrow fas fa-chevron-right fa-fw'; 
+        if (actualHighlightDiv) actualHighlightDiv.style.visibility = 'hidden'; 
+        highlightWrapper.style.maxHeight = '0';
+
+        setTimeout(() => {
+          if (!currentCodeBlock.classList.contains('open')) { 
+            highlightWrapper.style.display = 'none';
+          }
+        }, 350); 
+      }
+    });
+  }
+
+  if (copyBtn && highlightWrapper) {
+    copyBtn.addEventListener('click', function(e) {
+      e.stopPropagation(); 
+      
+      const tableEl = highlightWrapper.querySelector('div.highlight > pre.chroma > table');
+      let codeToCopy = '';
+
+      if (tableEl) { 
+        const codeCell = tableEl.querySelector('td.lntd:last-child pre > code');
+        if (codeCell) {
+          codeToCopy = codeCell.innerText;
+        } else { 
+            const genericCodeInLastCell = tableEl.querySelector('td.lntd:last-child');
+            if(genericCodeInLastCell) codeToCopy = genericCodeInLastCell.innerText.trim(); 
+        }
+      } else { 
+        const preCode = highlightWrapper.querySelector('div.highlight > pre.chroma > code, div.highlight > pre > code');
+        if (preCode) {
+          codeToCopy = preCode.innerText;
+        }
+      }
+      
+      if (codeToCopy) {
+        navigator.clipboard.writeText(codeToCopy).then(() => {
+          const icon = this.querySelector('i');
+          const originalTitle = this.title;
+          icon.className = 'fas fa-check fa-fw';
+          this.title = "Copied!";
+          setTimeout(() => {
+            icon.className = 'far fa-copy fa-fw';
+            this.title = originalTitle;
+          }, 2000);
+        }).catch(err => {
+          this.title = "Failed to copy";
+          setTimeout(() => { this.title = "Copy to clipboard"; }, 2000);
+        });
+      } else {
+        this.title = "Nothing to copy";
+        setTimeout(() => { this.title = "Copy to clipboard"; }, 2000);
+      }
+    });
+  }
+
+  
+  const actualHighlightDivInitial = highlightWrapper ? highlightWrapper.querySelector('div.highlight') : null;
+  const arrowIconInitial = toggleArea ? toggleArea.querySelector('.arrow') : null;
+
+  if (currentCodeBlock.classList.contains('open') && highlightWrapper) {
+    if (arrowIconInitial) arrowIconInitial.className = 'arrow fas fa-chevron-down fa-fw';
+    highlightWrapper.style.display = 'block';
+    if (actualHighlightDivInitial) actualHighlightDivInitial.style.visibility = 'visible';
+    setTimeout(() => {
+        highlightWrapper.style.maxHeight = highlightWrapper.scrollHeight + "px";
+    }, 50);
+  } else if (highlightWrapper) {
+    if (arrowIconInitial) arrowIconInitial.className = 'arrow fas fa-chevron-right fa-fw';
+    highlightWrapper.style.maxHeight = '0';
+    highlightWrapper.style.display = 'none';
+    if (actualHighlightDivInitial) actualHighlightDivInitial.style.visibility = 'hidden';
+  }
+});
+</script> 
+</script> 
+<p>In the above code we created a python function for uploading the audio file to the gemini. First we pass the <strong>audio file path</strong> in the <code>path</code> argument. And then it upload that audio file to gemini.</p>
 <h4 id="getting-the-response">Getting the response</h4>
 
 
@@ -583,6 +1780,7 @@ document.addEventListener('DOMContentLoaded', function() {
   }
 });
 </script> 
+</script> 
 <p>In the above code we are doing:</p>
 <ol>
 <li>First creating a session or think of as a chat history, where we are passing the audio file that we&rsquo;ve already uploaded to the gemini in the previous step. We&rsquo;re just passing <code>files[0]</code> means the first item from the <code>files</code> list.</li>
@@ -592,7 +1790,26 @@ document.addEventListener('DOMContentLoaded', function() {
 </ol>
 <p>That&rsquo;s it we&rsquo;re able to generate <strong>bangla transcribtion from an audio using gemini llm</strong>. Now for my usecase all I did is loop over each audio file and generate transcription and save them to a json file. That&rsquo;s it.</p>
 <h2 id="future-work">Future work</h2>
-<h2 id="gratitude">Gratitude</h2></div><div class="post-footer" id="post-footer">
+<p><strong>If you&rsquo;ve read this far then I&rsquo;d say dude you&rsquo;ve genuine patience!! I&rsquo;m not a professional writter or something, I write for fun and therefore my writing may sometime feel monotonous. Thank you!</strong> Ok, lets talk about what future improvement you can do if you want to make this project better.</p>
+<ol>
+<li>
+<p><strong>RAG Application:</strong> You can create a complete RAG based chatbot using this transcription. Where the chatbot search for the answer from the transcription itself. I won&rsquo;t go into details of RAG. This in of itself required another blog. I may write a blog on this in future but no promises.</p>
+</li>
+<li>
+<p><strong>Automation Pipeline:</strong> You&rsquo;ve seen that the entire process can be automated. So my suggestion is to create an automation pipeline where an script is monitoring a particular youtube channel and if a new video comes in then it&rsquo;ll automatically trigger the pipeline and transcribe the new video.</p>
+</li>
+<li>
+<p><strong>Package Update:</strong> I had built this project in february &lsquo;25. I had started working before that. Therefore some packages are outdated. Suppose <code>genai</code> package from google. I had used <code>google-generativeai</code> but this package is deprecated and google is migrating to <code>google-genai</code>. So you can migrate this project to latest <code>google-genai</code> package.</p>
+</li>
+</ol>
+<h2 id="gratitude">Gratitude</h2>
+<p>This project is a tribute to my sensei <strong>Rakibul Hasan</strong>. I&rsquo;ve started my journey in AI by reading his books in 2019. Now I&rsquo;m working as a professional AI engineer (though jr). I owe him a lot. If you&rsquo;re starting your AI journey (specially deep learning journey) then here are some of his resources I&rsquo;m listing below (all of them are free!)</p>
+<ol>
+<li><a href="https://rakibul-hassan.gitbook.io/deep-learning" target="_blank" rel="noopener noreffer "><strong>Python Deep Learning from Scracth (Bangla book)</strong></a></li>
+<li><a href="https://aiwithr.github.io/nlpbook/" target="_blank" rel="noopener noreffer "><strong>Natuaral Language Processing from Scratch (Bangla book)</strong></a></li>
+</ol>
+<h2 id="my-next-blog">My Next Blog</h2>
+<p>I&rsquo;m going to write about one of my recent project that I&rsquo;ve completed. It is about creating <strong>first bangla reasoning dataset.</strong> Stay tuned!</p></div><div class="post-footer" id="post-footer">
     <div class="post-info">
         <div class="post-info-line">
             <div class="post-info-mod">
@@ -617,7 +1834,7 @@ document.addEventListener('DOMContentLoaded', function() {
 </div>
 </article></div>
             </main><footer class="footer">
-        <div class="footer-container"><div class="footer-line">Powered by <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.147.3">Hugo</a> | Theme - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.2.11"><i class="far fa-kiss-wink-heart fa-fw" aria-hidden="true"></i> LoveIt</a>
+        <div class="footer-container"><div class="footer-line">Powered by <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.147.5">Hugo</a> | Theme - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.2.11"><i class="far fa-kiss-wink-heart fa-fw" aria-hidden="true"></i> LoveIt</a>
                 </div><div class="footer-line" itemscope itemtype="http://schema.org/CreativeWork"><i class="far fa-copyright fa-fw" aria-hidden="true"></i><span itemprop="copyrightYear">2022 - 2025</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="/" target="_blank"></a></span></div>
         </div>
     </footer></div>

@@ -54,7 +54,7 @@ languages:
           pre: ""
           post: ""
           name: About
-          url: https://reliable-chimera-d33c1f.netlify.app/
+          url: /about/
           title: ""
   bn:
     weight: 2
@@ -99,7 +99,7 @@ languages:
           pre: ""
           post: ""
           name: লেখক পরিচিতি
-          url: https://reliable-chimera-d33c1f.netlify.app/
+          url: /about/
           title: ""
     params:
       home:

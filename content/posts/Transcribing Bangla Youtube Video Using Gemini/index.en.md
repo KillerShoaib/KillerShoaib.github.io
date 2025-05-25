@@ -174,7 +174,7 @@ First, I've imported `playLists` from `PlayListUrl` which contain all the playli
 Then I had used `pytube`. **Pytube** is really cool tbh. You can do a lot of automation for utub using **pytube**. There is a class in `pytube` name `Playlist`. All you need to do is to pass the playlist url
 while creating the object and that's it. You'll get all the publicly available information of that playlist from that object. Below look in the example:
 
-```python
+{{< codeblock python >}}
 from pytube import Playlist
 
 url = "a playlist url"
@@ -185,7 +185,7 @@ p.title
 
 # accessing the all the video urls fro that playlist
 p.video_urls
-```
+{{< /codeblock >}}
 
 In the above code you can see I can get all the video urls by passing the playlist url. That's it, now all I had done is loop over `playLists` list (which was in `PlayListUrl`) and pass each url to the class, get the `title` and `video_urls` and save them to a json file.
 In the next step I used this video links to download the video directly.
@@ -202,7 +202,7 @@ of how `pytube` can download youtube video below.
 > **Before that one big thing I need to mention is that for video download purpose I've used `pytubefix` instead of `pytube`. You can think of `pytubefix` is an extension of
 `pytube`. Where it fixes lots of bugs and integrate new features but yet act exactly same as `pytube`.**
 
-```python
+{{< codeblock python >}}
 from pytubefix import YouTube
 from pytubefix.cli import on_progress
 
@@ -216,7 +216,7 @@ audio_stream = yt.streams.get_audio_only()
 
 # Download the audio file
 audio_stream.download(mp3=True,output_path="Audio output path")
-```
+{{< /codeblock >}}
 
 Let's break it down the code piece by piece.
 
@@ -268,18 +268,18 @@ Now I'll show you how you can upload an audio file and get the transcription usi
 
 #### Setting up the API
 Now let's see the code snippet one by one. First we need to pass the `gemini api key` to the `genai` client.
-```python
+{{< codeblock python >}}
 import google.generativeai as genai
 from google.ai.generativelanguage_v1beta.types import content
 
 # passing the api key
 genai.configure(api_key="GEMINI_API_KEY_COPIED_EARLIER")
-```
+{{< /codeblock >}}
 
 #### Setting Parameters
 After setting up the api key now we'll configure different **LLM parameters** (i.e: `temperature`, `top_p`)
 
-```python
+{{< codeblock python >}}
 
 
 generation_config = {
@@ -298,7 +298,7 @@ generation_config = {
 }
 
 
-```
+{{< /codeblock >}}
 Let's understand what's happening above:
 
 1. First we set the `temperature` parameter value to 0
@@ -315,24 +315,30 @@ I'm going to talk very breifly about **structure output.** Structure output from
 
 We need to prompt the model so that model knows exactly what to do. This part can be refer as **prompt engineering** where we're prompting or giving instruction to the LLM in a way so that it can give us the desired output. I've used the below **instruction prompt:**
 
-{{< image src="/images/YoutubeTranscriptionGemini/System_prompt.png" caption="**System Prompt**" >}}
+{{< codeblock markdown >}}
+You're an expert at transcribing bangla audio into bangla text. Now follow the below steps:
+1. You'll be given a bangla audio. Your task is to only transcribe that bangla audio in bangla text. 
+2. Do not add anything else. Only transcribe the audio into bangla.
+3. Sometimes in the audio there maybe english words. You don't have to translate the english words into bangla. Rather while transcribing keep the english words as it is.
+4. Finally return your final bangla transcription (with some english text if there is any).
+{{< /codeblock >}}
 
 
 #### Creating the Model Instance
 
 So far, we've **setup parameters**, created an **instruction prompt** and now we need to pass this alongside the model or llm name to create the model instance.
 
-```python
+{{< codeblock python >}}
 model = genai.GenerativeModel(
   model_name="gemini-2.0-flash-exp",
   generation_config=generation_config,
   system_instruction=SYSTEM_INST,
 )
-```
+{{< /codeblock >}}
 
 #### Uploading Audio File
 
-```python
+{{< codeblock python >}}
 def upload_to_gemini(path:str, mime_type:Optional[str]=None):
 
   file = genai.upload_file(path, mime_type=mime_type)
@@ -342,7 +348,7 @@ def upload_to_gemini(path:str, mime_type:Optional[str]=None):
 files = [
   upload_to_gemini("audio_file_path")
 ]
-```
+{{< /codeblock >}}
 
 In the above code we created a python function for uploading the audio file to the gemini. First we pass the **audio file path** in the `path` argument. And then it upload that audio file to gemini.
 
@@ -380,13 +386,22 @@ That's it we're able to generate **bangla transcribtion from an audio using gemi
  
 ## Future work
 
+**If you've read this far then I'd say dude you've genuine patience!! I'm not a professional writter or something, I write for fun and therefore my writing may sometime feel monotonous. Thank you!** Ok, lets talk about what future improvement you can do if you want to make this project better.
+
+1. **RAG Application:** You can create a complete RAG based chatbot using this transcription. Where the chatbot search for the answer from the transcription itself. I won't go into details of RAG. This in of itself required another blog. I may write a blog on this in future but no promises.
+
+2. **Automation Pipeline:** You've seen that the entire process can be automated. So my suggestion is to create an automation pipeline where an script is monitoring a particular youtube channel and if a new video comes in then it'll automatically trigger the pipeline and transcribe the new video.
+
+3. **Package Update:** I had built this project in february '25. I had started working before that. Therefore some packages are outdated. Suppose `genai` package from google. I had used `google-generativeai` but this package is deprecated and google is migrating to `google-genai`. So you can migrate this project to latest `google-genai` package.
+
 ## Gratitude
 
+This project is a tribute to my sensei **Rakibul Hasan**. I've started my journey in AI by reading his books in 2019. Now I'm working as a professional AI engineer (though jr). I owe him a lot. If you're starting your AI journey (specially deep learning journey) then here are some of his resources I'm listing below (all of them are free!)
 
-<!-- 
+1. [**Python Deep Learning from Scracth (Bangla book)**](https://rakibul-hassan.gitbook.io/deep-learning)
+2. [**Natuaral Language Processing from Scratch (Bangla book)**](https://aiwithr.github.io/nlpbook/)
 
-### More resources & Future work
+## My Next Blog
 
-
-## Gratitude -->
+I'm going to write about one of my recent project that I've completed. It is about creating **first bangla reasoning dataset.** Stay tuned!
  
