@@ -1,0 +1,366 @@
+/* Custom CSS for code blocks that mimic the LoveIt theme */
+
+.code-block {
+  position: relative;
+  margin: 0.5rem 0;
+  font-family: var(--code-font-family, Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace);
+  font-size: var(--code-font-size, 0.875rem);
+  line-height: 1.4em;
+  border-radius: 4px;
+  overflow: hidden;
+  background-color: #f8f8f8;
+  border: 1px solid #e0e0e0;
+  color: #272822;
+}
+
+.code-block.open .code-header {
+}
+
+[theme=dark] .code-block.open .code-header {
+}
+
+.code-block .code-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-sizing: border-box;
+  width: 100%;
+  font-weight: bold;
+  color: #666;
+  /* background-color: #1A1E22;*/
+  padding: 0.6rem 0.8rem;
+}
+
+[theme=dark] .code-block .code-header {
+  color: #ddd;
+}
+
+.code-block .code-header-left {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.code-block .lang-name-text {
+  margin-left: 0.5rem;
+}
+
+.code-block .arrow {
+  padding: 0 0.2rem;
+  transition: transform 0.2s ease;
+}
+
+.code-block.open .arrow {
+  transform: rotate(90deg);
+}
+
+.code-block .code-header-right {
+  display: flex;
+  align-items: center;
+}
+
+.code-block .copy {
+  padding: 0.4rem;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+}
+
+.code-block .copy:hover {
+  color: #2196f3;
+}
+
+[theme=dark] .code-block .copy:hover {
+  color: #42a5f5;
+}
+
+.code-block .highlight {
+  padding: 0;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease-in-out;
+}
+
+[theme=dark] .code-block .highlight {
+}
+
+.code-block.open .highlight {
+  max-height: 1000px;
+  padding: 0.8rem;
+}
+
+.code-block .highlight pre.chroma {
+  margin: 0;
+  padding: 0;
+  overflow-x: auto;
+  background: transparent !important;
+  color: inherit !important;
+  font-family: inherit;
+  font-size: inherit;
+  line-height: inherit;
+}
+
+.code-block .highlight pre.chroma code {
+  display: block;
+  white-space: pre;
+  overflow-wrap: normal;
+  padding: 0;
+}
+
+.code-block .highlight .lntable {
+  border-spacing: 0;
+  padding: 0;
+  margin: 0;
+  border: 0;
+  width: 100%;
+  overflow: auto;
+}
+
+.code-block .highlight .lntd {
+  padding: 0;
+  margin: 0;
+  border: 0;
+  vertical-align: top;
+}
+
+.code-block .highlight .lntd:first-child pre.chroma {
+  padding-right: 0.8rem;
+}
+
+.code-block .highlight .lntd:last-child pre.chroma {
+}
+
+.code-block .chroma {
+  background-color: transparent;
+}
+
+[theme=dark] .code-block .chroma {
+  background-color: transparent;
+}
+
+.code-block pre.chroma {
+  margin: 0;
+  padding: 0;
+  overflow-x: auto;
+}
+
+.code-block code {
+  font-family: var(--code-font-family, Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace);
+  font-size: var(--code-font-size, 0.875rem);
+  line-height: 1.4em;
+  display: block;
+  word-break: normal;
+  white-space: pre;
+  overflow-wrap: normal;
+  overflow-x: auto;
+  padding: 0;
+  background: transparent;
+}
+
+/* Main container for the custom code block */
+.code-block-custom {
+  position: relative;
+  margin: 1rem 0;
+  font-family: var(--code-font-family, Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace);
+  font-size: var(--code-font-size, 0.875rem);
+  line-height: 1.5em; /* Increased slightly for better readability */
+  border-radius: 6px; /* Slightly larger radius */
+  overflow: hidden;
+  background-color: #fdfdfd; /* Light theme background */
+  border: 1px solid #e0e0e0; /* Light theme border */
+  color: #333; /* Light theme base text color */
+}
+
+/* Dark theme adjustments for the main container */
+[theme=dark] .code-block-custom {
+  background-color: #262626; /* Dark theme background */
+  border: 1px solid #444; /* Dark theme border */
+  color: #f1f1f1; /* Dark theme base text color */
+}
+
+/* Header section of the code block */
+.code-block-custom .code-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.6rem 0.8rem;
+  /* background-color: #f0f0f0; */ /* Optional: slightly different header bg */
+  border-bottom: 1px solid #e0e0e0; /* Separator line for light theme */
+  font-weight: bold;
+}
+
+[theme=dark] .code-block-custom .code-header {
+  /* background-color: #303030; */ /* Optional: for dark theme */
+  border-bottom: 1px solid #444; /* Separator line for dark theme */
+  color: #ccc;
+}
+
+/* Left part of the header (arrow and title) - clickable for toggle */
+.code-block-custom .code-header-left-toggle-area {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  flex-grow: 1; /* Allow title to take available space */
+  overflow: hidden; /* Prevent long titles from breaking layout */
+}
+
+.code-block-custom .arrow {
+  padding-right: 0.6rem; /* Space between arrow and title */
+  transition: transform 0.2s ease-out;
+  color: #555;
+}
+
+[theme=dark] .code-block-custom .arrow {
+  color: #bbb;
+}
+
+/* .code-block-custom.open .arrow {
+  transform: rotate(90deg);
+} */ /* Removed as icon class is swapped directly by JS */
+
+.code-block-custom .lang-name-text {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis; /* Show ... for very long titles */
+  color: #444; /* Title color for light theme */
+}
+
+[theme=dark] .code-block-custom .lang-name-text {
+  color: #ddd; /* Title color for dark theme */
+}
+
+/* Right part of the header (copy button) */
+.code-block-custom .code-header-right-copy-area {
+  display: flex;
+  align-items: center;
+  padding-left: 0.5rem; /* Space before copy button if title is short */
+}
+
+.code-block-custom .copy {
+  padding: 0.3rem 0.4rem;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  border-radius: 4px;
+  color: #555;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+[theme=dark] .code-block-custom .copy {
+  color: #bbb;
+}
+
+.code-block-custom .copy:hover {
+  background-color: #e0e0e0;
+  color: #111;
+}
+
+[theme=dark] .code-block-custom .copy:hover {
+  background-color: #4a4a4a;
+  color: #fff;
+}
+
+/* Wrapper for the highlighted code content - for collapse animation */
+.code-block-custom .highlight-wrapper {
+  max-height: 0; /* Initially collapsed */
+  overflow: hidden;
+  transition: max-height 0.35s ease-in-out;
+  /* background-color will be inherited from .code-block-custom */
+  /* The actual Hugo 'highlight' div will be inside this */
+}
+
+/* When the block is open, max-height is set by JS to content's scrollHeight */
+.code-block-custom.open .highlight-wrapper {
+  /* max-height will be set dynamically by JS */
+}
+
+/* Styling for the div.highlight generated by Hugo */
+.code-block-custom .highlight-wrapper div.highlight {
+  padding: 0.8rem; /* Padding around the <pre> block */
+  background-color: transparent !important; /* Ensure it doesn't override wrapper */
+  color: inherit !important; /* Inherit from .code-block-custom */
+  margin: 0;
+}
+
+/* Styling for the <pre> tag generated by Chroma inside div.highlight */
+.code-block-custom .highlight-wrapper div.highlight pre.chroma {
+  margin: 0 !important; /* Reset any default margin */
+  padding: 0 !important; /* Reset any default padding */
+  overflow-x: auto !important; /* CRITICAL for horizontal scroll */
+  background: transparent !important; /* Ensure pre has no bg color */
+  color: inherit !important; /* Inherit text color */
+  font-family: inherit !important;
+  font-size: inherit !important;
+  line-height: inherit !important;
+  white-space: pre !important; /* Preserve whitespace and prevent wrapping */
+  border-radius: 0; /* No radius here, parent div.highlight or wrapper can handle it */
+}
+
+/* Styling for the <code> tag inside <pre.chroma> */
+.code-block-custom .highlight-wrapper div.highlight pre.chroma code {
+  display: block; /* Or inline-block if preferred, but block is common for code lines */
+  white-space: pre !important; /* Crucial for preventing wrap and respecting spaces */
+  overflow-wrap: normal !important; /* Prevent wrapping */
+  padding: 0 !important;
+  background: transparent !important;
+  color: inherit !important;
+  font-family: inherit !important;
+  font-size: inherit !important;
+  line-height: inherit !important;
+}
+
+/* Line numbers table styling (if linenos=table) */
+.code-block-custom .highlight-wrapper .lntable {
+  border-spacing: 0;
+  padding: 0;
+  margin: 0;
+  border: 0;
+  width: auto; /* Let it size to content, or 100% if needed */
+  overflow: visible; /* Table itself shouldn't scroll, pre.chroma within td will */
+}
+
+.code-block-custom .highlight-wrapper .lntd {
+  padding: 0;
+  margin: 0;
+  border: 0;
+  vertical-align: top;
+}
+
+/* Line numbers cell */
+.code-block-custom .highlight-wrapper .lntd:first-child pre.chroma {
+  padding-right: 0.8rem !important; /* Space between line numbers and code */
+  color: #75715e; /* Color for line numbers - adjust as per your Chroma style */
+  -webkit-user-select: none; /* Non-selectable line numbers */
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+[theme=dark] .code-block-custom .highlight-wrapper .lntd:first-child pre.chroma {
+    color: #8f8f8f; /* Line numbers color for dark theme */
+}
+
+/* Code cell */
+.code-block-custom .highlight-wrapper .lntd:last-child pre.chroma {
+  /* This contains the actual code, already styled by pre.chroma and code rules */
+}
+
+/* General code tag styling if used outside of Chroma highlight, ensure consistency */
+.code-block-custom code {
+  font-family: var(--code-font-family, Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace);
+  font-size: var(--code-font-size, 0.875rem);
+  line-height: 1.5em;
+  /* display: block; */ /* Only if it's meant to be a block-level element itself */
+  word-break: normal;
+  white-space: pre; /* Keep for inline code snippets to not wrap */
+  overflow-wrap: normal;
+  /* overflow-x: auto; */ /* Only if individual inline code needs to scroll */
+  padding: 0.1em 0.3em; /* Small padding for inline code */
+  background-color: rgba(0,0,0,0.04); /* Subtle background for inline code */
+  color: inherit;
+  border-radius: 3px;
+}
+
+[theme=dark] .code-block-custom code {
+  background-color: rgba(255,255,255,0.06);
+} 
