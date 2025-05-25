@@ -2,7 +2,7 @@
 title: "Transcribing Bangla Youtube Video With Gemini"
 subtitle: "An end to end guide to transcribe bangla youtube video using gemini flash 2"
 description: "An end to end guide to transcribe bangla youtube video using gemini flash 2"
-date: 2025-05-25T05:43:40+06:00
+date: 2025-05-25
 draft: false
 toc:
   auto: false
