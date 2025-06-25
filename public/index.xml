@@ -3,9 +3,19 @@
         <title>AI With Shoaib</title>
         <link>http://localhost:1313/</link>
         <description>Blogs About ML-DL-CV-NLP and anything related AI</description>
-        <generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Sun, 25 May 2025 00:00:00 &#43;0000</lastBuildDate>
+        <generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Sun, 22 Jun 2025 00:00:00 &#43;0000</lastBuildDate>
             <atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
         <item>
+    <title>How We Created First Bangla Reasoning Dataset</title>
+    <link>http://localhost:1313/posts/firstbanglareasoningdataset/</link>
+    <pubDate>Sun, 22 Jun 2025 00:00:00 &#43;0000</pubDate>
+    <author>Shoaib</author>
+    <guid>http://localhost:1313/posts/firstbanglareasoningdataset/</guid>
+    <description><![CDATA[<div class="featured-image">
+                <img src="/images/DeepSeekBangla/DeepSeek%20Bangla%20Reasoning%20Blog%20thumbnail.png" referrerpolicy="no-referrer">
+            </div><p>Time to deep dive to find out how to build a synthetic Bangla reasoning dataset using <strong>DeepSeek-r1</strong></p>]]></description>
+</item>
+<item>
     <title>Transcribing Bangla Youtube Video With Gemini</title>
     <link>http://localhost:1313/posts/transcribing-bangla-youtube-video-using-gemini/</link>
     <pubDate>Sun, 25 May 2025 00:00:00 &#43;0000</pubDate>

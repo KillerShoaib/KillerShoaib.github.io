@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="noodp" />
+        <title>How We Created First Bangla Reasoning Dataset - AI With Shoaib</title><meta name="Description" content="A complete walkthrough of our process of creating first open source bangla reasoning dataset on top of DeepSeek-r1"><meta property="og:url" content="http://localhost:1313/posts/firstbanglareasoningdataset/">
+  <meta property="og:site_name" content="AI With Shoaib">
+  <meta property="og:title" content="How We Created First Bangla Reasoning Dataset">
+  <meta property="og:description" content="A complete walkthrough of our process of creating first open source bangla reasoning dataset on top of DeepSeek-r1">
+  <meta property="og:locale" content="en">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2025-06-22T00:00:00+00:00">
+    <meta property="article:modified_time" content="2025-06-22T00:00:00+00:00">
+    <meta property="article:tag" content="LLM">
+    <meta property="article:tag" content="Dataset">
+    <meta property="og:image" content="http://localhost:1313/images/DeepSeekBangla/DeepSeek%20Bangla%20Reasoning%20Blog%20thumbnail.png">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="http://localhost:1313/images/DeepSeekBangla/DeepSeek%20Bangla%20Reasoning%20Blog%20thumbnail.png">
+  <meta name="twitter:title" content="How We Created First Bangla Reasoning Dataset">
+  <meta name="twitter:description" content="A complete walkthrough of our process of creating first open source bangla reasoning dataset on top of DeepSeek-r1">
+      <meta name="twitter:site" content="@KillerShoaib__">
+<meta name="application-name" content="AI With Shoaib ">
+<meta name="apple-mobile-web-app-title" content="AI With Shoaib "><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="http://localhost:1313/posts/firstbanglareasoningdataset/" /><link rel="prev" href="http://localhost:1313/posts/transcribing-bangla-youtube-video-using-gemini/" /><link rel="stylesheet" href="/css/style.min.css"><link rel="preload" href="/lib/fontawesome-free/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+        <noscript><link rel="stylesheet" href="/lib/fontawesome-free/all.min.css"></noscript><link rel="preload" href="/lib/animate/animate.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+        <noscript><link rel="stylesheet" href="/lib/animate/animate.min.css"></noscript><script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "headline": "How We Created First Bangla Reasoning Dataset",
+        "inLanguage": "en",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "http:\/\/localhost:1313\/posts\/firstbanglareasoningdataset\/"
+        },"genre": "posts","keywords": "LLM, Dataset","wordcount":  527 ,
+        "url": "http:\/\/localhost:1313\/posts\/firstbanglareasoningdataset\/","datePublished": "2025-06-22T00:00:00+00:00","dateModified": "2025-06-22T00:00:00+00:00","publisher": {
+            "@type": "Organization",
+            "name": ""},"author": {
+                "@type": "Person",
+                "name": "Shoaib"
+            },"description": "A complete walkthrough of our process of creating first open source bangla reasoning dataset on top of DeepSeek-r1"
+    }
+    </script></head>
+    <body data-header-desktop="fixed" data-header-mobile="auto"><script type="text/javascript">(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('dark' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'dark' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
+
+        <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
+    <div class="header-wrapper">
+        <div class="header-title">
+            <a href="/" title="AI With Shoaib"><span class="header-title-pre"><i class="fa-solid fa-robot"></i></span> AI With Shoaib </a>
+        </div>
+        <div class="menu">
+            <div class="menu-inner"><a class="menu-item" href="/posts/"> Posts </a><a class="menu-item" href="/categories/"> Categories </a><a class="menu-item" href="/tags/"> Tags </a><a class="menu-item" href="/categories/deep-learning/"> Deep Learning </a><a class="menu-item" href="/about/"> About </a><span class="menu-item delimiter"></span><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                    <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
+                </a><a href="javascript:void(0);" class="menu-item language" title="Select Language">
+                    <i class="fa fa-globe" aria-hidden="true"></i>                      
+                    <select class="language-select" id="language-select-desktop" onchange="location = this.value;"><option value="/posts/firstbanglareasoningdataset/" selected>English</option></select>
+                </a></div>
+        </div>
+    </div>
+</header><header class="mobile" id="header-mobile">
+    <div class="header-container">
+        <div class="header-wrapper">
+            <div class="header-title">
+                <a href="/" title="AI With Shoaib"><span class="header-title-pre"><i class="fa-solid fa-robot"></i></span> AI With Shoaib </a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle-mobile">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="menu" id="menu-mobile"><a class="menu-item" href="/posts/" title="">Posts</a><a class="menu-item" href="/categories/" title="">Categories</a><a class="menu-item" href="/tags/" title="">Tags</a><a class="menu-item" href="/categories/deep-learning/" title="">Deep Learning</a><a class="menu-item" href="/about/" title="">About</a><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
+            </a><a href="javascript:void(0);" class="menu-item" title="Select Language">
+                    <i class="fa fa-globe fa-fw" aria-hidden="true"></i>
+                    <select class="language-select" onchange="location = this.value;"><option value="/posts/firstbanglareasoningdataset/" selected>English</option></select>
+                </a></div>
+    </div>
+</header><main class="main">
+                <div class="container"><div class="toc" id="toc-auto">
+            <h2 class="toc-title">Contents</h2>
+            <div class="toc-content" id="toc-content-auto"></div>
+        </div><article class="page single"><h1 class="single-title animate__animated animate__flipInX">How We Created First Bangla Reasoning Dataset</h1><h2 class="single-subtitle">Bangla reasoning dataset synthetically generated from deepseek-r1</h2><div class="post-meta">
+            <div class="post-meta-line"><span class="post-author"><a href="/" title="Author" rel="author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>Shoaib</a></span>&nbsp;<span class="post-category">included in <a href="/categories/standalone-project/"><i class="far fa-folder fa-fw" aria-hidden="true"></i>Standalone Project</a></span></div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="2025-06-22">2025-06-22</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden="true"></i>&nbsp;527 words&nbsp;
+                <i class="far fa-clock fa-fw" aria-hidden="true"></i>&nbsp;3 minutes&nbsp;</div>
+        </div><div class="featured-image"><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="/images/DeepSeekBangla/DeepSeek%20Bangla%20Reasoning%20Blog%20thumbnail.png"
+        data-srcset="/images/DeepSeekBangla/DeepSeek%20Bangla%20Reasoning%20Blog%20thumbnail.png, /images/DeepSeekBangla/DeepSeek%20Bangla%20Reasoning%20Blog%20thumbnail.png 1.5x, /images/DeepSeekBangla/DeepSeek%20Bangla%20Reasoning%20Blog%20thumbnail.png 2x"
+        data-sizes="auto"
+        alt="/images/DeepSeekBangla/DeepSeek Bangla Reasoning Blog thumbnail.png"
+        title="A complete walkthrough of our process of creating first open source bangla reasoning dataset on top of DeepSeek-r1" /></div><div class="details toc" id="toc-static"  data-kept="">
+                <div class="details-summary toc-title">
+                    <span>Contents</span>
+                    <span><i class="details-icon fas fa-angle-right" aria-hidden="true"></i></span>
+                </div>
+                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#origin-of-the-idea">Origin of the Idea</a></li>
+    <li><a href="#dataset--codebase">Dataset &amp; Codebase</a></li>
+    <li><a href="#where-to-get-the-money">Where to get the money?</a></li>
+    <li><a href="#how-did-we-do-it">How did we do it?</a></li>
+  </ul>
+</nav></div>
+            </div><div class="content" id="content"><p>Time to deep dive to find out how to build a synthetic Bangla reasoning dataset using <strong>DeepSeek-r1</strong></p>
+<h2 id="origin-of-the-idea">Origin of the Idea</h2>
+<p>It was in january of this year and suddenly the world was taking over by the <strong>DeepSeek-r1</strong>. It was the first open source reasoning model and
+boy oh boy it was good. I was playing with it and instantly fall in love with this model (not that type of love). I was able to solve lots of
+the complex problem. In that time only <strong>o1</strong> from openai can come close to its performance. But for me the most interesting thing was the
+reasoning traces. I was able to see all the reasoning that the model was doing before the final answer.</p>
+<p>That&rsquo;s when I tried to think what if the model can reason in Bangla? I tried to prompt the model specifically to think in bangla.
+But no luck! The model either think in English or Chinese. Then after doing bit of research I got to know that the model was trained in such
+a way that it will think in the dominant language that it was trained on. That&rsquo;s why I failed to prompt it. I&rsquo;m not going to details of why
+is the case, if you want to know more then you can search <strong>GRPO</strong> and how it works.</p>
+<p>And here you go that&rsquo;s when I think how &lsquo;bout I create a dataset that can be used for <strong>supervised finetuning to mimic the reasoning capabilities</strong>
+but the reasoning is happening in the Bangla. And from this idea we started working on creating the first ever Bangla reasoning dataset.</p>
+<h2 id="dataset--codebase">Dataset &amp; Codebase</h2>
+<p>For the impatince one who doesn&rsquo;t want to read the blog and just want the dataset or see the code (though I&rsquo;m warning the codebase is a hell due to my skills issue) I&rsquo;m providing
+them in the begining of the blog.</p>
+<ol>
+<li><strong>Bangla Reasoning Dataset</strong> - <a href="https://huggingface.co/datasets/KillerShoaib/DeepSeek-r1-Distill-Bangla-MMLU-Reasoning-Data" target="_blank" rel="noopener noreffer "><strong>DeepSeek-r1-Distill-Bangla-MMLU-Reasoning-Data</strong></a></li>
+<li><strong>Github Repo</strong> - <a href="https://github.com/KillerShoaib/DeepSeek-r1-Bangla-Reasoning-Data" target="_blank" rel="noopener noreffer "><strong>DeepSeek-r1-Bangla-Reasoning-Data</strong></a></li>
+</ol>
+<h2 id="where-to-get-the-money">Where to get the money?</h2>
+<figure><a class="lightgallery" href="/images/DeepSeekBangla/money-begging.jpg" title="/images/DeepSeekBangla/money-begging.jpg" data-thumbnail="/images/DeepSeekBangla/money-begging.jpg" data-sub-html="<h2>Me raising money for the project</h2>">
+        <img
+            class="lazyload"
+            src="/svg/loading.min.svg"
+            data-src="/images/DeepSeekBangla/money-begging.jpg"
+            data-srcset="/images/DeepSeekBangla/money-begging.jpg, /images/DeepSeekBangla/money-begging.jpg 1.5x, /images/DeepSeekBangla/money-begging.jpg 2x"
+            data-sizes="auto"
+            alt="/images/DeepSeekBangla/money-begging.jpg" />
+    </a><figcaption class="image-caption"><strong>Me raising money for the project</strong></figcaption>
+    </figure>
+<p>Okay, the above picture isn&rsquo;t true but still I need to figure out a way how to manage the cost. You see I wanted to use the reasoning traces from <strong>DeepSeek-r1</strong>. Even though their usage from the website is free but I need to use the api which is not free. So my initial budget was 5k BDT. To the
+rich people that&rsquo;s no money but man I&rsquo;m broke. I started working for couple of months (back then) so don&rsquo;t make much to begin with. So I need a partner
+where we can split the bill. That&rsquo;s where my man <strong>Numaer</strong> comes into the picture. He was the unsung hero of this project. Not only he split the bill but also setup all the logistics such as billing and etc. And after that he also helped me with the project. He is also a NLP/python guy so our interest and expertise are almost same. In the end we were able to finish the project and the final cost was around 7K BDT. This couldn&rsquo;t possible without the help of <strong>Numaer</strong>. Thanks my man, I owe you.</p>
+<h2 id="how-did-we-do-it">How did we do it?</h2></div><div class="post-footer" id="post-footer">
+    <div class="post-info">
+        <div class="post-info-line">
+            <div class="post-info-mod">
+                <span>Updated on 2025-06-22</span>
+            </div></div>
+        <div class="post-info-line">
+            <div class="post-info-md"></div>
+            <div class="post-info-share">
+                <span><a href="javascript:void(0);" title="Share on Twitter" data-sharer="twitter" data-url="http://localhost:1313/posts/firstbanglareasoningdataset/" data-title="How We Created First Bangla Reasoning Dataset" data-via="KillerShoaib__" data-hashtags="LLM,Dataset"><i class="fab fa-twitter fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="Share on Facebook" data-sharer="facebook" data-url="http://localhost:1313/posts/firstbanglareasoningdataset/" data-hashtag="LLM"><i class="fab fa-facebook-square fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="Share on Hacker News" data-sharer="hackernews" data-url="http://localhost:1313/posts/firstbanglareasoningdataset/" data-title="How We Created First Bangla Reasoning Dataset"><i class="fab fa-hacker-news fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="Share on Line" data-sharer="line" data-url="http://localhost:1313/posts/firstbanglareasoningdataset/" data-title="How We Created First Bangla Reasoning Dataset"><i data-svg-src="/lib/simple-icons/icons/line.min.svg" aria-hidden="true"></i></a><a href="javascript:void(0);" title="Share on 微博" data-sharer="weibo" data-url="http://localhost:1313/posts/firstbanglareasoningdataset/" data-title="How We Created First Bangla Reasoning Dataset" data-image="/images/DeepSeekBangla/DeepSeek Bangla Reasoning Blog thumbnail.png"><i class="fab fa-weibo fa-fw" aria-hidden="true"></i></a></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="post-info-more">
+        <section class="post-tags"><i class="fas fa-tags fa-fw" aria-hidden="true"></i>&nbsp;<a href="/tags/llm/">LLM</a>,&nbsp;<a href="/tags/dataset/">Dataset</a></section>
+        <section>
+            <span><a href="javascript:void(0);" onclick="window.history.back();">Back</a></span>&nbsp;|&nbsp;<span><a href="/">Home</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav"><a href="/posts/transcribing-bangla-youtube-video-using-gemini/" class="prev" rel="prev" title="Transcribing Bangla Youtube Video With Gemini"><i class="fas fa-angle-left fa-fw" aria-hidden="true"></i>Transcribing Bangla Youtube Video With Gemini</a></div>
+</div>
+</article></div>
+            </main><footer class="footer">
+        <div class="footer-container"><div class="footer-line">Powered by <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.147.9">Hugo</a> | Theme - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.2.11"><i class="far fa-kiss-wink-heart fa-fw" aria-hidden="true"></i> LoveIt</a>
+                </div><div class="footer-line" itemscope itemtype="http://schema.org/CreativeWork"><i class="far fa-copyright fa-fw" aria-hidden="true"></i><span itemprop="copyrightYear">2022 - 2025</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="/" target="_blank"></a></span></div>
+        </div>
+    </footer></div>
+
+        <div id="fixed-buttons"><a href="#" id="back-to-top" class="fixed-button" title="Back to Top">
+                <i class="fas fa-arrow-up fa-fw" aria-hidden="true"></i>
+            </a><a href="#" id="view-comments" class="fixed-button" title="View Comments">
+                <i class="fas fa-comment fa-fw" aria-hidden="true"></i>
+            </a>
+        </div><link rel="stylesheet" href="/lib/lightgallery/css/lightgallery-bundle.min.css"><link rel="stylesheet" href="/lib/katex/katex.min.css"><script type="text/javascript" src="/lib/lazysizes/lazysizes.min.js"></script><script type="text/javascript" src="/lib/lightgallery/lightgallery.min.js"></script><script type="text/javascript" src="/lib/lightgallery/plugins/thumbnail/lg-thumbnail.min.js"></script><script type="text/javascript" src="/lib/lightgallery/plugins/zoom/lg-zoom.min.js"></script><script type="text/javascript" src="/lib/clipboard/clipboard.min.js"></script><script type="text/javascript" src="/lib/sharer/sharer.min.js"></script><script type="text/javascript" src="/lib/katex/katex.min.js"></script><script type="text/javascript" src="/lib/katex/contrib/auto-render.min.js"></script><script type="text/javascript" src="/lib/katex/contrib/copy-tex.min.js"></script><script type="text/javascript" src="/lib/katex/contrib/mhchem.min.js"></script><script type="text/javascript">window.config={"code":{"copyTitle":"Copy to clipboard","maxShownLines":50},"comment":{},"lightgallery":true,"math":{"delimiters":[{"display":true,"left":"$$","right":"$$"},{"display":true,"left":"\\[","right":"\\]"},{"display":true,"left":"\\begin{equation}","right":"\\end{equation}"},{"display":true,"left":"\\begin{equation*}","right":"\\end{equation*}"},{"display":true,"left":"\\begin{align}","right":"\\end{align}"},{"display":true,"left":"\\begin{align*}","right":"\\end{align*}"},{"display":true,"left":"\\begin{alignat}","right":"\\end{alignat}"},{"display":true,"left":"\\begin{alignat*}","right":"\\end{alignat*}"},{"display":true,"left":"\\begin{gather}","right":"\\end{gather}"},{"display":true,"left":"\\begin{CD}","right":"\\end{CD}"},{"display":false,"left":"$","right":"$"},{"display":false,"left":"\\(","right":"\\)"}],"strict":false}};</script><script type="text/javascript" src="/js/theme.min.js"></script></body>
+</html>
