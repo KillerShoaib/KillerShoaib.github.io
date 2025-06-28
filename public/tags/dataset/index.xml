@@ -6,13 +6,13 @@
     <description>Recent content in Dataset on AI With Shoaib</description>
     <generator>Hugo</generator>
     <language>en</language>
-    <lastBuildDate>Sun, 22 Jun 2025 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 27 Jun 2025 00:00:00 +0000</lastBuildDate>
     <atom:link href="http://localhost:1313/tags/dataset/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>How We Created First Bangla Reasoning Dataset</title>
-      <link>http://localhost:1313/posts/firstbanglareasoningdataset/</link>
-      <pubDate>Sun, 22 Jun 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/posts/firstbanglareasoningdataset/</guid>
+      <link>http://localhost:1313/posts/deepseek-bangla-dataset/</link>
+      <pubDate>Fri, 27 Jun 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/deepseek-bangla-dataset/</guid>
       <description>&lt;p&gt;Time to deep dive to find out how to build a synthetic Bangla reasoning dataset using &lt;strong&gt;DeepSeek-r1&lt;/strong&gt;&lt;/p&gt;</description>
     </item>
   </channel>
