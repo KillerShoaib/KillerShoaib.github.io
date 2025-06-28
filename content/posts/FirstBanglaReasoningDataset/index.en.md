@@ -13,7 +13,7 @@ code:
 
 math: true
 fraction: true
-images: ["/images/DeepSeekBangla/DeepSeek Bangla Reasoning Blog thumbnail.png"]
+images: ["/images/DeepSeekBangla/DeepSeek Social Preview.png"]
 featuredImage: "/images/DeepSeekBangla/DeepSeek Bangla Reasoning Blog thumbnail.png"
 featuredImagePreview: "/images/DeepSeekBangla/DeepSeek Bangla Reasoning Blog thumbnail.png"
 author: "Shoaib"

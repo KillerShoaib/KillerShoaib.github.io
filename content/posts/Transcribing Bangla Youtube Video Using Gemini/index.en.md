@@ -13,8 +13,8 @@ code:
 
 math: true
 fraction: true
-images: ["/images/YoutubeTranscriptionGemini/Bangla Youtube Video Transcription Banner.png"]
-featuredImage: "/images/YoutubeTranscriptionGemini/Bangla Youtube Video Transcription Banner.png"
+images: ["/images/YoutubeTranscriptionGemini/Transcribing Bangla Youtube Video Blog Preview.png"]
+featuredImage: "/images/YoutubeTranscriptionGemini/Transcribing Bangla Youtube Video Blog Preview.png"
 featuredImagePreview: "images/YoutubeTranscriptionGemini/Bangla Youtube Video Transcription Pipeline.png"
 author: "Shoaib Hossain"
 
