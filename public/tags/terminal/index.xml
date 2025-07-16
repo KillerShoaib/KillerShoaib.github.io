@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Terminal on AI With Shoaib</title>
+    <link>http://localhost:1313/tags/terminal/</link>
+    <description>Recent content in Terminal on AI With Shoaib</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <lastBuildDate>Fri, 11 Jul 2025 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/terminal/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>tAI - Get Terminal Commands Using Natural Language</title>
+      <link>http://localhost:1313/posts/tai/</link>
+      <pubDate>Fri, 11 Jul 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/tai/</guid>
+      <description>&lt;p&gt;tAI is a simple command line utility tool built on top of Python. Which can generate any commands based on natural language.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

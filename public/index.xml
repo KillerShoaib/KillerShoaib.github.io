@@ -3,9 +3,19 @@
         <title>AI With Shoaib</title>
         <link>http://localhost:1313/</link>
         <description>Blogs About ML-DL-CV-NLP and anything related AI</description>
-        <generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Fri, 27 Jun 2025 00:00:00 &#43;0000</lastBuildDate>
+        <generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Fri, 11 Jul 2025 00:00:00 &#43;0000</lastBuildDate>
             <atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
         <item>
+    <title>tAI - Get Terminal Commands Using Natural Language</title>
+    <link>http://localhost:1313/posts/tai/</link>
+    <pubDate>Fri, 11 Jul 2025 00:00:00 &#43;0000</pubDate>
+    <author>Shoaib</author>
+    <guid>http://localhost:1313/posts/tai/</guid>
+    <description><![CDATA[<div class="featured-image">
+                <img src="/images/tAI/tAI%20Blog%20Thumbnail.png" referrerpolicy="no-referrer">
+            </div><p>tAI is a simple command line utility tool built on top of Python. Which can generate any commands based on natural language.</p>]]></description>
+</item>
+<item>
     <title>How We Created First Bangla Reasoning Dataset</title>
     <link>http://localhost:1313/posts/deepseek-bangla-dataset/</link>
     <pubDate>Fri, 27 Jun 2025 00:00:00 &#43;0000</pubDate>

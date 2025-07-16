@@ -2,7 +2,8 @@
     xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
     xmlns:xhtml="http://www.w3.org/1999/xhtml"
     ><url>
-            <loc>http://localhost:1313/</loc><lastmod>2025-06-27T00:00:00&#43;00:00</lastmod><xhtml:link
+            <loc>http://localhost:1313/tags/ai/</loc><lastmod>2025-07-11T00:00:00&#43;00:00</lastmod></url><url>
+            <loc>http://localhost:1313/</loc><lastmod>2025-07-11T00:00:00&#43;00:00</lastmod><xhtml:link
                         rel="alternate"
                         hreflang="bn"
                         href="http://localhost:1313/bn/"
@@ -11,7 +12,7 @@
                     hreflang="en"
                     href="http://localhost:1313/"
                     /></url><url>
-            <loc>http://localhost:1313/categories/</loc><lastmod>2025-06-27T00:00:00&#43;00:00</lastmod><xhtml:link
+            <loc>http://localhost:1313/categories/</loc><lastmod>2025-07-11T00:00:00&#43;00:00</lastmod><xhtml:link
                         rel="alternate"
                         hreflang="bn"
                         href="http://localhost:1313/bn/categories/"
@@ -20,10 +21,7 @@
                     hreflang="en"
                     href="http://localhost:1313/categories/"
                     /></url><url>
-            <loc>http://localhost:1313/tags/dataset/</loc><lastmod>2025-06-27T00:00:00&#43;00:00</lastmod></url><url>
-            <loc>http://localhost:1313/posts/deepseek-bangla-dataset/</loc><lastmod>2025-06-27T00:00:00&#43;00:00</lastmod></url><url>
-            <loc>http://localhost:1313/tags/llm/</loc><lastmod>2025-06-27T00:00:00&#43;00:00</lastmod></url><url>
-            <loc>http://localhost:1313/posts/</loc><lastmod>2025-06-27T00:00:00&#43;00:00</lastmod><xhtml:link
+            <loc>http://localhost:1313/posts/</loc><lastmod>2025-07-11T00:00:00&#43;00:00</lastmod><xhtml:link
                         rel="alternate"
                         hreflang="bn"
                         href="http://localhost:1313/bn/posts/"
@@ -32,8 +30,8 @@
                     hreflang="en"
                     href="http://localhost:1313/posts/"
                     /></url><url>
-            <loc>http://localhost:1313/categories/standalone-project/</loc><lastmod>2025-06-27T00:00:00&#43;00:00</lastmod></url><url>
-            <loc>http://localhost:1313/tags/</loc><lastmod>2025-06-27T00:00:00&#43;00:00</lastmod><xhtml:link
+            <loc>http://localhost:1313/categories/standalone-project/</loc><lastmod>2025-07-11T00:00:00&#43;00:00</lastmod></url><url>
+            <loc>http://localhost:1313/tags/</loc><lastmod>2025-07-11T00:00:00&#43;00:00</lastmod><xhtml:link
                         rel="alternate"
                         hreflang="bn"
                         href="http://localhost:1313/bn/tags/"
@@ -42,6 +40,11 @@
                     hreflang="en"
                     href="http://localhost:1313/tags/"
                     /></url><url>
+            <loc>http://localhost:1313/posts/tai/</loc><lastmod>2025-07-11T00:00:00&#43;00:00</lastmod></url><url>
+            <loc>http://localhost:1313/tags/terminal/</loc><lastmod>2025-07-11T00:00:00&#43;00:00</lastmod></url><url>
+            <loc>http://localhost:1313/tags/dataset/</loc><lastmod>2025-06-27T00:00:00&#43;00:00</lastmod></url><url>
+            <loc>http://localhost:1313/posts/deepseek-bangla-dataset/</loc><lastmod>2025-06-27T00:00:00&#43;00:00</lastmod></url><url>
+            <loc>http://localhost:1313/tags/llm/</loc><lastmod>2025-06-27T00:00:00&#43;00:00</lastmod></url><url>
             <loc>http://localhost:1313/tags/stt/</loc><lastmod>2025-05-25T00:00:00&#43;00:00</lastmod></url><url>
             <loc>http://localhost:1313/posts/transcribing-bangla-youtube-video-using-gemini/</loc><lastmod>2025-05-25T00:00:00&#43;00:00</lastmod></url><url>
             <loc>http://localhost:1313/posts/deeplearning/chapter2/</loc><lastmod>2023-02-12T00:18:40&#43;06:00</lastmod><xhtml:link
