@@ -36,14 +36,14 @@ tAI is a simple command line utility tool built on top of Python. Which can gene
 **Example**: User says "list all the files in the current directory" and tAI will generate command `ls -al` and paste it on the terminal. Then user can execute the command by pressing `Enter` key (there is also a self execution mode). 
 \
 \
-**That's it! It doesn't do much or less**. It is a simple tool built on top of python to generate commands on natural language.
+**That's it! It doesn't do much or less**.
 \
 \
 {{< image src="/images/tAI/tAI demo.gif" caption="**tAI in action**" >}}
 
 ## Why I Built This?
 
-I have really bad memory and I always forgot what command I need to pass. One day I was working with `gcp sdk` and I had to change the current gcp project to another project. And, I completely forgot the command to do so. Then I've to leave my terminal & go to chatgpt website, then ask it, got a response, paste it in the terminal and press enter. This is a huge bottleneck. Instead of leaving the terminal, I should ask it from my terminal and should get the result. That's what sparked my first interest in building `tAI`.
+I have really bad memory and I always forgot what command I need to pass. One day I was working with `gcp sdk` and I had to change the current gcp project to another project. And, I completely forgot the command to do so. Then I had to leave my terminal & went to chatgpt website, then asked it, got a response, pasted it in the terminal and pressed enter. This is a huge bottleneck. Instead of leaving the terminal, I should be asking it from my terminal and should get the result. That's what sparked my first interest in building `tAI`.
 
 That's why I built `tAI` which I can use without leaving the terminal and open source it so that others can also use it.
 \
@@ -108,7 +108,7 @@ pip install tai-textual
 That's it! Now you can use `tAI` by running `tai` command in the terminal. I know it's a bit more complicated than the simple pip install but it is much more robust. And if you're using `Ubuntu 22` or above you can't direcly install via `pip`. 
 \
 \
-**There is a neat trick which you can use to create a bash function and call the function directly from the terminal**. That function will automatically handle the virtual environment activation. After you've installed the `tAI` package in the virtual env then just copy paste this bash function inside your `.bashrc` file (or `.zshrc` if you're using `zsh`). You'll find this file in the `home` directory (remember this is a hidden file).
+**There is a neat trick which you can use so that you don't have to activate the virtual environment everytime you want to use `tAI`. You can create a bash function and call the function directly from the terminal**. That function will automatically handle the virtual environment activation. After you've installed the `tAI` package in the virtual env then just copy paste this bash function inside your `.bashrc` file (or `.zshrc` if you're using `zsh`). You'll find this file in the `home` directory (remember this is a hidden file).
 \
 \
 {{< codeblock bash >}}
@@ -133,10 +133,13 @@ tai() {
 }
 {{< /codeblock >}}
 
+\
+After pasting this function inside your `.bashrc` file, you need to change the `VENV_ACTIVATE` path to the path where you've created the virtual environment. Then, restart the terminal or run `source ~/.bashrc` to apply the changes. Now you're all set! Just type `tai` in your terminal to use `tAI`.
+
 
 ### Installing via pipx
 
-This one is for `Linux` or `Ubuntu` user. It is not recommended to install globally via `pip` in a `debian` based distribution. This can corrupt the entire system. This where `pipx` comes into the picture. It creates an isolated environment for each package and installed them there. Instead of creating a virtual environment manually, installing via `pipx` can be handy. 
+This one is for `Linux` or `Ubuntu` user. It is not recommended to install globally via `pip` in a `debian` based distribution. This can corrupt the entire system. This is where `pipx` comes into the picture. It creates an isolated environment for each package and installed them there. Instead of creating a virtual environment manually, installing via `pipx` can be handy. 
 
 **1. Install `pipx`**:
 ```
@@ -158,15 +161,15 @@ Though the principle of `tAI` was to be as minimal as possible. But I've to bala
 
 ### 21+ LLMs
 
-Currently `tAI` supports 21+ LLMs from different provider such as **Google**, **OpenAI**, **Anthropic** and **Open router** for free models. User have the flexibility to choose any of the model they like. They can change the model from the terminal utilizing terminal user interface (thanks to **textual**). I'll be adding more models in future.
+Currently `tAI` supports 21+ LLMs from different provider such as **Google**, **OpenAI**, **Anthropic** and **Open router** for free models. User have the flexibility to choose any of the models they like. They can change the model from the terminal utilizing terminal user interface (thanks to **textual**). I'll be adding more models in the future.
 
-### Free Usage without Setting API keys
+### Free Usage without Seting API keys
 
-You'll have access to Free LLMs from the get go. You'll just install the package and start using it without setting any api keys. Currently `tAI` offers total **7 open source models completely free to use.**
+You'll have access to Free LLMs from the get go. You'll install the package and start using it without seting any api keys. Currently `tAI` offers total **7 open source models completely free to use.**
 
 ### Default LLM 
 
-Set a default LLM so that everytime `tAI` starts it is set to the default. You can set the default LLM either from the `settings` tab or using command.
+Set a default LLM so that everytime `tAI` starts it is set to the default model. You can set the default LLM either from the `settings` tab or using command.
 \
 **Command to set default model:**
 {{< codeblock bash >}}
@@ -179,27 +182,24 @@ tai --default-model openai/gpt-4o
 
 ### Inline & Fullscreen Mode
 
-`tAI` have 2 screen modes. One is **inline** mode similar to cursor another one is **fullscreen** mode. This gives the user complete flexibility to use any of the mode as per his liking. Changing between this to mode is also very simple. Either can use direct command to change between **fullscreen** and **inline** or use the `settings` tab to change the mode. You can find this under the `others` section from the `settings`.
+`tAI` have 2 screen modes. One is **inline** mode similar to cursor, another one is **fullscreen** mode. This gives the user complete flexibility to use any of the mode as per his liking. Changing between this two mode is also very simple. Either can use direct command (`tai --fullscreen true`) to change between **fullscreen** and **inline** or use the `settings` tab to change the mode. You can find this under the `others` section from the `settings`.
 
-\
 \
 {{< image src="https://cdn-uploads.huggingface.co/production/uploads/65ca6f0098a46a56261ac3ac/CxFXZ84qlzgUma9G6yErO.png" caption="**Inline mode of `tAI`**" >}}
 \
-\
 {{< image src="https://cdn-uploads.huggingface.co/production/uploads/65ca6f0098a46a56261ac3ac/FoJOmIhm0BBaw0ro46c9q.png" caption="**Fullscreen mode of `tAI`**" >}}
-\
 \
 {{< image src="https://cdn-uploads.huggingface.co/production/uploads/65ca6f0098a46a56261ac3ac/ecXKLHI00X9VhpNoipiHx.png" caption="**Changing between fullscreen & inline**" >}}
 
-> It is advised to use the **fullscreen** mode while using `tAI` inside from `tmux`.
+> It is advised to use the **fullscreen** mode while using `tAI` inside `tmux`.
 
 ### Auto Paste & Execution Mode
 
-There is 2 mode. One is **Auto paste** and another one is **Auto execute**. User can **toggle between this mode using `ctrl+e` keybind**. In the **Auto paste** mode `tAI` generates a command and paste it to the terminal. Then user can see the command and decide if he wants to run it or not. Meanwhile **Auto execute** model runs the command itself. My advice is to use the **Auto execute** mode with caution. Cause LLM can generate a command which can delete system files. You don't want blindly trust LLMs.
+There is 2 mode. One is **Auto paste** and another one is **Auto execute**. User can **toggle between this mode using `ctrl+e` keybind**. In the **Auto paste** mode `tAI` generates a command and paste it to the terminal. Then user can see the command and decide if he wants to run it or not. Meanwhile **Auto execute** model runs the command itself. My advice is to use the **Auto execute** mode with caution. Cause LLM can generate a command which can delete system files. You don't want to blindly trust LLMs.
 
 ### Custom Prompt Config
 
-To make it more customizable and more personalized I've give the user the choice to **customize the system prompt.** User can customize the **system prompt** from the `settings` tab. You can guide the LLM to your personal need. This is completely upto the user. Also you can see the default **system prompt** from this `prompt config` section.
+To make it more customizable and more personalized, I've given the user the choice to **customize the system prompt.** User can customize the **system prompt** from the `prompt config` section inside `settings`. You can guide the LLM to your personal need. This is completely upto the user. Also you can see the default **system prompt** from this `prompt config` section.
 
 \
 \
@@ -208,7 +208,7 @@ To make it more customizable and more personalized I've give the user the choice
 
 ### Seting API keys
 
-You have free access to LLM. But it is still a better choice to bring your own API key (paid or free) for better experience. Free LLM will have rate limitation and slow response time. For the best experience bring your own api key. Currently we have 4 providers:
+You have free access to LLM. But it is still a better choice to bring your own API key (paid or free) for better experience. Free LLM will have rate limitation and slow response time. For the best experience bring your own api key. Currently `tAI` have integration with 4 providers:
 1. `Google` (Gemini models)
 2. `OpenAI` (GPT models)
 3. `Anthropic` (Claude models)
@@ -228,7 +228,7 @@ or using **command line argument** to setup api key.
 | `--anthropic`       | string  | Set the Anthropic API key                                                                           | `tai --anthropic YOUR_ANTHROPIC_API_KEY`          |
 | `--openrouter`      | string  | Set the OpenRouter API key                                                                          | `tai --openrouter YOUR_OPENROUTER_API_KEY`        |
 
-> There is another option in the `others` tab of `settings`. Where you can set the all the model to use `Open router` api key. Then you only just provide your own `Open router` api key and use every model. But then the default `open router` api key (which was being used for free models) will be disabled.
+> There is another option in the `others` tab of `settings`. Where you can set all the models to use `Open router` api key. Then you only just provide your own `Open router` api key and use every model (OpenAI, Google, Anthropic, etc). But then the default `open router` api key (which was being used for free models) will be disabled.
 
 
 
@@ -238,7 +238,7 @@ This is an open source project so I can't make any promises but I'll try my best
 
 1. **Add more models** (will be adding new `kimi k2` model)
 2. **A docker image** (pull the image and start using without any hassle)
-3. **Add context** (currently there is no context is added to LLM call, if it makes mistake it won't know, will be adding context so that it knows about previous query and response)
+3. **Add context** (currently there is no context added to LLM call, if it makes mistake it won't know, will be adding context so that it knows about previous query and response)
 
 But, I welcome any contribution to this open source project. If you encounter any bug then create an issue, or ask for a new feature or create a PR with new feature. Below I'm adding the project repo.
 
@@ -247,21 +247,21 @@ But, I welcome any contribution to this open source project. If you encounter an
 
 ## Special Thanks
 
-This project is build on top of 2 great library.
+This project is build on top of 2 great libraries.
 
 1. [**Textual**](https://textual.textualize.io/): This framework was the **MVP**. Everything you see in the terminal is build on top of this library.
 2. [**LiteLLM**](https://www.litellm.ai/): This is an API wrapper for all the LLMs. It made my life so much easier.
 
 ## Connect With Me
 
-I'm building stuff with AI/LLM. If you want to see my work or want to do a collab with me then you can reach out to me in my socials.
+I'm building stuff with AI/LLM. If you're interested in seeing my work or collaborating, feel free to reach out on my socials.
 
 1. **Facebook**: [**Shoaib Hossain**](https://www.facebook.com/shoaib.hossain.298028)
 2. **LinkedIn**: [**Shoaib Hossain**](https://www.linkedin.com/in/shoaibhossainkhandakar/)
 3. **X**: [**@KillerShoaib__**](https://x.com/KillerShoaib__)
 
 \
-And I have also started **writing blogs** about my work related to AI and other stuffs. If you're interested in it, then checkout my blogs.
+And I have also started writing blogs about my work related to AI and other stuff. If you’re interested, then check out my blogs.
 - **My Personal Blog**: [**AI With Shoaib**](https://killershoaib.github.io/)
 
 \

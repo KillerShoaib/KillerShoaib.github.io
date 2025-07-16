@@ -36,7 +36,7 @@
         "mainEntityOfPage": {
             "@type": "WebPage",
             "@id": "http:\/\/localhost:1313\/posts\/tai\/"
-        },"genre": "posts","keywords": "AI, Terminal","wordcount":  1812 ,
+        },"genre": "posts","keywords": "AI, Terminal","wordcount":  1867 ,
         "url": "http:\/\/localhost:1313\/posts\/tai\/","datePublished": "2025-07-11T00:00:00+00:00","dateModified": "2025-07-11T00:00:00+00:00","publisher": {
             "@type": "Organization",
             "name": ""},"author": {
@@ -84,7 +84,7 @@
             <div class="toc-content always-active" id="toc-content-auto"></div>
         </div><article class="page single"><h1 class="single-title animate__animated animate__flipInX">tAI - Get Terminal Commands Using Natural Language</h1><h2 class="single-subtitle">A python package to help you get terminal commands using natural language</h2><div class="post-meta">
             <div class="post-meta-line"><span class="post-author"><a href="/" title="Author" rel="author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>Shoaib</a></span>&nbsp;<span class="post-category">included in <a href="/categories/standalone-project/"><i class="far fa-folder fa-fw" aria-hidden="true"></i>Standalone Project</a></span></div>
-            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="2025-07-11">2025-07-11</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden="true"></i>&nbsp;1812 words&nbsp;
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="2025-07-11">2025-07-11</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden="true"></i>&nbsp;1867 words&nbsp;
                 <i class="far fa-clock fa-fw" aria-hidden="true"></i>&nbsp;9 minutes&nbsp;</div>
         </div><div class="featured-image"><img
         class="lazyload"
@@ -112,7 +112,7 @@
     <li><a href="#what-features-tai-have">What Features tAI have?</a>
       <ul>
         <li><a href="#21-llms">21+ LLMs</a></li>
-        <li><a href="#free-usage-without-setting-api-keys">Free Usage without Setting API keys</a></li>
+        <li><a href="#free-usage-without-seting-api-keys">Free Usage without Seting API keys</a></li>
         <li><a href="#default-llm">Default LLM</a></li>
         <li><a href="#inline--fullscreen-mode">Inline &amp; Fullscreen Mode</a></li>
         <li><a href="#auto-paste--execution-mode">Auto Paste &amp; Execution Mode</a></li>
@@ -133,7 +133,7 @@
 <strong>Example</strong>: User says &ldquo;list all the files in the current directory&rdquo; and tAI will generate command <code>ls -al</code> and paste it on the terminal. Then user can execute the command by pressing <code>Enter</code> key (there is also a self execution mode).
 <br>
 <br>
-<strong>That&rsquo;s it! It doesn&rsquo;t do much or less</strong>. It is a simple tool built on top of python to generate commands on natural language.
+<strong>That&rsquo;s it! It doesn&rsquo;t do much or less</strong>.
 <br>
 <br>
 <figure><a class="lightgallery" href="/images/tAI/tAI%20demo.gif" title="/images/tAI/tAI demo.gif" data-thumbnail="/images/tAI/tAI demo.gif" data-sub-html="<h2>tAI in action</h2>">
@@ -147,7 +147,7 @@
     </a><figcaption class="image-caption"><strong>tAI in action</strong></figcaption>
     </figure></p>
 <h2 id="why-i-built-this">Why I Built This?</h2>
-<p>I have really bad memory and I always forgot what command I need to pass. One day I was working with <code>gcp sdk</code> and I had to change the current gcp project to another project. And, I completely forgot the command to do so. Then I&rsquo;ve to leave my terminal &amp; go to chatgpt website, then ask it, got a response, paste it in the terminal and press enter. This is a huge bottleneck. Instead of leaving the terminal, I should ask it from my terminal and should get the result. That&rsquo;s what sparked my first interest in building <code>tAI</code>.</p>
+<p>I have really bad memory and I always forgot what command I need to pass. One day I was working with <code>gcp sdk</code> and I had to change the current gcp project to another project. And, I completely forgot the command to do so. Then I had to leave my terminal &amp; went to chatgpt website, then asked it, got a response, pasted it in the terminal and pressed enter. This is a huge bottleneck. Instead of leaving the terminal, I should be asking it from my terminal and should get the result. That&rsquo;s what sparked my first interest in building <code>tAI</code>.</p>
 <p>That&rsquo;s why I built <code>tAI</code> which I can use without leaving the terminal and open source it so that others can also use it.
 <br>
 <br>
@@ -690,7 +690,7 @@ document.addEventListener('DOMContentLoaded', function() {
 That&rsquo;s it! Now you can use <code>tAI</code> by running <code>tai</code> command in the terminal. I know it&rsquo;s a bit more complicated than the simple pip install but it is much more robust. And if you&rsquo;re using <code>Ubuntu 22</code> or above you can&rsquo;t direcly install via <code>pip</code>.
 <br>
 <br>
-<strong>There is a neat trick which you can use to create a bash function and call the function directly from the terminal</strong>. That function will automatically handle the virtual environment activation. After you&rsquo;ve installed the <code>tAI</code> package in the virtual env then just copy paste this bash function inside your <code>.bashrc</code> file (or <code>.zshrc</code> if you&rsquo;re using <code>zsh</code>). You&rsquo;ll find this file in the <code>home</code> directory (remember this is a hidden file).
+<strong>There is a neat trick which you can use so that you don&rsquo;t have to activate the virtual environment everytime you want to use <code>tAI</code>. You can create a bash function and call the function directly from the terminal</strong>. That function will automatically handle the virtual environment activation. After you&rsquo;ve installed the <code>tAI</code> package in the virtual env then just copy paste this bash function inside your <code>.bashrc</code> file (or <code>.zshrc</code> if you&rsquo;re using <code>zsh</code>). You&rsquo;ll find this file in the <code>home</code> directory (remember this is a hidden file).
 <br>
 <br>
 
@@ -893,8 +893,10 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 </script> 
 </script> </p>
+<p><br>
+After pasting this function inside your <code>.bashrc</code> file, you need to change the <code>VENV_ACTIVATE</code> path to the path where you&rsquo;ve created the virtual environment. Then, restart the terminal or run <code>source ~/.bashrc</code> to apply the changes. Now you&rsquo;re all set! Just type <code>tai</code> in your terminal to use <code>tAI</code>.</p>
 <h3 id="installing-via-pipx">Installing via pipx</h3>
-<p>This one is for <code>Linux</code> or <code>Ubuntu</code> user. It is not recommended to install globally via <code>pip</code> in a <code>debian</code> based distribution. This can corrupt the entire system. This where <code>pipx</code> comes into the picture. It creates an isolated environment for each package and installed them there. Instead of creating a virtual environment manually, installing via <code>pipx</code> can be handy.</p>
+<p>This one is for <code>Linux</code> or <code>Ubuntu</code> user. It is not recommended to install globally via <code>pip</code> in a <code>debian</code> based distribution. This can corrupt the entire system. This is where <code>pipx</code> comes into the picture. It creates an isolated environment for each package and installed them there. Instead of creating a virtual environment manually, installing via <code>pipx</code> can be handy.</p>
 <p><strong>1. Install <code>pipx</code></strong>:</p>
 <pre tabindex="0"><code>sudo apt install pipx
 </code></pre><p><strong>2. Install <code>tAI</code> via <code>pipx</code></strong>:</p>
@@ -913,11 +915,11 @@ document.addEventListener('DOMContentLoaded', function() {
     </figure>
 <p>Though the principle of <code>tAI</code> was to be as minimal as possible. But I&rsquo;ve to balance between minimalism yet configurable. That&rsquo;s why I&rsquo;ve added many customization features.</p>
 <h3 id="21-llms">21+ LLMs</h3>
-<p>Currently <code>tAI</code> supports 21+ LLMs from different provider such as <strong>Google</strong>, <strong>OpenAI</strong>, <strong>Anthropic</strong> and <strong>Open router</strong> for free models. User have the flexibility to choose any of the model they like. They can change the model from the terminal utilizing terminal user interface (thanks to <strong>textual</strong>). I&rsquo;ll be adding more models in future.</p>
-<h3 id="free-usage-without-setting-api-keys">Free Usage without Setting API keys</h3>
-<p>You&rsquo;ll have access to Free LLMs from the get go. You&rsquo;ll just install the package and start using it without setting any api keys. Currently <code>tAI</code> offers total <strong>7 open source models completely free to use.</strong></p>
+<p>Currently <code>tAI</code> supports 21+ LLMs from different provider such as <strong>Google</strong>, <strong>OpenAI</strong>, <strong>Anthropic</strong> and <strong>Open router</strong> for free models. User have the flexibility to choose any of the models they like. They can change the model from the terminal utilizing terminal user interface (thanks to <strong>textual</strong>). I&rsquo;ll be adding more models in the future.</p>
+<h3 id="free-usage-without-seting-api-keys">Free Usage without Seting API keys</h3>
+<p>You&rsquo;ll have access to Free LLMs from the get go. You&rsquo;ll install the package and start using it without seting any api keys. Currently <code>tAI</code> offers total <strong>7 open source models completely free to use.</strong></p>
 <h3 id="default-llm">Default LLM</h3>
-<p>Set a default LLM so that everytime <code>tAI</code> starts it is set to the default. You can set the default LLM either from the <code>settings</code> tab or using command.
+<p>Set a default LLM so that everytime <code>tAI</code> starts it is set to the default model. You can set the default LLM either from the <code>settings</code> tab or using command.
 <br>
 <strong>Command to set default model:</strong>
 
@@ -1097,9 +1099,8 @@ document.addEventListener('DOMContentLoaded', function() {
     </a><figcaption class="image-caption"><strong>Default model selecting from setting</strong></figcaption>
     </figure>
 <h3 id="inline--fullscreen-mode">Inline &amp; Fullscreen Mode</h3>
-<p><code>tAI</code> have 2 screen modes. One is <strong>inline</strong> mode similar to cursor another one is <strong>fullscreen</strong> mode. This gives the user complete flexibility to use any of the mode as per his liking. Changing between this to mode is also very simple. Either can use direct command to change between <strong>fullscreen</strong> and <strong>inline</strong> or use the <code>settings</code> tab to change the mode. You can find this under the <code>others</code> section from the <code>settings</code>.</p>
+<p><code>tAI</code> have 2 screen modes. One is <strong>inline</strong> mode similar to cursor, another one is <strong>fullscreen</strong> mode. This gives the user complete flexibility to use any of the mode as per his liking. Changing between this two mode is also very simple. Either can use direct command (<code>tai --fullscreen true</code>) to change between <strong>fullscreen</strong> and <strong>inline</strong> or use the <code>settings</code> tab to change the mode. You can find this under the <code>others</code> section from the <code>settings</code>.</p>
 <p><br>
-<br>
 <figure><a class="lightgallery" href="https://cdn-uploads.huggingface.co/production/uploads/65ca6f0098a46a56261ac3ac/CxFXZ84qlzgUma9G6yErO.png" title="https://cdn-uploads.huggingface.co/production/uploads/65ca6f0098a46a56261ac3ac/CxFXZ84qlzgUma9G6yErO.png" data-thumbnail="https://cdn-uploads.huggingface.co/production/uploads/65ca6f0098a46a56261ac3ac/CxFXZ84qlzgUma9G6yErO.png" data-sub-html="<h2>Inline mode of tAI</h2>">
         <img
             class="lazyload"
@@ -1110,7 +1111,6 @@ document.addEventListener('DOMContentLoaded', function() {
             alt="https://cdn-uploads.huggingface.co/production/uploads/65ca6f0098a46a56261ac3ac/CxFXZ84qlzgUma9G6yErO.png" />
     </a><figcaption class="image-caption"><strong>Inline mode of <code>tAI</code></strong></figcaption>
     </figure>
-<br>
 <br>
 <figure><a class="lightgallery" href="https://cdn-uploads.huggingface.co/production/uploads/65ca6f0098a46a56261ac3ac/FoJOmIhm0BBaw0ro46c9q.png" title="https://cdn-uploads.huggingface.co/production/uploads/65ca6f0098a46a56261ac3ac/FoJOmIhm0BBaw0ro46c9q.png" data-thumbnail="https://cdn-uploads.huggingface.co/production/uploads/65ca6f0098a46a56261ac3ac/FoJOmIhm0BBaw0ro46c9q.png" data-sub-html="<h2>Fullscreen mode of tAI</h2>">
         <img
@@ -1123,7 +1123,6 @@ document.addEventListener('DOMContentLoaded', function() {
     </a><figcaption class="image-caption"><strong>Fullscreen mode of <code>tAI</code></strong></figcaption>
     </figure>
 <br>
-<br>
 <figure><a class="lightgallery" href="https://cdn-uploads.huggingface.co/production/uploads/65ca6f0098a46a56261ac3ac/ecXKLHI00X9VhpNoipiHx.png" title="https://cdn-uploads.huggingface.co/production/uploads/65ca6f0098a46a56261ac3ac/ecXKLHI00X9VhpNoipiHx.png" data-thumbnail="https://cdn-uploads.huggingface.co/production/uploads/65ca6f0098a46a56261ac3ac/ecXKLHI00X9VhpNoipiHx.png" data-sub-html="<h2>Changing between fullscreen &amp; inline</h2>">
         <img
             class="lazyload"
@@ -1135,11 +1134,11 @@ document.addEventListener('DOMContentLoaded', function() {
     </a><figcaption class="image-caption"><strong>Changing between fullscreen &amp; inline</strong></figcaption>
     </figure></p>
 <blockquote>
-<p>It is advised to use the <strong>fullscreen</strong> mode while using <code>tAI</code> inside from <code>tmux</code>.</p></blockquote>
+<p>It is advised to use the <strong>fullscreen</strong> mode while using <code>tAI</code> inside <code>tmux</code>.</p></blockquote>
 <h3 id="auto-paste--execution-mode">Auto Paste &amp; Execution Mode</h3>
-<p>There is 2 mode. One is <strong>Auto paste</strong> and another one is <strong>Auto execute</strong>. User can <strong>toggle between this mode using <code>ctrl+e</code> keybind</strong>. In the <strong>Auto paste</strong> mode <code>tAI</code> generates a command and paste it to the terminal. Then user can see the command and decide if he wants to run it or not. Meanwhile <strong>Auto execute</strong> model runs the command itself. My advice is to use the <strong>Auto execute</strong> mode with caution. Cause LLM can generate a command which can delete system files. You don&rsquo;t want blindly trust LLMs.</p>
+<p>There is 2 mode. One is <strong>Auto paste</strong> and another one is <strong>Auto execute</strong>. User can <strong>toggle between this mode using <code>ctrl+e</code> keybind</strong>. In the <strong>Auto paste</strong> mode <code>tAI</code> generates a command and paste it to the terminal. Then user can see the command and decide if he wants to run it or not. Meanwhile <strong>Auto execute</strong> model runs the command itself. My advice is to use the <strong>Auto execute</strong> mode with caution. Cause LLM can generate a command which can delete system files. You don&rsquo;t want to blindly trust LLMs.</p>
 <h3 id="custom-prompt-config">Custom Prompt Config</h3>
-<p>To make it more customizable and more personalized I&rsquo;ve give the user the choice to <strong>customize the system prompt.</strong> User can customize the <strong>system prompt</strong> from the <code>settings</code> tab. You can guide the LLM to your personal need. This is completely upto the user. Also you can see the default <strong>system prompt</strong> from this <code>prompt config</code> section.</p>
+<p>To make it more customizable and more personalized, I&rsquo;ve given the user the choice to <strong>customize the system prompt.</strong> User can customize the <strong>system prompt</strong> from the <code>prompt config</code> section inside <code>settings</code>. You can guide the LLM to your personal need. This is completely upto the user. Also you can see the default <strong>system prompt</strong> from this <code>prompt config</code> section.</p>
 <p><br>
 <br>
 <figure><a class="lightgallery" href="https://cdn-uploads.huggingface.co/production/uploads/65ca6f0098a46a56261ac3ac/DXGusMbv208fLe33MGtc1.png" title="https://cdn-uploads.huggingface.co/production/uploads/65ca6f0098a46a56261ac3ac/DXGusMbv208fLe33MGtc1.png" data-thumbnail="https://cdn-uploads.huggingface.co/production/uploads/65ca6f0098a46a56261ac3ac/DXGusMbv208fLe33MGtc1.png" data-sub-html="<h2>Customizing System Prompt from Setting</h2>">
@@ -1153,7 +1152,7 @@ document.addEventListener('DOMContentLoaded', function() {
     </a><figcaption class="image-caption"><strong>Customizing System Prompt from Setting</strong></figcaption>
     </figure></p>
 <h3 id="seting-api-keys">Seting API keys</h3>
-<p>You have free access to LLM. But it is still a better choice to bring your own API key (paid or free) for better experience. Free LLM will have rate limitation and slow response time. For the best experience bring your own api key. Currently we have 4 providers:</p>
+<p>You have free access to LLM. But it is still a better choice to bring your own API key (paid or free) for better experience. Free LLM will have rate limitation and slow response time. For the best experience bring your own api key. Currently <code>tAI</code> have integration with 4 providers:</p>
 <ol>
 <li><code>Google</code> (Gemini models)</li>
 <li><code>OpenAI</code> (GPT models)</li>
@@ -1211,13 +1210,13 @@ or using <strong>command line argument</strong> to setup api key.</p>
   </tbody>
 </table>
 <blockquote>
-<p>There is another option in the <code>others</code> tab of <code>settings</code>. Where you can set the all the model to use <code>Open router</code> api key. Then you only just provide your own <code>Open router</code> api key and use every model. But then the default <code>open router</code> api key (which was being used for free models) will be disabled.</p></blockquote>
+<p>There is another option in the <code>others</code> tab of <code>settings</code>. Where you can set all the models to use <code>Open router</code> api key. Then you only just provide your own <code>Open router</code> api key and use every model (OpenAI, Google, Anthropic, etc). But then the default <code>open router</code> api key (which was being used for free models) will be disabled.</p></blockquote>
 <h2 id="future--contribution">Future &amp; Contribution</h2>
 <p>This is an open source project so I can&rsquo;t make any promises but I&rsquo;ll try my best to add more features or improvement to <code>tAI</code>. At this moment I&rsquo;m working on the following features:</p>
 <ol>
 <li><strong>Add more models</strong> (will be adding new <code>kimi k2</code> model)</li>
 <li><strong>A docker image</strong> (pull the image and start using without any hassle)</li>
-<li><strong>Add context</strong> (currently there is no context is added to LLM call, if it makes mistake it won&rsquo;t know, will be adding context so that it knows about previous query and response)</li>
+<li><strong>Add context</strong> (currently there is no context added to LLM call, if it makes mistake it won&rsquo;t know, will be adding context so that it knows about previous query and response)</li>
 </ol>
 <p>But, I welcome any contribution to this open source project. If you encounter any bug then create an issue, or ask for a new feature or create a PR with new feature. Below I&rsquo;m adding the project repo.</p>
 <ol>
@@ -1225,20 +1224,20 @@ or using <strong>command line argument</strong> to setup api key.</p>
 <li><strong>PyPI</strong>: <a href="https://pypi.org/project/tai-textual/" target="_blank" rel="noopener noreffer "><strong>tai-textual</strong></a></li>
 </ol>
 <h2 id="special-thanks">Special Thanks</h2>
-<p>This project is build on top of 2 great library.</p>
+<p>This project is build on top of 2 great libraries.</p>
 <ol>
 <li><a href="https://textual.textualize.io/" target="_blank" rel="noopener noreffer "><strong>Textual</strong></a>: This framework was the <strong>MVP</strong>. Everything you see in the terminal is build on top of this library.</li>
 <li><a href="https://www.litellm.ai/" target="_blank" rel="noopener noreffer "><strong>LiteLLM</strong></a>: This is an API wrapper for all the LLMs. It made my life so much easier.</li>
 </ol>
 <h2 id="connect-with-me">Connect With Me</h2>
-<p>I&rsquo;m building stuff with AI/LLM. If you want to see my work or want to do a collab with me then you can reach out to me in my socials.</p>
+<p>I&rsquo;m building stuff with AI/LLM. If you&rsquo;re interested in seeing my work or collaborating, feel free to reach out on my socials.</p>
 <ol>
 <li><strong>Facebook</strong>: <a href="https://www.facebook.com/shoaib.hossain.298028" target="_blank" rel="noopener noreffer "><strong>Shoaib Hossain</strong></a></li>
 <li><strong>LinkedIn</strong>: <a href="https://www.linkedin.com/in/shoaibhossainkhandakar/" target="_blank" rel="noopener noreffer "><strong>Shoaib Hossain</strong></a></li>
 <li><strong>X</strong>: <a href="https://x.com/KillerShoaib__" target="_blank" rel="noopener noreffer "><strong>@KillerShoaib__</strong></a></li>
 </ol>
 <p><br>
-And I have also started <strong>writing blogs</strong> about my work related to AI and other stuffs. If you&rsquo;re interested in it, then checkout my blogs.</p>
+And I have also started writing blogs about my work related to AI and other stuff. If you’re interested, then check out my blogs.</p>
 <ul>
 <li><strong>My Personal Blog</strong>: <a href="https://killershoaib.github.io/" target="_blank" rel="noopener noreffer "><strong>AI With Shoaib</strong></a></li>
 </ul>
